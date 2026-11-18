@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lịch Sử Nvidia 30s - Hồ Sơ Tài Liệu Vintage</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:ital,wght@0,700;1,700&family=Oswald:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+
+    <style>
+      :root {
+        --yellow-hl: #f0a500;
+        --dark-paper: #161513;
+        --dark-box: #1b1916;
+        --font-headline: 'Oswald', sans-serif;
+        --font-archival: 'Courier Prime', 'Courier New', monospace;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background-color: #0b0a09;
+        overflow: hidden;
+      }
+
+      #root {
+        width: 1920px;
+        height: 1080px;
+        position: relative;
+        background: #141311;
+        overflow: hidden;
+        user-select: none;
+      }
+
+      .clip {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      /* Aged vintage paper texture with warm sepia grading */
+      .bg-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: sepia(24%) contrast(1.12) brightness(0.94);
+      }
+
+      /* Global Vintage Vignette Overlay */
+      .vignette-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        background: radial-gradient(circle at 50% 50%, rgba(0,0,0,0) 50%, rgba(40,30,18,0.22) 80%, rgba(18,12,6,0.48) 100%);
+        mix-blend-mode: multiply;
+        z-index: 85;
+      }
+
+      /* ================= TOP-LEFT ARCHIVAL BADGE (SCENE 1) ================= */
+      .badge-container {
+        position: absolute;
+        top: 36px;
+        left: 56px;
+        display: flex;
+        align-items: center;
+        z-index: 25;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+      }
+      .badge-main {
+        background: var(--yellow-hl);
+        color: #12100e;
+        font-family: var(--font-headline);
+        font-size: 48px;
+        font-weight: 700;
+        padding: 4px 24px;
+        letter-spacing: 0.5px;
+      }
+      .badge-sub {
+        background: var(--dark-box);
+        color: #e5dfd3;
+        font-family: var(--font-archival);
+        font-size: 34px;
+        font-weight: 700;
+        padding: 8px 24px;
+        letter-spacing: 1px;
+        border-left: 1px solid rgba(255,255,255,0.1);
+      }
+
+      /* ================= BOTTOM CALLOUT (SCENE 1) ================= */
+      .map-callout-bottom {
+        position: absolute;
+        bottom: 120px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #11100e;
+        color: #f2eee6;
+        font-family: var(--font-archival);
+        font-size: 36px;
+        font-weight: 700;
+        padding: 10px 48px;
+        border: 2px solid rgba(255,255,255,0.25);
+        border-radius: 3px;
+        box-shadow: 0 12px 30px rgba(0,0,0,0.85);
+        z-index: 30;
+        letter-spacing: 1.5px;
+      }
+
+      /* ================= TOP CENTER HEADLINES ================= */
+      .headline-container {
+        position: absolute;
+        top: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        z-index: 25;
+      }
+      .headline-row {
+        display: flex;
+        align-items: center;
+        white-space: nowrap;
+        font-family: var(--font-headline);
+        font-size: 64px;
+        font-weight: 700;
+        color: #14110e;
+        letter-spacing: 2.5px;
+        line-height: 1.1;
+      }
+      .hl-box {
+        position: relative;
+        display: inline-block;
+        padding: 0 16px;
+        margin: 0 12px;
+        isolation: isolate;
+      }
+      .hl-bg {
+        position: absolute;
+        top: 4px;
+        left: 0;
+        width: 100%;
+        height: 86%;
+        background: var(--yellow-hl);
+        z-index: -1;
+        transform-origin: left center;
+      }
+      .archival-sub-box {
+        font-family: var(--font-archival);
+        background: #141210;
+        color: #e5ded2;
+        font-size: 32px;
+        font-weight: 700;
+        padding: 6px 36px;
+        letter-spacing: 2px;
+        margin-top: 10px;
+        border: 1px solid rgba(255,255,255,0.18);
+        box-shadow: 0 6px 16px rgba(0,0,0,0.45);
+      }
+
+      /* ================= VINTAGE ARCHIVAL SCRAPBOOK CARDS ================= */
+      .scrapbook-card {
+        position: absolute;
+        background: #f3efe6;
+        padding: 12px 12px 36px 12px;
+        box-shadow: 0 20px 45px rgba(0,0,0,0.45), inset 0 0 15px rgba(130,100,60,0.12);
+        border: 1px solid #ddd6c5;
+        border-radius: 2px;
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .scrapbook-card img {
+        display: block;
+        object-fit: cover;
+      }
+      .photo-caption {
+        font-family: var(--font-archival);
+        font-size: 19px;
+        font-weight: 700;
+        color: #383228;
+        letter-spacing: 1.5px;
+        margin-top: 10px;
+        text-transform: uppercase;
+      }
+
+      /* Aged Kraft / Scotch Masking Tape */
+      .tape {
+        position: absolute;
+        width: 140px;
+        height: 38px;
+        background: rgba(215, 198, 162, 0.78);
+        box-shadow: 0 2px 6px rgba(50,35,15,0.28);
+        backdrop-filter: blur(1.5px);
+        z-index: 20;
+      }
+      .tape-tl {
+        top: -18px;
+        left: -32px;
+        transform: rotate(-32deg);
+      }
+      .tape-tr {
+        top: -18px;
+        right: -32px;
+        transform: rotate(32deg);
+      }
+      .tape-bl {
+        bottom: -18px;
+        left: -32px;
+        transform: rotate(32deg);
+      }
+      .tape-br {
+        bottom: -18px;
+        right: -32px;
+        transform: rotate(-32deg);
+      }
+
+      /* ================= SUBTITLE CARDS (LOWER THIRD) ================= */
+      .subtitle-card {
+        position: absolute;
+        bottom: 26px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 1720px;
+        height: 72px;
+        background: rgba(18, 16, 14, 0.95);
+        border-left: 8px solid var(--yellow-hl);
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 32px;
+        z-index: 100;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.75);
+        pointer-events: none;
+      }
+      .subtitle-text {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 27px;
+        font-weight: 700;
+        font-style: italic;
+        color: #f7f4ed;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="30"
+      data-width="1920"
+      data-height="1080"
+    >
+      <!-- Audio Soundtrack with Bass drops, Ticking, Whooshes, and Chimes -->
+      <audio id="audio" src="assets/nvidia_soundtrack.mp3" data-start="0" data-duration="30"></audio>
+
+      <!-- Global Vignette Overlay for Authentic Archival Tone -->
+      <div class="vignette-overlay"></div>
+
+      <!-- ================= SCENE 1: ĐIỂM ĐÁY DENNY'S (0 - 10s) ================= -->
+      <div
+        id="scene1"
+        class="clip scene"
+        data-start="0"
+        data-duration="10"
+        data-track-index="1"
+      >
+        <div id="s1-content" style="width:100%; height:100%; position:relative;">
+          <img class="bg-img" src="assets/clean_paper_bg.jpg" alt="Paper" />
+
+          <!-- Top-Left Archival Badge -->
+          <div class="badge-container" id="s1-badge">
+            <div class="badge-main">HỒ SƠ 1993</div>
+            <div class="badge-sub">SAN JOSE · DENNY'S</div>
+          </div>
+
+          <!-- Left Photo: Denny's Restaurant (Archival B&W) -->
+          <div class="scrapbook-card" id="s1-card-left" style="top: 170px; left: 160px; transform: rotate(-2deg);">
+            <div class="tape tape-tl"></div>
+            <div class="tape tape-br"></div>
+            <img src="assets/dennys_archival.jpg" width="730" height="590" alt="Dennys Archival" />
+            <div class="photo-caption">QUÁN ĂN DENNY'S · NƠI KHỞI ĐẦU 1993</div>
+          </div>
+
+          <!-- Right Photo: Jensen Huang (Archival B&W) -->
+          <div class="scrapbook-card" id="s1-card-right" style="top: 170px; left: 1030px; transform: rotate(2deg);">
+            <div class="tape tape-tr"></div>
+            <div class="tape tape-bl"></div>
+            <img src="assets/jensen_archival.jpg" width="710" height="590" alt="Jensen Huang Archival" />
+            <div class="photo-caption">JENSEN HUANG · CỰU NHÂN VIÊN RỬA BÁT</div>
+          </div>
+
+          <!-- Bottom Callout (Appears at 1.8s) -->
+          <div class="map-callout-bottom" id="s1-callout">
+            VỎN VẸN 40.000 USD TIỀN VỐN KHỞI NGHIỆP
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= SCENE 2: CANH BẠC CUDA (10 - 20s) ================= -->
+      <div
+        id="scene2"
+        class="clip scene"
+        data-start="10"
+        data-duration="10"
+        data-track-index="1"
+      >
+        <div id="s2-content" style="width:100%; height:100%; position:relative;">
+          <img class="bg-img" src="assets/clean_paper_bg.jpg" alt="Paper" />
+
+          <!-- Headline Centered -->
+          <div class="headline-container" id="s2-headline">
+            <div class="headline-row">
+              <span>CANH BẠC</span>
+              <span class="hl-box">
+                <span class="hl-bg" id="s2-hl"></span>
+                <span>CUDA</span>
+              </span>
+              <span>SUÝT CHẾT 3 LẦN</span>
+            </div>
+            <div class="archival-sub-box" id="s2-sub-box">
+              HỒ SƠ THUA LỖ: CỔ ĐÔNG ĐÒI ĐUỔI VIỆC CEO
+            </div>
+          </div>
+
+          <!-- Left Photo: GPU Chip (Archival B&W) -->
+          <div class="scrapbook-card" id="s2-card-left" style="top: 235px; left: 160px; transform: rotate(1.5deg);">
+            <div class="tape tape-tl"></div>
+            <div class="tape tape-br"></div>
+            <img src="assets/geforce_archival.jpg" width="730" height="580" alt="GeForce Archival" />
+            <div class="photo-caption">BẢN MẠCH GPU RIVA 128 & GEFORCE</div>
+          </div>
+
+          <!-- Right Photo: Headquarters (Archival B&W) -->
+          <div class="scrapbook-card" id="s2-card-right" style="top: 235px; left: 1030px; transform: rotate(-2deg);">
+            <div class="tape tape-tr"></div>
+            <div class="tape tape-bl"></div>
+            <img src="assets/nvidia_hq_archival.jpg" width="710" height="580" alt="Headquarters Archival" />
+            <div class="photo-caption">TRỤ SỞ NVIDIA TRONG CƠN KHỦNG HOẢNG</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= SCENE 3: KỶ NGUYÊN 3.000 TỶ (20 - 30s) ================= -->
+      <div
+        id="scene3"
+        class="clip scene"
+        data-start="20"
+        data-duration="10"
+        data-track-index="1"
+      >
+        <div id="s3-content" style="width:100%; height:100%; position:relative;">
+          <img class="bg-img" src="assets/clean_paper_bg.jpg" alt="Paper" />
+
+          <!-- Headline Centered -->
+          <div class="headline-container" id="s3-headline">
+            <div class="headline-row">
+              <span>ĐẾ CHẾ</span>
+              <span class="hl-box">
+                <span class="hl-bg" id="s3-hl"></span>
+                <span>3 NGHÌN TỶ ĐÔ</span>
+              </span>
+              <span>VƯỢT APPLE</span>
+            </div>
+            <div class="archival-sub-box" id="s3-sub-box">
+              TÀI LIỆU LƯU TRỮ: TRẠM THU PHÍ ĐỘC QUYỀN KỶ NGUYÊN AI
+            </div>
+          </div>
+
+          <!-- Left Photo: Jensen Huang AI Keynote (Archival B&W) -->
+          <div class="scrapbook-card" id="s3-card-left" style="top: 235px; left: 160px; transform: rotate(-1.5deg);">
+            <div class="tape tape-tl"></div>
+            <div class="tape tape-br"></div>
+            <img src="assets/jensen_archival.jpg" width="730" height="580" alt="Jensen Huang AI" />
+            <div class="photo-caption">CEO JENSEN HUANG · TỔNG TƯ LỆNH AI</div>
+          </div>
+
+          <!-- Right Card: Vintage Newspaper Clipping Artifact -->
+          <div class="scrapbook-card" id="s3-card-right" style="top: 235px; left: 1030px; transform: rotate(1.5deg);">
+            <div class="tape tape-tr"></div>
+            <div class="tape tape-bl"></div>
+            <img src="assets/nvidia_newspaper_clipping.jpg" width="710" height="580" alt="Newspaper Artifact" />
+            <div class="photo-caption">BẢN TIN PHỐ WALL LƯU TRỮ · THÁNG 6/2024</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= Subtitle Cards (Track 2) ================= -->
+      <div class="subtitle-card" id="sub1" data-start="0" data-duration="10" data-track-index="2" data-layout-allow-occlusion>
+        <div class="subtitle-text">
+          "Năm 1993, tại một góc quán ăn Denny's dầu mỡ, ba kỹ sư nghèo gom vỏn vẹn 40.000 đô để khởi nghiệp..."
+        </div>
+      </div>
+      <div class="subtitle-card" id="sub2" data-start="10" data-duration="10" data-track-index="2" data-layout-allow-occlusion>
+        <div class="subtitle-text">
+          "Họ cược toàn bộ tài sản vào CUDA — một canh bạc bị chửi rủa, cổ phiếu cắm đầu và suýt phá sản 3 lần..."
+        </div>
+      </div>
+      <div class="subtitle-card" id="sub3" data-start="20" data-duration="10" data-track-index="2" data-layout-allow-occlusion>
+        <div class="subtitle-text">
+          "Nhưng khi AI bùng nổ, thế giới bàng hoàng: Nvidia đã trở thành trạm thu phí độc quyền của tương lai!"
+        </div>
+      </div>
+    </div>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+
+      // ----------------- Scene 1 Animations (0 - 10s) -----------------
+      tl.fromTo("#s1-badge", { y: -50, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power2.out" }, 0.2);
+      tl.fromTo("#s1-card-left", { y: -40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: "power3.out" }, 0.4);
+      tl.fromTo("#s1-card-right", { y: -40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: "power3.out" }, 0.6);
+      tl.fromTo("#s1-callout", { scale: 0.8, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.4, ease: "back.out(2)" }, 1.8);
+
+      // ----------------- Scene 2 Animations (10 - 20s) -----------------
+      tl.fromTo("#s2-content", { opacity: 0 }, { opacity: 1, duration: 0.35, ease: "power2.out" }, 10.0);
+      tl.fromTo("#s2-card-left", { y: -40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: "power3.out" }, 10.2);
+      tl.fromTo("#s2-card-right", { y: -40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: "power3.out" }, 10.4);
+      tl.fromTo("#s2-hl", { scaleX: 0 }, { scaleX: 1, duration: 0.5, ease: "power2.out" }, 11.5);
+      tl.fromTo("#s2-sub-box", { scale: 0.8, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.4, ease: "back.out(2)" }, 12.3);
+
+      // ----------------- Scene 3 Animations (20 - 30s) -----------------
+      tl.fromTo("#s3-content", { opacity: 0 }, { opacity: 1, duration: 0.35, ease: "power2.out" }, 20.0);
+      tl.fromTo("#s3-card-left", { y: -40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: "power3.out" }, 20.2);
+      tl.fromTo("#s3-card-right", { y: -40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: "power3.out" }, 20.4);
+      tl.fromTo("#s3-hl", { scaleX: 0 }, { scaleX: 1, duration: 0.5, ease: "power2.out" }, 21.5);
+      tl.fromTo("#s3-sub-box", { scale: 0.8, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.4, ease: "back.out(2)" }, 22.5);
+
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>

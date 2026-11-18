@@ -1,0 +1,12 @@
+{
+  "title": "TỪ MÁY DỆT ĐẾN TOYOTA",
+  "durationSeconds": 30,
+  "format": "1920x1080",
+  "scenes": [
+    { "id": "scene-01", "start": 0, "end": 5, "asset": "assets/scene-01.png", "headline": "KHỞI ĐẦU TỪ MÁY DỆT", "subhead": "Sakichi Toyoda theo đuổi một ý tưởng: loại bỏ lãng phí." },
+    { "id": "scene-02", "start": 5, "end": 11, "asset": "assets/scene-02.png", "headline": "1937: BƯỚC SANG Ô TÔ", "subhead": "Từ kỹ nghệ dệt, một công ty xe hơi Nhật Bản bắt đầu hành trình." },
+    { "id": "scene-03", "start": 11, "end": 19, "asset": "assets/scene-03.png", "headline": "SAU CHIẾN TRANH: LÀM TỐT HƠN", "subhead": "Sản xuất tinh gọn biến từng công đoạn thành lợi thế." },
+    { "id": "scene-04", "start": 19, "end": 26, "asset": "assets/scene-04.png", "headline": "1997: HYBRID ĐI VÀO ĐẠI CHÚNG", "subhead": "Một chương mới: hiệu quả năng lượng trở thành trọng tâm." },
+    { "id": "scene-05", "start": 26, "end": 30, "asset": "assets/scene-04.png", "headline": "TỪ SỢI VẢI ĐẾN CHUYỂN ĐỘNG", "subhead": "Lịch sử Toyota là lịch sử của việc cải tiến không ngừng." }
+  ]
+}

@@ -1,0 +1,1317 @@
+<USER_REQUEST>
+1. Phần bản đồ lỗi
+2. làm lại theo plan sau: 
+# MASTER PRODUCTION BRIEF
+## TSMC — THE SEMICONDUCTOR EMPIRE
+**Style:** MagnatesMedia × Vox × Premium Historical Documentary  
+**Target duration:** 18:00  
+**Structure:** 6 Acts — 31 timed sequences  
+**Narration:** Japanese male voice — ja-JP-KeitaNeural (theo kịch bản gốc)  
+**Format:** 16:9, 3840×2160, 24 fps  
+**Production approach:** Cinematic storytelling + explanatory motion graphics + archival documentary.
+
+---
+
+# PART A — GLOBAL CREATIVE DIRECTION
+
+## A1. Mục tiêu của video
+
+Tạo một phim tài liệu dài 18 phút kể lại lịch sử TSMC, từ một doanh nghiệp foundry thành lập năm 1987 đến một mắt xích thiết yếu của chuỗi cung ứng bán dẫn tiên tiến toàn cầu.
+
+Video phải khiến người xem trải qua bốn cảm xúc theo trình tự:
+
+1. **Tò mò và bất an:** Tại sao một doanh nghiệp tại Đài Loan lại có tầm ảnh hưởng lớn đến nền kinh tế và công nghệ thế giới?
+2. **Đồng cảm và hoài nghi:** Morris Chang đã xây dựng TSMC như thế nào khi mô hình kinh doanh này chưa được nhiều doanh nghiệp tin tưởng?
+3. **Kinh ngạc và thấu hiểu:** Tại sao mô hình foundry, chất lượng sản xuất, sự hợp tác với các hãng thiết kế chip và đầu tư công nghệ tạo nên lợi thế cạnh tranh?
+4. **Suy ngẫm:** Thành công của TSMC mang ý nghĩa gì đối với Đài Loan, Nhật Bản và thế giới?
+
+Không được chỉ tạo một chuỗi hình ảnh công nghệ đẹp mắt. Mỗi cảnh phải phục vụ một luận điểm, sự kiện, nhân vật hoặc diễn biến được đề cập trong kịch bản.
+
+**Nguyên tắc storytelling:** Mọi thông tin quan trọng phải được thể hiện bằng hình ảnh trực quan hoặc hình ảnh có ý nghĩa, không chỉ bằng chữ chạy trên màn hình.
+
+---
+
+## A2. Visual DNA — Hệ thống phong cách bắt buộc
+
+### STYLE 1: MAGNATESMEDIA — CINEMATIC STORYTELLING
+
+Dùng cho mở đầu, câu chuyện Morris Chang, các cuộc đối đầu, bước ngoặt, khủng hoảng và kết thúc.
+
+Đặc điểm hình ảnh:
+
+- Cinematic lighting với tương phản rõ, vùng tối sâu nhưng vẫn giữ chi tiết.
+- Layered 2.5D composition: foreground, midground, background.
+- Slow cinematic camera push-in, pull-out và lateral tracking.
+- Ảnh chân dung lịch sử được tách nền, đặt vào không gian có chiều sâu.
+- Newspaper collage, corporate documents, photographs, film frames.
+- Selective spotlight: chiếu sáng vật thể hoặc nhân vật mà voice-over đang đề cập.
+- Subtle film grain, atmospheric haze, depth of field.
+- Dramatic reveal: thông tin quan trọng xuất hiện đúng thời điểm lời dẫn nhắc đến.
+- High-impact cuts ở những bước ngoặt, không áp dụng cho tất cả cảnh.
+
+Không nên dùng camera shake liên tục, glitch vô nghĩa, zoom cực nhanh trên mọi hình ảnh hoặc các hiệu ứng chỉ mang tính trang trí.
+
+### STYLE 2: VOX — EXPLANATORY MOTION GRAPHICS
+
+Dùng khi cần giải thích:
+
+- Cấu trúc ngành công nghiệp bán dẫn.
+- Mô hình IDM và Pure-play Foundry.
+- Mối quan hệ giữa doanh nghiệp thiết kế chip và nhà sản xuất.
+- Dòng tiền, vốn đầu tư, thị phần, xu hướng tăng trưởng.
+- Timeline lịch sử.
+- Mạng lưới chuỗi cung ứng.
+- Vai trò của EUV lithography.
+- Địa lý và chiến lược quốc tế của TSMC.
+
+Đặc điểm hình ảnh:
+
+- Clean 2D vector graphics.
+- Simplified geometric diagrams.
+- Flat illustrations kết hợp texture giấy rất nhẹ.
+- Animated lines, arrows và connecting nodes.
+- Map graphics với đường biên, tọa độ và vị trí nhà máy.
+- Charts hiển thị số liệu có đơn vị, năm và nguồn.
+- Object morphing: một sơ đồ biến đổi thành sơ đồ khác.
+- Từng thành phần xuất hiện theo nhịp voice-over.
+- Chuyển động rõ ràng, dễ theo dõi, không gây rối.
+
+Một infographic phải giúp người xem hiểu được một vấn đề phức tạp trong khoảng 5–15 giây.
+
+### STYLE 3: ARCHIVAL SCRAPBOOK DOCUMENTARY
+
+Đây là phong cách kết nối MagnatesMedia và Vox, đồng thời giữ tinh thần thiết kế của kịch bản gốc.
+
+Sử dụng:
+
+- Historical newspaper clippings.
+- Original photography.
+- Vintage documents.
+- Typewriter typography.
+- Highlight marker màu vàng.
+- Red archival stamps.
+- Paper cut-outs.
+- Polaroid-like photo frames.
+- Archival timelines.
+- Subtle dust and scratches.
+- Camera pans across documentary evidence.
+
+Quy tắc quan trọng:
+
+Tài liệu thật và tài liệu tái hiện phải được phân biệt. Không tự tạo biên bản, thư tay, hợp đồng, ảnh cuộc gặp hoặc ảnh lịch sử giả rồi trình bày như tư liệu xác thực.
+
+Nếu cần minh họa một sự kiện không có ảnh thật, sử dụng cảnh tái hiện mang tính biểu tượng, silhouette hoặc abstract reconstruction. Gắn nhãn "Dramatization" / "再現映像" khi cần.
+
+---
+
+# PART B — DESIGN SYSTEM
+
+## B1. Color palette
+
+**Primary background — Charcoal Black**
+- HEX: #11151B
+- Dùng cho cinematic storytelling, opening và dramatic transitions.
+
+**Secondary background — Archive Paper**
+- HEX: #E9E1D2
+- Dùng cho timeline, documents và historical scrapbook.
+
+**Technology Blue**
+- HEX: #315E78
+- Dùng cho semiconductor factories, technology diagrams, corporate networks.
+
+**Information Yellow**
+- HEX: #E5BB54
+- Dùng cho highlights, important keywords, infographic emphasis và reveal.
+
+**Crisis Red**
+- HEX: #C34C45
+- Chỉ dùng cho cảnh khủng hoảng, sai sót, rủi ro địa chính trị và cảnh báo.
+
+**Neutral White**
+- HEX: #F1F1ED
+- Dùng cho typography chính trên nền tối.
+
+Không được dùng ngẫu nhiên nhiều bảng màu khác nhau giữa các hồi.
+
+Màu vàng và xanh phải xuất hiện xuyên suốt để tạo nhận diện hình ảnh riêng cho video.
+
+## B2. Typography
+
+Headline font:
+- Oswald Bold hoặc font condensed sans-serif tương đương.
+
+Information font:
+- Inter / Noto Sans JP.
+
+Archival font:
+- Noto Serif JP hoặc serif có khả năng hiển thị tiếng Nhật.
+
+Numbers:
+- Bold condensed sans-serif.
+
+Quy tắc:
+
+- Headline ngắn, tối đa khoảng 2 dòng.
+- Mỗi infographic chỉ nhấn mạnh một thông điệp chính.
+- Không tạo phụ đề quá lớn che kín hình ảnh.
+- Lower-thirds đặt trong safe area.
+- Sử dụng cùng hệ thống kích thước và typography xuyên suốt.
+- Với bản video tiếng Nhật, sử dụng Japanese typography và kiểm tra độ chính xác của từng ký tự.
+
+Không tự động dịch toàn bộ telop sang tiếng Anh nếu video đang sử dụng voice-over tiếng Nhật.
+
+## B3. Texture
+
+Cinematic sequences:
+- Subtle film grain.
+- Slight vignette.
+- Atmospheric shadows.
+- Minimal chromatic aberration.
+
+Archival sequences:
+- Light paper texture.
+- Torn paper edges.
+- Slight color fading.
+- Selective monochrome.
+- Film photography look.
+
+Infographics:
+- Almost clean.
+- Very light texture.
+- Crisp edges.
+- Readable labels.
+
+Không dùng texture quá mạnh gây mất chi tiết trên chip, bản đồ hoặc biểu đồ.
+
+## B4. Camera language
+
+Có 5 loại chuyển động chính:
+
+1. **Slow Push-in:** Nhấn mạnh nhân vật hoặc một phát hiện quan trọng.
+2. **Parallax Pan:** Dùng với ảnh tư liệu và scrapbook.
+3. **Map Zoom:** Dẫn khán giả từ thế giới đến quốc gia, thành phố, nhà máy.
+4. **Top-down Documentary Camera:** Dùng trên bàn tài liệu, hồ sơ và bản vẽ.
+5. **Tracking Along Diagram:** Dẫn mắt người xem theo một quy trình kỹ thuật hoặc chuỗi cung ứng.
+
+Camera phải chuyển động có mục đích. Khi infographic xuất hiện, hạn chế chuyển động camera 3D để người xem tập trung hiểu nội dung.
+
+## B5. Transition language
+
+Sử dụng tối đa 6 kiểu chuyển cảnh chính:
+
+- Match cut.
+- Camera movement transition.
+- Paper slide / paper reveal.
+- Diagram morph.
+- Map zoom.
+- Cinematic hard cut.
+
+Không sử dụng hiệu ứng chuyển cảnh ngẫu nhiên hoặc template transition quá phô trương.
+
+## B6. Editing rhythm
+
+**High tension:** 2–5 giây cho một thay đổi hình ảnh đáng kể.
+
+**Historical storytelling:** 4–8 giây.
+
+**Infographic explanation:** 6–15 giây tùy mức độ phức tạp.
+
+**Emotional closing:** 6–12 giây.
+
+Đây là nhịp tham khảo, không phải quy tắc cắt cứng. Thay đổi framing, graphic layer hoặc camera movement có thể tạo nhịp mà không cần đổi toàn bộ cảnh.
+
+---
+
+# PART C — SHOT-BY-SHOT VISUAL DIRECTION
+
+# ACT 1 — THE GEOPOLITICAL BOTTLENECK
+## 00:00–02:30
+
+**Mood:** Dark, tense, mysterious, geopolitical.
+
+**Narrative objective:** Tạo cảm giác rằng TSMC là một điểm nghẽn cực kỳ quan trọng đối với nền kinh tế công nghệ thế giới, sau đó đặt câu hỏi vì sao công ty này có được vị thế đó.
+
+### SCENE 01 — 00:00–00:20
+**Topic:** Khủng hoảng giả định tại eo biển Đài Loan.
+
+**Visual content:**
+
+Màn hình đen hoàn toàn.
+
+Một âm thanh sub-bass drone xuất hiện.
+
+Bản đồ châu Á hiện dần trong ánh sáng xanh tối, với Nhật Bản, Trung Quốc, Đài Loan và các vùng biển lân cận.
+
+Camera từ từ tiến vào eo biển Đài Loan.
+
+Một vòng radar đỏ quét trên mặt biển.
+
+Đường viền Đài Loan phát sáng nhẹ.
+
+Camera tiếp tục zoom vào khu vực Tân Trúc (Hsinchu), nơi có các cơ sở sản xuất bán dẫn quan trọng.
+
+**Motion:**
+- Satellite map zoom.
+- Slow rotation.
+- Radar scanning.
+- Subtle light pulses.
+- Brief dramatic pause.
+
+**On-screen content:**
+- Taiwan Strait.
+- Hsinchu.
+- Geopolitical risk warning.
+- Telop bám theo câu hỏi mở đầu của kịch bản.
+
+**SFX:** Sub-bass drone, radar pulse, low cinematic rumble.
+
+**Important:** Đây là giả định, không dựng footage như thể chiến tranh thực sự đã xảy ra.
+
+### SCENE 02 — 00:20–00:45
+**Topic:** Hệ quả của việc gián đoạn sản xuất chip.
+
+**Visual content:**
+
+Một chiếc smartphone xuất hiện giữa không gian tối.
+
+Camera tiến vào vi xử lý bên trong.
+
+Match cut từ smartphone chip sang AI accelerator.
+
+Sau đó chuyển đến GPU trong data center và hệ thống máy chủ.
+
+Các hình ảnh tách thành ba nhóm trên màn hình:
+
+SMARTPHONE / AI / COMPUTING.
+
+Những đường nối từ mỗi nhóm hội tụ về một cụm nhà máy tại Đài Loan.
+
+Khi nhà máy chuyển sang trạng thái dừng giả định, các đường kết nối lần lượt bị ngắt.
+
+**Motion:**
+- Macro cinematic zoom.
+- Connection-line animation.
+- Progressive dimming.
+- Domino-effect animation.
+
+**On-screen content:**
+- Smartphones.
+- AI processors.
+- Data centers.
+- Semiconductor supply disruption.
+
+Không hiển thị thiệt hại tài chính cụ thể nếu chưa có nguồn kiểm chứng.
+
+**SFX:** Digital clicks, electronic shutdown, bass hit.
+
+### SCENE 03 — 00:45–01:10
+**Topic:** TSMC reveal.
+
+**Visual content:**
+
+Toàn cảnh cleanroom.
+
+Camera tracking dọc theo các thiết bị sản xuất bán dẫn.
+
+Cắt sang close-up silicon wafer.
+
+Một khung tài liệu xuất hiện.
+
+Tên công ty được reveal:
+
+TSMC
+
+Taiwan Semiconductor Manufacturing Company.
+
+Dùng một đường highlighter vàng quét ngang từ khóa TSMC.
+
+Một infographic xuất hiện để minh họa vị thế TSMC trong phân khúc chip tiên tiến.
+
+**Motion:**
+- Smooth factory tracking.
+- Macro wafer zoom.
+- Text reveal.
+- Data infographic build-up.
+
+**On-screen content:**
+- TSMC.
+- Semiconductor manufacturing.
+- Market position.
+- Thị phần phải có định nghĩa, mốc thời gian và nguồn phù hợp.
+
+**SFX:** Marker wipe, mechanical hum, cinematic impact.
+
+### SCENE 04 — 01:10–01:45
+**Topic:** Nhật Bản và nhà máy Kumamoto.
+
+**Visual content:**
+
+Bản đồ Nhật Bản hiện lên.
+
+Camera zoom đến Kumamoto, Kikuyo.
+
+Transition từ bản đồ sang cảnh khu vực nhà máy JASM.
+
+Đưa vào ảnh nhà máy thực tế, công trình và lễ khánh thành tháng 2/2024.
+
+Xuất hiện ảnh Morris Chang tại sự kiện phù hợp nếu có tư liệu xác thực.
+
+Các tiêu đề về khoản hỗ trợ của chính phủ Nhật xuất hiện như những mảnh báo hoặc infographic.
+
+**Motion:**
+- Map zoom.
+- Archival photo reveal.
+- Paper document stack.
+- Slow cinematic push-in.
+
+**On-screen content:**
+- Kumamoto, Japan.
+- February 2024.
+- JASM.
+- Japan semiconductor investment.
+
+Phân biệt khoản hỗ trợ từng dự án và tổng hỗ trợ các dự án.
+
+**SFX:** Camera shutter, subtle documentary impact.
+
+### SCENE 05 — 01:45–02:15
+**Topic:** Flashback 1987.
+
+**Visual content:**
+
+Camera quay ngược từ nhà máy hiện đại về ảnh nhà máy thập niên 1980.
+
+Dùng một timeline lớn từ 2024 chạy ngược về 1987.
+
+Màn hình chuyển dần sang màu giấy ngả vàng.
+
+Ảnh Morris Chang thời trung niên xuất hiện bên trái.
+
+Bên phải là hình ảnh phòng sạch và dây chuyền sản xuất thế hệ đầu.
+
+**Motion:**
+- Reverse timeline.
+- Archival photo parallax.
+- Slow desk-camera movement.
+
+**On-screen content:**
+- 1987.
+- Morris Chang.
+- Birth of TSMC.
+
+Không mô tả công ty hoàn toàn không có vốn hay công nghệ nếu chưa điều chỉnh câu chữ theo lịch sử thực tế.
+
+**SFX:** Clock ticking, tape rewind.
+
+### SCENE 06 — 02:15–02:30
+**Topic:** Main title reveal.
+
+**Visual content:**
+
+Một hình ảnh Morris Chang ở giai đoạn đầu sự nghiệp TSMC.
+
+Camera tiến gần chân dung.
+
+Ảnh chuyển thành silhouette.
+
+Silhouette match cut sang nhà máy hiện đại.
+
+Màn hình fade sang màu đen.
+
+Main title xuất hiện:
+
+TSMC  
+THE SEMICONDUCTOR EMPIRE
+
+Subtitle liên quan đến hành trình từ năm 1987 đến vị thế công nghệ toàn cầu.
+
+**Motion:** Slow push-in, cinematic fade, title reveal.
+
+**SFX:** Deep cinematic impact followed by short silence.
+
+---
+
+# ACT 2 — THE 55-YEAR-OLD OUTSIDER
+## 02:30–05:30
+
+**Mood:** Historical, personal, nostalgic, intellectually engaging.
+
+**Narrative objective:** Giới thiệu Morris Chang và giải thích sự khác biệt mang tính nền tảng giữa mô hình sản xuất chip truyền thống và Pure-play Foundry.
+
+### SCENE 07 — 02:30–03:00
+**Topic:** Sự nghiệp Morris Chang.
+
+**Visual content:**
+
+Chân dung thật của Morris Chang xuất hiện trên nền tối.
+
+Các tài liệu và ảnh tư liệu về Harvard, MIT, Stanford và Texas Instruments xuất hiện thành những lớp scrapbook.
+
+Timeline đi qua các cột mốc học tập và công việc được xác minh.
+
+Các dòng chữ nhỏ cho thấy chức vụ của Morris Chang tại Texas Instruments.
+
+**Motion:**
+- Archival photo parallax.
+- Typewriter text reveal.
+- Timeline build.
+- Gentle camera tracking.
+
+**SFX:** Typewriter clicks, soft mechanical ambience.
+
+### SCENE 08 — 03:00–03:30
+**Topic:** Bước ngoặt sự nghiệp và trở về Đài Loan.
+
+**Visual content:**
+
+Một hành lang văn phòng tập đoàn Mỹ trong thập niên 1980.
+
+Cảnh tái hiện mang tính biểu tượng: bóng một người đàn ông đứng bên cửa sổ.
+
+Không tạo ảnh giả mô tả chính xác cuộc họp nội bộ Texas Instruments.
+
+Cắt sang một chiếc điện thoại cổ.
+
+Đường dây kết nối từ Mỹ tới Đài Loan xuất hiện trên bản đồ.
+
+Timeline dừng ở năm 1985.
+
+**On-screen content:**
+- 1985.
+- Taiwan.
+- Morris Chang's new chapter.
+
+**Motion:** Slow camera movement, map line animation.
+
+**SFX:** Telephone ring, rain ambience, restrained piano.
+
+### SCENE 09 — 03:30–04:10
+**Topic:** Mô hình IDM.
+
+**Visual content:**
+
+Bắt đầu bằng hình ảnh Intel, Motorola, NEC và Hitachi trong bối cảnh lịch sử.
+
+Chuyển toàn bộ màn hình thành infographic nền giấy sáng.
+
+Một hình chữ nhật lớn mang nhãn:
+
+TRADITIONAL IDM MODEL.
+
+Bên trong có hai khối:
+
+DESIGN → MANUFACTURE.
+
+Hai khối nằm trong ranh giới của cùng một công ty.
+
+Dùng icon blueprint, silicon wafer, factory.
+
+Sau đó xuất hiện một chú thích:
+
+A company designs and manufactures its own chips.
+
+**Motion:**
+- Vector diagram reveal.
+- Animated arrows.
+- Shape morphing.
+- Label highlight.
+
+**SFX:** Soft clicks only, giảm nhạc để người xem tập trung.
+
+### SCENE 10 — 04:10–04:50
+**Topic:** Ý tưởng Pure-play Foundry.
+
+**Visual content:**
+
+Từ sơ đồ IDM ở cảnh trước, hai khối DESIGN và MANUFACTURE bắt đầu tách rời nhau.
+
+Bên trái xuất hiện các công ty thiết kế chip.
+
+Bên phải xuất hiện một nhà máy TSMC.
+
+Các đường mũi tên từ nhiều công ty thiết kế chip hội tụ về nhà máy sản xuất TSMC.
+
+Không dùng logo các doanh nghiệp ra đời sau năm 1987 như thể họ đã là khách hàng tại thời điểm thành lập.
+
+Hiển thị khái niệm:
+
+PURE-PLAY FOUNDRY.
+
+Dòng chữ chính:
+
+DESIGN FOR OTHERS.  
+DON'T COMPETE WITH CUSTOMERS.
+
+**Motion:**
+- Diagram split.
+- Connecting lines.
+- Morph from IDM into Foundry.
+- Yellow information highlight.
+
+**SFX:** Pencil drawing, marker wipe, subtle positive musical transition.
+
+### SCENE 11 — 04:50–05:15
+**Topic:** Không cạnh tranh với khách hàng.
+
+**Visual content:**
+
+Đưa vào một bản thiết kế vi mạch dạng vector.
+
+Camera di chuyển từ bản vẽ sang nhà máy TSMC.
+
+Hiển thị hai lớp:
+
+CHIP DESIGN IP  
+MANUFACTURING PARTNER.
+
+Một biểu tượng khóa bảo mật xuất hiện trên đường kết nối.
+
+Dùng các thẻ tài liệu để làm rõ lý do công ty thiết kế chip có thể hợp tác với foundry độc lập.
+
+**On-screen content:**
+- Customer Trust.
+- Neutral Manufacturing Partner.
+- No competing chip product.
+
+**Motion:** Diagram animations, lock icon, document stamp.
+
+**SFX:** Rubber stamp thud.
+
+### SCENE 12 — 05:15–05:30
+**Topic:** Những khó khăn ban đầu.
+
+**Visual content:**
+
+Chuyển từ infographic sáng sang nhà máy tối.
+
+Một phiến wafer đặt trong khung hình.
+
+Camera chậm rãi kéo lùi.
+
+Các khung báo cáo và đơn đặt hàng xuất hiện, để trống hoặc chưa hoàn chỉnh theo hướng minh họa.
+
+Tạo cảm giác một mô hình mới đang phải tìm cách giành được khách hàng.
+
+**Motion:** Slow pull-back, falling light level.
+
+**SFX:** Clock ticks, quiet factory ambience.
+
+Không tạo biểu đồ bằng 0 hoặc mô tả cạn kiệt vốn như số liệu lịch sử khi chưa có nguồn.
+
+---
+
+# ACT 3 — THE INTEL CHALLENGE
+## 05:30–08:30
+
+**Mood:** Pressure, humiliation, determination, breakthrough.
+
+**Narrative objective:** Minh họa thử thách chất lượng của TSMC thời kỳ đầu và giải thích cách sự tồn tại của foundry tạo cơ hội cho các công ty thiết kế chip không cần tự xây dựng nhà máy.
+
+### SCENE 13 — 05:30–06:10
+**Topic:** Morris Chang và Intel.
+
+**Visual content:**
+
+Morris Chang và Andy Grove xuất hiện bằng ảnh chân dung thật, nếu có thể sử dụng.
+
+Giữa hai người là timeline quan hệ TSMC–Intel.
+
+Một đường kết nối từ Đài Loan tới trụ sở Intel tại Mỹ xuất hiện trên bản đồ.
+
+Camera tiến gần đến hình ảnh một nhà máy bán dẫn thế hệ đầu.
+
+Dùng không khí của một cuộc thẩm định chất lượng, không diễn tả lời thoại được sáng tác như phát ngôn thật.
+
+**Motion:** Map connections, documentary split composition, slow push-in.
+
+**SFX:** Low heartbeat, restrained tension drone.
+
+### SCENE 14 — 06:10–06:50
+**Topic:** Danh sách lỗi kỹ thuật.
+
+**Visual content:**
+
+Một tài liệu kiểm định mô phỏng xuất hiện trên bàn làm việc.
+
+Các dòng checklist kỹ thuật được highlight bằng màu đỏ.
+
+Nếu con số "200 lỗi" có nguồn đáng tin cậy, hiển thị con số lớn:
+
+200+ ISSUES.
+
+Nếu chưa kiểm chứng được, chỉ sử dụng:
+
+QUALITY AUDIT  
+ENGINEERING CHALLENGES.
+
+Camera di chuyển từ các mục lỗi sang kỹ sư trong phòng sạch.
+
+Không tạo hình ảnh nhân viên Intel chế giễu TSMC như một sự kiện có bằng chứng nếu nguồn không hỗ trợ.
+
+**Motion:** Top-down camera, checklist animation, highlight marker.
+
+**SFX:** Paper thud, warning tone, low string tension.
+
+### SCENE 15 — 06:50–07:30
+**Topic:** Cải tiến chất lượng.
+
+**Visual content:**
+
+Một montage kỹ thuật.
+
+Máy kiểm tra wafer.
+
+Kỹ sư theo dõi màn hình.
+
+Wafer inspection.
+
+Laboratory equipment.
+
+Một sơ đồ quy trình xuất hiện:
+
+INSPECT → IDENTIFY → IMPROVE → VERIFY.
+
+Các ô checklist lần lượt chuyển từ đỏ sang vàng rồi xanh.
+
+**Motion:** Technical macro cuts, animated process diagram.
+
+**SFX:** Machine ambience, electronic beeps, gradually uplifting score.
+
+### SCENE 16 — 07:30–08:00
+**Topic:** Năng lực sản xuất đạt tiêu chuẩn.
+
+**Visual content:**
+
+Các chỉ báo chất lượng dần chuyển sang trạng thái đạt yêu cầu.
+
+Nhà máy từ gam tối chuyển sang tông xanh công nghệ.
+
+Xuất hiện bản đồ Silicon Valley.
+
+Những doanh nghiệp fabless bắt đầu được giới thiệu dưới dạng biểu tượng và tên có mốc thời gian phù hợp.
+
+Nếu có tài liệu xác thực về quá trình kiểm định Intel, có thể dùng ảnh hoặc trích đoạn tài liệu thật.
+
+**Motion:** Map build-up, quality diagram, light reveal.
+
+**SFX:** Hopeful brass accents, restrained impact.
+
+### SCENE 17 — 08:00–08:30
+**Topic:** NVIDIA và Jensen Huang.
+
+**Visual content:**
+
+Chân dung Jensen Huang thời kỳ đầu NVIDIA.
+
+Logo NVIDIA giai đoạn những năm 1990.
+
+Một chiếc máy tính cá nhân đời đầu và card đồ họa tương ứng thời kỳ.
+
+Sơ đồ:
+
+NVIDIA — CHIP DESIGN  
+TSMC — CHIP MANUFACTURING.
+
+Chuyển từ ảnh NVIDIA sang thiết kế chip và wafer.
+
+**Motion:** Archival collage, logo reveal, diagram transition.
+
+**SFX:** Vintage keyboard typing, electronic synth pulse.
+
+Không tạo thư tay Jensen Huang gửi Morris Chang nếu không có tư liệu chứng minh.
+
+---
+
+# ACT 4 — THE APPLE ALLIANCE
+## 08:30–12:00
+
+**Mood:** Industrial discipline, corporate strategy, competitive tension.
+
+**Narrative objective:** Cho thấy vai trò của năng lực vận hành và lợi thế của một nhà sản xuất chip không cạnh tranh trực tiếp với khách hàng.
+
+### SCENE 18 — 08:30–09:10
+**Topic:** Nhà máy hoạt động liên tục.
+
+**Visual content:**
+
+Toàn cảnh khu công nghệ Tân Trúc vào ban đêm.
+
+Time-lapse các nhà máy.
+
+Đèn phòng sạch vẫn sáng.
+
+Camera tiến vào dây chuyền sản xuất.
+
+Dùng chuyển động 24-hour clock overlay để thể hiện vận hành xuyên ca.
+
+**Motion:** Night-to-day time-lapse, tracking camera, clock overlay.
+
+**SFX:** Factory hum, ventilation, ambient night wind.
+
+### SCENE 19 — 09:10–09:50
+**Topic:** Ca làm việc và quy trình R&D.
+
+**Visual content:**
+
+Infographic circular clock 24 giờ.
+
+Các vòng ca làm việc xuất hiện nối tiếp nhau.
+
+Một vấn đề kỹ thuật được truyền từ nhóm kỹ sư này sang nhóm khác.
+
+Sơ đồ mô tả:
+
+SHIFT A → SHIFT B → SHIFT C → NEXT DAY.
+
+Kết hợp ảnh kỹ sư thật và máy móc phòng sạch.
+
+**Motion:** Rotating clock graphic, process flow, time-lapse.
+
+**SFX:** Ticking clock, rhythmic machine pulses.
+
+Không khẳng định tốc độ R&D nhanh gấp 3 lần phương Tây nếu không có dữ liệu kiểm chứng.
+
+### SCENE 20 — 09:50–10:30
+**Topic:** Apple và chiến lược sản xuất chip.
+
+**Visual content:**
+
+Map zoom từ Đài Loan đến Cupertino.
+
+Hình ảnh khuôn viên Apple.
+
+Ảnh Steve Jobs, Tim Cook và Morris Chang theo đúng giai đoạn.
+
+Sử dụng bố cục documentary với các chân dung trên nền bản đồ và tài liệu.
+
+Tạo cảm giác chuyển sang một cuộc thương lượng quan trọng, không tạo ảnh chụp một cuộc gặp bí mật không được ghi nhận.
+
+**Motion:** Map line, photo parallax, documentary tension.
+
+**SFX:** Low piano, deep synth ambience.
+
+### SCENE 21 — 10:30–11:15
+**Topic:** Apple, Samsung và xung đột lợi ích.
+
+**Visual content:**
+
+Màn hình chia làm hai phần.
+
+Bên trái là Apple iPhone.
+
+Bên phải là Samsung Galaxy.
+
+Một sơ đồ giải thích mối quan hệ xuất hiện:
+
+APPLE → CHIP DESIGN.
+
+SAMSUNG → CHIP MANUFACTURING.
+
+SAMSUNG → COMPETING SMARTPHONES.
+
+Hai nhánh Samsung được đánh dấu để nhấn mạnh vị thế vừa là nhà cung ứng vừa là đối thủ của Apple.
+
+Sau đó giới thiệu TSMC như một đối tác sản xuất độc lập.
+
+**Motion:** Split-screen, vector arrows, diagram morph.
+
+**SFX:** Tension pulses, crisp infographic clicks.
+
+Không sử dụng đồ họa ám chỉ Samsung đã đánh cắp bí mật thiết kế nếu không có bằng chứng cụ thể cho cáo buộc đó.
+
+### SCENE 22 — 11:15–12:00
+**Topic:** Sự hình thành quan hệ đối tác Apple–TSMC.
+
+**Visual content:**
+
+Apple logo xuất hiện bên trái.
+
+TSMC logo xuất hiện bên phải.
+
+Một dây chuyền wafer manufacturing được reveal ở giữa.
+
+Camera chuyển sang những thế hệ chip Apple A-series.
+
+Timeline cho thấy quá trình dịch chuyển đơn hàng qua các thế hệ sản phẩm thay vì một lần chuyển đổi lập tức.
+
+Kết thúc bằng sơ đồ:
+
+APPLE DESIGNS  
+TSMC MANUFACTURES.
+
+Hai bên được kết nối bằng đường sáng vàng.
+
+**Motion:** Chip animation, timeline build, cinematic partnership reveal.
+
+**SFX:** Metallic impacts, ascending strings, resolved musical phrase.
+
+---
+
+# ACT 5 — THE TECHNOLOGY GAMBLE
+## 12:00–15:30
+
+**Mood:** Crisis, financial pressure, industrial scale, technological ambition.
+
+**Narrative objective:** Thể hiện Morris Chang tái nắm quyền điều hành, chiến lược đầu tư và lợi thế công nghệ sản xuất chip tiên tiến.
+
+**Chronology direction:** Kịch bản chuyển từ quan hệ Apple thập niên 2010 quay ngược về khủng hoảng 2008. Bắt buộc dùng flashback timeline rõ ràng.
+
+### SCENE 23 — 12:00–12:40
+**Topic:** Khủng hoảng tài chính 2008.
+
+**Visual content:**
+
+Chữ "2008" xuất hiện lớn.
+
+Các chỉ số tài chính và headline về Lehman Brothers được trình bày bằng tư liệu thật.
+
+Biểu đồ nhu cầu hoặc doanh thu ngành bán dẫn thay đổi theo dữ liệu đã xác minh.
+
+Ảnh nhà máy trở nên lạnh và ít ánh sáng hơn.
+
+Dùng biểu đồ để giải thích tác động của suy thoái tới thị trường chip.
+
+**Motion:** Timeline rewind, newspaper transition, chart animation.
+
+**SFX:** Low-frequency impact, downward pitch sweep.
+
+### SCENE 24 — 12:40–13:20
+**Topic:** Morris Chang trở lại điều hành.
+
+**Visual content:**
+
+Chân dung Morris Chang cuối những năm 2000.
+
+Timeline đánh dấu năm 2009.
+
+Một chiếc ghế lãnh đạo trống mang tính biểu tượng.
+
+Ảnh Morris Chang chuyển từ grayscale sang màu thật.
+
+Bố cục tập trung vào con người, sự thay đổi lãnh đạo và các quyết định chiến lược.
+
+Nếu có tư liệu xác thực về phản ứng của nhân viên trước việc cắt giảm, sử dụng dưới dạng archival photo có nguồn.
+
+**Motion:** Slow push-in, portrait parallax, timeline reveal.
+
+**SFX:** Crowd ambience rất tiết chế, rồi chuyển sang nhạc quyết tâm.
+
+### SCENE 25 — 13:20–14:10
+**Topic:** Đầu tư vốn và mở rộng năng lực sản xuất.
+
+**Visual content:**
+
+Màn hình chuyển sang infographic lớn.
+
+Bar chart thể hiện capital expenditure của TSMC qua các năm.
+
+Các cột tăng lên dựa trên số liệu thực tế từ báo cáo tài chính.
+
+Từ biểu đồ chuyển sang hình nhà máy đang được mở rộng.
+
+Một bản đồ với các fab của TSMC xuất hiện.
+
+**Motion:** Financial chart build, bar growth, diagram-to-factory match cut.
+
+**SFX:** Deep rhythmic drum, mechanical ambience.
+
+Không được dùng số 10 tỷ USD như chi tiêu vốn thực tế của một năm nếu không tương ứng dữ liệu xác minh.
+
+### SCENE 26 — 14:10–14:50
+**Topic:** Công nghệ EUV và ASML.
+
+**Visual content:**
+
+Mở bằng macro silicon wafer.
+
+Camera đi sâu vào một lớp pattern trên wafer.
+
+Chuyển sang sơ đồ đơn giản của quá trình photolithography:
+
+LIGHT SOURCE → OPTICS → MASK/PATTERN → WAFER.
+
+Sau đó hiện hình ảnh thật của hệ thống ASML EUV.
+
+Các thành phần quan trọng được chú thích ngắn gọn.
+
+Chỉ sử dụng hình máy ASML đúng thế hệ phù hợp với thời kỳ đề cập.
+
+**Motion:** Technical 2D animation, light-beam animation, macro machine reveal.
+
+**SFX:** Clean industrial hum, precise electronic pulses.
+
+Không mô tả TSMC sở hữu độc quyền máy EUV hoặc đã gom toàn bộ nguồn cung nếu điều đó không được nguồn tin xác nhận.
+
+### SCENE 27 — 14:50–15:30
+**Topic:** Lợi thế năng lực công nghệ.
+
+**Visual content:**
+
+Timeline các thế hệ tiến trình chip.
+
+Hình ảnh wafer, CPU và GPU hiện đại.
+
+Biểu đồ so sánh năng lực công nghệ chỉ xuất hiện khi có dữ liệu và tiêu chí so sánh rõ ràng.
+
+Một sơ đồ về độ phức tạp của nhà máy bán dẫn xuất hiện:
+
+PROCESS TECHNOLOGY  
+YIELD  
+CAPITAL INVESTMENT  
+MANUFACTURING SCALE.
+
+Bốn yếu tố hội tụ về hình nhà máy TSMC.
+
+**Motion:** Timeline, layered infographic, cinematic factory reveal.
+
+**SFX:** Uplifting orchestral transition, restrained metallic chime.
+
+---
+
+# ACT 6 — THE SILICON SHIELD
+## 15:30–18:00
+
+**Mood:** Geopolitical, reflective, hopeful, emotionally resonant.
+
+**Narrative objective:** Kết nối vị thế của TSMC với sự phát triển ngành bán dẫn Nhật Bản và vai trò chiến lược của Đài Loan.
+
+### SCENE 28 — 15:30–16:15
+**Topic:** Kumamoto và chiến lược mở rộng quốc tế.
+
+**Visual content:**
+
+Bản đồ châu Á.
+
+Đài Loan được highlight.
+
+Một đường kết nối chạy tới Kumamoto, Nhật Bản.
+
+Sau đó mở rộng bản đồ tới Arizona, Mỹ.
+
+Dùng footage thật của nhà máy Kumamoto và các cơ sở tại Arizona.
+
+Dựng một timeline so sánh các mốc khởi công, hoàn thành và vận hành theo nguồn đáng tin cậy.
+
+Camera chuyển sang hình núi Aso và cảnh địa lý Kumamoto.
+
+**Motion:** Map animation, construction time-lapse, documentary montage.
+
+**SFX:** Ambient wind, water sounds, gentle orchestral score.
+
+### SCENE 29 — 16:15–16:55
+**Topic:** Nước, hạ tầng và kỹ năng sản xuất.
+
+**Visual content:**
+
+Mở đầu bằng núi Aso.
+
+Chuyển sang nguồn nước địa phương.
+
+Sau đó giải thích vai trò của ultrapure water trong chế tạo chip bằng infographic.
+
+Sơ đồ:
+
+WATER SOURCE → WATER TREATMENT → ULTRAPURE WATER → SEMICONDUCTOR FAB.
+
+Kết hợp hình ảnh công nhân, kỹ sư và nhà máy tại Nhật Bản.
+
+Không thể hiện nước ngầm tự nhiên đi thẳng vào dây chuyền sản xuất mà không qua quá trình xử lý.
+
+**Motion:** Water-flow diagram, match cut to cleanroom.
+
+**SFX:** Water ambience, soft mechanical pulses, uplifting music.
+
+### SCENE 30 — 16:55–17:35
+**Topic:** Silicon Shield.
+
+**Visual content:**
+
+Bản đồ Đài Loan xuất hiện giữa màn hình.
+
+Những đường kết nối công nghệ và thương mại lan ra từ Đài Loan tới các trung tâm kinh tế lớn.
+
+Biểu tượng chip và nhà máy xuất hiện dọc các đường kết nối.
+
+Một hình khiên bằng các đường mạch điện tử xuất hiện bao quanh Đài Loan, mang tính biểu tượng chứ không mô tả khả năng phòng thủ thực tế.
+
+Dòng chữ chính:
+
+SILICON SHIELD.
+
+Chuyển từ đồ họa sang hình ảnh thật của các nhà máy tại Đài Loan.
+
+**Motion:** Network map, glowing circuit paths, symbolic shield reveal.
+
+**SFX:** Deep atmospheric drone, slow cinematic rise.
+
+Phần này phải truyền đạt "Silicon Shield" như một luận điểm về sự phụ thuộc lẫn nhau và khả năng răn đe, không phải sự đảm bảo chiến tranh không thể xảy ra.
+
+### SCENE 31 — 17:35–18:00
+**Topic:** Emotional conclusion.
+
+**Visual content:**
+
+Quay lại ảnh Morris Chang ở thời kỳ đầu thành lập TSMC.
+
+Một timeline 1987 → hiện đại xuất hiện phía dưới.
+
+Camera chậm rãi chuyển từ chân dung Morris Chang sang hình ảnh nhà máy ngày nay.
+
+Cắt sang một smartphone trên tay người dùng.
+
+Camera tiến sâu vào khu vực chip bên trong điện thoại.
+
+Hình ảnh chip match cut sang một silicon wafer đang xoay.
+
+Nhạc hạ dần.
+
+Dòng chữ cuối cùng xuất hiện:
+
+THE FUTURE IS BUILT ON SILICON.
+
+Sau đó fade to black.
+
+Logo kênh xuất hiện nhẹ nhàng.
+
+**Motion:** Slow parallax, macro zoom, seamless match cut, fade to black.
+
+**SFX:** Emotional piano, soft cinematic atmosphere, final resolving note.
+
+---
+
+# PART D — AGENT EXECUTION RULES
+
+## D1. Script fidelity
+
+Agent phải tuân thủ các nguyên tắc:
+
+1. Dùng kịch bản gốc làm nguồn xác định thứ tự và ý nghĩa từng cảnh.
+2. Không tự thêm nhân vật, cuộc gặp, phát ngôn hoặc sự kiện lịch sử.
+3. Không tự thay đổi tuyến truyện của 6 hồi.
+4. Không dùng video stock không liên quan chỉ để lấp thời gian.
+5. Nội dung hiển thị phải tương ứng với nội dung đang được voice-over nhắc đến.
+6. Không thay thế các phân cảnh giải thích chuyên môn bằng những hình ảnh chip chung chung.
+7. Không tự đặt tên chương mới làm thay đổi nội dung gốc.
+8. Các nội dung chưa được kiểm chứng phải được đánh dấu trong bản sản xuất và không được trình bày như sự thật đã xác nhận.
+
+Nếu bản lời bình đã được khóa và có chi tiết sai hoặc chưa xác minh, agent phải báo lại và yêu cầu cập nhật nội dung hoặc đánh dấu visual cần điều chỉnh; không được tự tạo bằng chứng hình ảnh để hợp thức hóa lời bình.
+
+## D2. Visual accuracy
+
+- Ảnh Morris Chang phải là ảnh đúng nhân vật và ưu tiên đúng giai đoạn.
+- Ảnh Jensen Huang phải là ảnh đúng nhân vật.
+- Hình nhà máy TSMC phải được phân biệt với các nhà máy bán dẫn khác.
+- Hình công nghệ ASML phải gắn với đúng thời kỳ nếu nêu tên model.
+- Không dùng máy móc, sản phẩm ra đời sau làm bằng chứng cho thời kỳ trước.
+- Bản đồ không được đặt sai vị trí Đài Loan, Tân Trúc, Kumamoto hoặc Arizona.
+- Biểu đồ không được dùng số liệu giả.
+- Timeline không được thay đổi năm tùy tiện.
+- Tài liệu tái hiện phải được thể hiện là reconstruction.
+
+## D3. Voice synchronization
+
+Voice-over là trục thời gian chính của video.
+
+Agent phải:
+
+1. Phân tích voice thành từng câu.
+2. Xác định từ khóa và sự kiện quan trọng.
+3. Gắn marker theo thời điểm phát âm.
+4. Đặt infographic và text reveal đúng marker.
+5. Căn nhạc và SFX không lấn voice.
+6. Giữ khoảng nghỉ tại những dramatic reveal.
+7. Nếu voice thực tế không khớp mốc 18 phút, báo lệch thời lượng và điều chỉnh timing sau khi thống nhất phiên bản lời đọc.
+
+Không dùng time-stretch quá mức để ép voice khớp timeline.
+
+## D4. Asset selection
+
+Ưu tiên tài nguyên theo thứ tự:
+
+1. Official TSMC media and reports.
+2. Licensed archival photographs and footage.
+3. Official semiconductor company media.
+4. Credible historical documentary sources.
+5. Custom vector diagrams.
+6. Original 3D visualizations.
+7. AI-generated illustrative recreations.
+
+AI-generated material chỉ được dùng để tạo hình ảnh minh họa, không được dùng như tư liệu lịch sử được xác thực.
+
+Các asset cần được lưu metadata tối thiểu:
+
+- Asset ID.
+- Source URL hoặc source file.
+- Related scene.
+- Date / period.
+- Usage rights.
+- Original / stock / generated / reconstruction.
+- Verification status.
+
+## D5. AI image/video generation
+
+Khi tạo ảnh hoặc video mới, agent phải giữ cùng hệ thống hình ảnh.
+
+**Base cinematic generation description:**
+
+"Premium cinematic business-history documentary frame, grounded semiconductor industry setting, physically realistic industrial environment, layered 2.5D composition, restrained lighting, dark charcoal background, cool technology-blue practical lighting, subtle warm highlights, tactile archival texture where appropriate, realistic optical depth of field, professional editorial composition, historical accuracy, visually coherent with high-end documentary motion graphics, 16:9 widescreen."
+
+**Base infographic generation description:**
+
+"Clean premium editorial explainer graphic, simplified vector composition, flat shapes, subtle paper texture, dark charcoal and warm off-white palette, muted technology blue, restrained amber-yellow accents, clear visual hierarchy, simple geometric icons, highly legible labels, accurate information architecture, professional educational motion design, 16:9 widescreen."
+
+**Base archival generation description:**
+
+"Historical documentary scrapbook composition, authentic archival material where available, subtle aged-paper texture, restrained black-and-white photography, realistic print grain, off-white photo borders, selective yellow highlights, layered paper documents, sophisticated editorial layout, cinematic 2.5D parallax-ready composition, 16:9 widescreen."
+
+Không yêu cầu AI tạo chữ chi tiết, số liệu hoặc logo chính xác trực tiếp trong hình ảnh nền. Các thành phần đó phải được tạo thành graphic layer riêng.
+
+## D6. Negative visual instructions
+
+Avoid:
+
+- Random futuristic sci-fi cities.
+- Hologram interfaces xuất hiện ở mọi cảnh.
+- Neon cyberpunk styling.
+- Excessive glitch effects.
+- Unrealistic semiconductor machinery.
+- Generic robots as semiconductor engineers.
+- Constant camera shaking.
+- Excessive zoom transitions.
+- Low-quality AI-generated human faces.
+- Artificial portraits presented as historical photos.
+- Fake newspapers presented as genuine sources.
+- Fake documents with invented facts.
+- Inaccurate company logos.
+- Incorrect historical chronology.
+- Overly saturated colors.
+- Overcrowded infographics.
+- Long static slides with only narration.
+- Text appearing too fast to read.
+- Decorative animation that does not convey meaning.
+
+---
+
+# PART E — AUDIO & MUSIC
+
+## E1. Music progression
+
+ACT 1:
+- Dark geopolitical documentary.
+- Low bass drone.
+- Minimal percussion.
+- High tension.
+
+ACT 2:
+- Historical and introspective.
+- Piano, restrained strings.
+- Gradually introducing curiosity.
+
+ACT 3:
+- Tension turning into determination.
+- Percussive pulses.
+- Subtle orchestral rise.
+
+ACT 4:
+- Corporate strategic thriller.
+- Electronic rhythmic ambience.
+- Controlled suspense.
+
+ACT 5:
+- Financial crisis and technological ambition.
+- Low strings, cinematic percussion.
+- Building toward industrial-scale reveal.
+
+ACT 6:
+- Reflective and hopeful.
+- Warm piano.
+- Gentle cinematic strings.
+- Emotional resolution.
+
+## E2. Sound design
+
+Use SFX only when supporting an on-screen action.
+
+Common SFX:
+- Paper slap.
+- Typewriter click.
+- Marker wipe.
+- Clock ticking.
+- Camera shutter.
+- Map transition whoosh.
+- Digital UI click.
+- Machine ambience.
+- Low cinematic impact.
+- Subtle risers.
+
+No unnecessary dramatic boom for every text appearance.
+
+## E3. Mix principles
+
+- Voice always takes priority.
+- Music should follow narrative tension.
+- SFX must not overpower narration.
+- Apply ducking under voice when required.
+- Avoid abrupt music changes except for deliberate story transitions.
+- Preserve a consistent perceived loudness across the film.
+
+---
+
+# PART F — REQUIRED OUTPUTS
+
+The agent must produce:
+
+1. **Master timeline** — 18-minute target, 6 acts, 31 timed sequences.
+2. **Scene breakdown** — visual objective, source assets, camera, motion, text and SFX.
+3. **Asset manifest** — sources, dates, rights and verification flags.
+4. **Infographic package** — IDM, Foundry, Apple/Samsung/TSMC, R&D shifts, CapEx, EUV, Kumamoto and Silicon Shield.
+5. **Motion graphics package** — typography, timelines, maps, highlights, transitions and title cards.
+6. **Rendered video** — 16:9, UHD target, 24 fps.
+7. **Audio mix** — narration, music and sound effects.
+8. **Subtitle file** — Japanese subtitles synchronized with final voice.
+9. **Source and QC report** — historical claims, uncertain facts, unresolved items and corrections.
+10. **Editable project assets** — scene compositions and layered graphics wherever the production pipeline supports them.
+
+---
+
+# PART G — FINAL QUALITY CONTROL
+
+Before final rendering, verify:
+
+- Every sequence matches its corresponding original script segment.
+- All six acts are present.
+- The video's narrative remains centered on TSMC and Morris Chang.
+- The distinctions between IDM, fabless design and foundry manufacturing are clearly explained.
+- Relevant infographics are readable and accurate.
+- Historical assets correspond to the correct period.
+- No invented reconstruction appears to be genuine archival evidence.
+- Corporate logos and map positions are correct.
+- Voice and major on-screen reveals are synchronized.
+- Visual transitions maintain consistent creative direction.
+- Crisis scenes feel serious without sensationalized false imagery.
+- The video is not just a slideshow of documents.
+- The final conclusion connects naturally to the opening question.
+- The finished film remains intelligible even without excessive motion effects.
+
+**FINAL CREATIVE RULE:**
+
+The video must feel like a cinematic documentary when telling a human story, and a precise explanatory film when communicating complex information.
+
+MagnatesMedia supplies tension, cinematic depth and emotional storytelling.
+
+Vox supplies visual clarity, information architecture and explanatory motion graphics.
+
+Archival scrapbook supplies historical texture and continuity.
+
+Every visual must either advance the story, explain an idea, establish factual context, or create deliberate emotional emphasis.
+
+If a visual does none of these things, remove it.
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-11-18T14:25:46+07:00.
+
+The user has uploaded 1 image(s):
+- C:/Users/hoangtm/.gemini/antigravity/brain/01e29655-bd81-470b-a2c5-2eccf25727de/.user_uploaded/media_1794986713248_3e87b8a6.jpg
+You can embed this image in an artifact if you need the USER to review it.
+</ADDITIONAL_METADATA>

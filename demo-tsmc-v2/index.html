@@ -1,0 +1,1358 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>TSMC // The Semiconductor Empire (Vox Vintage Gold Master)</title>
+    <!-- Google Fonts: Vox x Vintage Documentary Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;600;700;800;900&family=JetBrains+Mono:wght@400;600;700;800&family=Noto+Sans+JP:wght@400;600;700;900&family=Noto+Serif+JP:wght@600;700;900&family=Oswald:wght@500;600;700;900&display=swap" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+    <style>
+      :root {
+        /* Authentic Vox Vintage Gold Palette */
+        --gold-canvas-light: #f3e8d2;
+        --gold-canvas-mid: #eadbc4;
+        --gold-canvas-dark: #d8c39e;
+        --gold-canvas-shadow: #bfa47a;
+        --ink-black: #181512;
+        --ink-slate: #2c2925;
+        --stamp-red: #c02626;
+        --stamp-red-bg: rgba(192, 38, 38, 0.14);
+        --highlight-gold: #f59e0b;
+        --highlight-marker: rgba(245, 158, 11, 0.55);
+        --paper-white: #faf7f0;
+        --tape-cream: rgba(250, 243, 224, 0.65);
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background: #000;
+        color: var(--ink-black);
+        font-family: 'Noto Serif JP', serif;
+        overflow: hidden;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      /* ================= UNIFIED VINTAGE GOLD CANVAS ================= */
+      #root {
+        position: relative;
+        width: 1920px;
+        height: 1080px;
+        /* Unified Vintage Gold Parchment Background across ALL scenes */
+        background: radial-gradient(ellipse at 50% 45%, var(--gold-canvas-light) 0%, var(--gold-canvas-mid) 55%, var(--gold-canvas-dark) 85%, var(--gold-canvas-shadow) 100%);
+        overflow: hidden;
+      }
+
+      /* Persistent Archival Film Grain & Paper Fibers */
+      .persistent-grain {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.07;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        pointer-events: none;
+        z-index: 80;
+      }
+
+      /* Tea-Stain Aged Vignette */
+      .persistent-vignette {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(ellipse at center, transparent 40%, rgba(138, 106, 62, 0.45) 85%, rgba(87, 63, 33, 0.75) 100%);
+        pointer-events: none;
+        z-index: 85;
+      }
+
+      /* ================= TOP VOX ARCHIVAL DOSSIER BAR ================= */
+      .vox-top-bar {
+        position: absolute;
+        top: 26px;
+        left: 56px;
+        right: 56px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 90;
+        border-bottom: 2px solid rgba(24, 21, 18, 0.4);
+        padding-bottom: 12px;
+      }
+
+      .vox-dossier-left {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+
+      .vox-red-tag {
+        background: var(--stamp-red);
+        color: #ffffff;
+        font-family: 'Oswald', sans-serif;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        padding: 4px 12px;
+        border-radius: 2px;
+        text-transform: uppercase;
+      }
+
+      .vox-dossier-title {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: 2.5px;
+        color: var(--ink-black);
+        text-transform: uppercase;
+      }
+
+      .vox-dossier-right {
+        font-family: 'Courier Prime', monospace;
+        font-size: 13px;
+        letter-spacing: 1.5px;
+        color: #574f45;
+        font-weight: 700;
+      }
+
+      /* ================= VINTAGE GOLD SUBTITLES ================= */
+      .vox-sub-box {
+        position: absolute;
+        bottom: 26px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 1720px;
+        min-height: 82px;
+        background: rgba(24, 21, 18, 0.94);
+        border: 2px solid var(--highlight-gold);
+        border-left: 8px solid var(--stamp-red);
+        border-radius: 3px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 36px;
+        z-index: 100;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.75);
+      }
+
+      .vox-sub-text {
+        font-family: 'Noto Serif JP', serif;
+        font-size: 30px;
+        font-weight: 700;
+        color: var(--gold-canvas-light);
+        line-height: 1.45;
+        text-align: center;
+        letter-spacing: 1.5px;
+      }
+
+      .sub-gold {
+        color: var(--highlight-gold);
+        text-shadow: 0 0 14px rgba(245, 158, 11, 0.5);
+      }
+
+      .sub-red {
+        color: #ff6b6b;
+      }
+
+      .sub-cyan {
+        color: #67e8f9;
+      }
+
+      /* ================= SHARED VOX VINTAGE ASSET STYLES ================= */
+      /* Polaroid Photos */
+      .vox-polaroid {
+        background: var(--paper-white);
+        padding: 14px 14px 22px 14px;
+        border-radius: 2px;
+        box-shadow: 0 18px 45px rgba(50, 40, 25, 0.35);
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        position: relative;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .vox-photo-frame {
+        width: 100%;
+        overflow: hidden;
+        border: 1px solid rgba(0, 0, 0, 0.12);
+      }
+
+      .vox-photo-frame img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: sepia(0.25) contrast(1.1) brightness(0.96);
+      }
+
+      .vox-polaroid-caption {
+        margin-top: 12px;
+        font-family: 'Courier Prime', monospace;
+        font-size: 13px;
+        color: #4a4237;
+        letter-spacing: 1.5px;
+      }
+
+      /* Translucent Scotch Tape */
+      .scotch-tape {
+        position: absolute;
+        top: -12px;
+        left: 50%;
+        transform: translateX(-50%) rotate(-2deg);
+        width: 110px;
+        height: 28px;
+        background: var(--tape-cream);
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+        border-left: 1px dashed rgba(0, 0, 0, 0.12);
+        border-right: 1px dashed rgba(0, 0, 0, 0.12);
+        z-index: 15;
+      }
+
+      /* Red Archival Rubber Stamp */
+      .vox-rubber-stamp {
+        border: 3px solid var(--stamp-red);
+        color: var(--stamp-red);
+        font-family: 'Oswald', sans-serif;
+        font-weight: 900;
+        letter-spacing: 3px;
+        padding: 6px 18px;
+        text-transform: uppercase;
+        border-radius: 3px;
+        transform: rotate(-10deg);
+        box-shadow: 0 4px 15px rgba(192, 38, 38, 0.25);
+        background: var(--stamp-red-bg);
+      }
+
+      /* Yellow Highlighter Marker Wipe */
+      .vox-marker {
+        background: var(--highlight-marker);
+        padding: 2px 8px;
+        border-radius: 2px;
+        color: var(--ink-black);
+      }
+
+      /* ================= SCENE 01: VEO 3 GOLD MAP VIDEO LAYER (0.00s - 8.42s) ================= */
+      .shot1-video-player {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .scene01-stage {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        pointer-events: none;
+      }
+
+      .shot1-dossier-card {
+        position: absolute;
+        top: 85px;
+        right: 56px;
+        background: rgba(24, 21, 18, 0.94);
+        border: 2px solid var(--highlight-gold);
+        border-left: 6px solid var(--stamp-red);
+        padding: 16px 26px;
+        border-radius: 3px;
+        min-width: 440px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+      }
+
+      .shot1-card-kicker {
+        font-family: 'Oswald', sans-serif;
+        font-size: 13px;
+        font-weight: 700;
+        color: #ff6b6b;
+        letter-spacing: 2.5px;
+      }
+
+      .shot1-card-title {
+        font-family: 'Oswald', sans-serif;
+        font-size: 28px;
+        font-weight: 700;
+        color: #ffffff;
+        letter-spacing: 2px;
+        margin-top: 4px;
+      }
+
+      .shot1-card-desc {
+        font-family: 'Noto Sans JP', sans-serif;
+        font-size: 15px;
+        color: var(--gold-canvas-light);
+        margin-top: 6px;
+        line-height: 1.45;
+      }
+
+      /* Taiwan Strait Center Badge (100% Unicode Japanese Support) */
+      .shot1-strait-badge {
+        position: absolute;
+        top: 480px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(18, 22, 28, 0.94);
+        border: 2px solid var(--highlight-gold);
+        padding: 10px 28px;
+        border-radius: 3px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        z-index: 25;
+      }
+
+      .strait-badge-inner {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .strait-en {
+        font-family: 'Oswald', sans-serif;
+        font-size: 20px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        color: var(--highlight-gold);
+      }
+
+      .strait-sep {
+        color: rgba(255, 255, 255, 0.4);
+        font-weight: 300;
+        font-size: 18px;
+      }
+
+      .strait-jp {
+        font-family: 'Noto Sans JP', sans-serif;
+        font-size: 19px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        color: #ffffff;
+      }
+
+      /* Cleanroom Fab Buffer Scene HUD */
+      .shot1-cleanroom-hud {
+        position: absolute;
+        bottom: 130px;
+        left: 70px;
+        background: rgba(14, 18, 24, 0.94);
+        border: 2px solid var(--highlight-gold);
+        border-left: 6px solid var(--stamp-red);
+        padding: 14px 24px;
+        border-radius: 3px;
+        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.75);
+        z-index: 25;
+      }
+
+      .cleanroom-hud-tag {
+        font-family: 'Oswald', sans-serif;
+        font-size: 18px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        color: var(--highlight-gold);
+      }
+
+      .cleanroom-hud-sub {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 13px;
+        font-weight: 600;
+        color: #e2e8f0;
+        letter-spacing: 1.5px;
+        margin-top: 5px;
+      }
+
+      /* ================= SCENE 02: DOMINO SUPPLY CHAIN DISRUPTION (8.42s - 23.57s) ================= */
+      .scene02-stage {
+        position: absolute;
+        top: 85px;
+        left: 80px;
+        right: 80px;
+        bottom: 120px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 10;
+      }
+
+      .scene02-cards-row {
+        display: flex;
+        gap: 40px;
+        width: 1720px;
+        justify-content: space-between;
+      }
+
+      .scene02-item {
+        flex: 1;
+        background: var(--paper-white);
+        border-radius: 3px;
+        padding: 20px 20px 24px 20px;
+        box-shadow: 0 18px 45px rgba(50, 40, 25, 0.35);
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        position: relative;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .scene02-img-wrap {
+        width: 100%;
+        height: 380px;
+        overflow: hidden;
+        border: 1px solid rgba(0, 0, 0, 0.12);
+      }
+
+      .scene02-img-wrap img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: grayscale(0.8) sepia(0.25) contrast(1.15);
+      }
+
+      .scene02-meta {
+        margin-top: 18px;
+      }
+
+      .scene02-sector-num {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 12px;
+        font-weight: 700;
+        color: #8c7e6c;
+        letter-spacing: 2px;
+      }
+
+      .scene02-sector-title {
+        font-family: 'Oswald', sans-serif;
+        font-size: 32px;
+        font-weight: 700;
+        color: var(--ink-black);
+        letter-spacing: 1px;
+        margin-top: 4px;
+      }
+
+      .scene02-sector-desc {
+        font-family: 'Noto Sans JP', sans-serif;
+        font-size: 15px;
+        color: #4a4237;
+        line-height: 1.45;
+        margin-top: 8px;
+      }
+
+      .stamp-holder {
+        position: absolute;
+        top: 30px;
+        right: 25px;
+        z-index: 20;
+      }
+
+      .scene02-ticker-badge {
+        margin-top: 32px;
+        background: rgba(24, 21, 18, 0.94);
+        border: 2px solid var(--highlight-gold);
+        border-radius: 4px;
+        padding: 12px 38px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      }
+
+      .ticker-lbl {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--highlight-gold);
+        letter-spacing: 2px;
+      }
+
+      .ticker-val {
+        font-family: 'Oswald', sans-serif;
+        font-size: 26px;
+        font-weight: 700;
+        color: #ffffff;
+        letter-spacing: 1.5px;
+      }
+
+      /* ================= SCENE 03: TSMC REVEAL & 90% MONOPOLY INFOGRAPHIC (23.57s - 39.58s) ================= */
+      .scene03-stage {
+        position: absolute;
+        top: 85px;
+        left: 80px;
+        right: 80px;
+        bottom: 120px;
+        display: flex;
+        gap: 50px;
+        align-items: center;
+        justify-content: center;
+        z-index: 10;
+      }
+
+      /* Left: Technical Gauge Folder */
+      .scene03-gauge-card {
+        flex: 1.1;
+        height: 720px;
+        background: #1c2733;
+        border: 2px solid rgba(103, 232, 249, 0.4);
+        border-radius: 4px;
+        padding: 36px;
+        box-shadow: 0 25px 60px rgba(50, 40, 25, 0.4);
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .blueprint-grid {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.12;
+        background-size: 25px 25px;
+        background-image: linear-gradient(to right, #67e8f9 1px, transparent 1px), linear-gradient(to bottom, #67e8f9 1px, transparent 1px);
+        pointer-events: none;
+      }
+
+      .gauge-center-content {
+        position: relative;
+        width: 280px;
+        height: 280px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .gauge-text-middle {
+        position: absolute;
+        text-align: center;
+      }
+
+      .gauge-pct-num {
+        font-family: 'Oswald', sans-serif;
+        font-size: 82px;
+        font-weight: 900;
+        color: var(--highlight-gold);
+        line-height: 1;
+        text-shadow: 0 0 25px rgba(245, 158, 11, 0.5);
+      }
+
+      .gauge-sub-lbl {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--gold-canvas-light);
+        letter-spacing: 2.5px;
+        margin-top: 6px;
+      }
+
+      .gauge-box-title {
+        font-family: 'Oswald', sans-serif;
+        font-size: 32px;
+        font-weight: 700;
+        color: #ffffff;
+        letter-spacing: 1.5px;
+        margin-top: 24px;
+        text-align: center;
+      }
+
+      .gauge-box-desc {
+        font-family: 'Noto Sans JP', sans-serif;
+        font-size: 16px;
+        color: #a5f3fc;
+        margin-top: 8px;
+        text-align: center;
+        line-height: 1.5;
+      }
+
+      /* Right: Comparative Assessment Dossier */
+      .scene03-dossier-paper {
+        flex: 1.25;
+        height: 720px;
+        background: var(--paper-white);
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        border-radius: 3px;
+        padding: 36px 40px;
+        box-shadow: 0 25px 60px rgba(50, 40, 25, 0.35);
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .dossier-paper-header {
+        border-bottom: 2px solid var(--ink-black);
+        padding-bottom: 12px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+      }
+
+      .dossier-firm-brand {
+        font-family: 'Oswald', sans-serif;
+        font-size: 28px;
+        font-weight: 900;
+        color: var(--ink-black);
+        letter-spacing: 1.5px;
+      }
+
+      .dossier-file-tag {
+        font-family: 'Courier Prime', monospace;
+        font-size: 13px;
+        color: #64748b;
+      }
+
+      .dossier-bars-block {
+        display: flex;
+        flex-direction: column;
+        gap: 22px;
+        margin: 24px 0;
+      }
+
+      .dossier-bar-card {
+        background: #f0eae1;
+        border-left: 6px solid #2d3748;
+        padding: 14px 20px;
+        border-radius: 2px;
+      }
+
+      .bar-card-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 8px;
+      }
+
+      .firm-heading {
+        font-family: 'Oswald', sans-serif;
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--ink-black);
+      }
+
+      .firm-percentage {
+        font-family: 'Oswald', sans-serif;
+        font-size: 24px;
+        font-weight: 900;
+        color: var(--ink-black);
+      }
+
+      .bar-track-strip {
+        width: 100%;
+        height: 12px;
+        background: rgba(0, 0, 0, 0.12);
+        border-radius: 6px;
+        overflow: hidden;
+      }
+
+      .bar-fill-strip {
+        height: 100%;
+        width: 0%;
+        border-radius: 6px;
+      }
+
+      .firm-footnote {
+        font-family: 'Noto Sans JP', sans-serif;
+        font-size: 13px;
+        color: #555048;
+        margin-top: 6px;
+      }
+
+      .dossier-citation {
+        font-family: 'Courier Prime', monospace;
+        font-size: 12px;
+        color: #718096;
+        letter-spacing: 1px;
+        text-align: right;
+      }
+
+      /* ================= SCENE 04: JAPAN KUMAMOTO JASM (39.58s - 59.09s) ================= */
+      .scene04-stage {
+        position: absolute;
+        top: 85px;
+        left: 80px;
+        right: 80px;
+        bottom: 120px;
+        display: flex;
+        gap: 50px;
+        align-items: center;
+        justify-content: center;
+        z-index: 10;
+      }
+
+      .scene04-card {
+        flex: 1;
+        height: 720px;
+        background: var(--paper-white);
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        border-radius: 3px;
+        padding: 24px;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 25px 60px rgba(50, 40, 25, 0.35);
+        position: relative;
+      }
+
+      .scene04-photo-container {
+        width: 100%;
+        height: 480px;
+        overflow: hidden;
+        border: 1px solid rgba(0, 0, 0, 0.15);
+      }
+
+      .scene04-photo-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: sepia(0.2) contrast(1.1);
+      }
+
+      .scene04-caption-box {
+        margin-top: 20px;
+      }
+
+      .scene04-kicker {
+        font-family: 'Courier Prime', monospace;
+        font-size: 13px;
+        color: #718096;
+        letter-spacing: 1.5px;
+      }
+
+      .scene04-title {
+        font-family: 'Oswald', sans-serif;
+        font-size: 32px;
+        font-weight: 700;
+        color: var(--ink-black);
+        letter-spacing: 1.5px;
+        margin-top: 4px;
+      }
+
+      .scene04-paragraph {
+        font-family: 'Noto Serif JP', serif;
+        font-size: 16px;
+        color: #4a453e;
+        line-height: 1.5;
+        margin-top: 8px;
+      }
+
+      .scene04-stamp-pos {
+        position: absolute;
+        top: 40px;
+        right: 35px;
+        z-index: 25;
+      }
+
+      /* ================= SCENE 05: 1987 FLASHBACK DOSSIER (59.09s - 82.27s) ================= */
+      .scene05-stage {
+        position: absolute;
+        top: 85px;
+        left: 80px;
+        right: 80px;
+        bottom: 120px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 10;
+      }
+
+      /* Vintage Timeline Ruler Across Screen */
+      .scene05-ruler-timeline {
+        width: 1720px;
+        background: #f0eae1;
+        border: 2px solid rgba(0, 0, 0, 0.25);
+        border-radius: 4px;
+        padding: 12px 36px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 8px 25px rgba(50, 40, 25, 0.3);
+        position: relative;
+        margin-bottom: 28px;
+      }
+
+      .ruler-year-text {
+        font-family: 'Courier Prime', monospace;
+        font-size: 20px;
+        font-weight: 700;
+        color: #718096;
+        letter-spacing: 2px;
+      }
+
+      .ruler-year-text.target-1987 {
+        color: var(--stamp-red);
+        font-size: 26px;
+        font-weight: 900;
+      }
+
+      /* Interactive Animated Mouse Cursor */
+      .scene05-pointer {
+        position: absolute;
+        top: 18px;
+        left: 100px;
+        width: 28px;
+        height: 28px;
+        pointer-events: none;
+        z-index: 40;
+        filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4));
+      }
+
+      .scene05-cards-pair {
+        display: flex;
+        gap: 50px;
+        width: 1720px;
+      }
+
+      .scene05-card-item {
+        flex: 1;
+        background: var(--paper-white);
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        border-radius: 3px;
+        padding: 24px;
+        box-shadow: 0 25px 60px rgba(50, 40, 25, 0.35);
+        position: relative;
+      }
+
+      .scene05-photo-wrap {
+        width: 100%;
+        height: 440px;
+        overflow: hidden;
+        border: 1px solid rgba(0, 0, 0, 0.15);
+      }
+
+      .scene05-photo-wrap img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: grayscale(0.9) sepia(0.3) contrast(1.15);
+      }
+
+      .scene05-info-meta {
+        margin-top: 18px;
+      }
+
+      .scene05-title {
+        font-family: 'Oswald', sans-serif;
+        font-size: 28px;
+        font-weight: 700;
+        color: var(--ink-black);
+        letter-spacing: 1.5px;
+      }
+
+      .scene05-desc {
+        font-family: 'Noto Serif JP', serif;
+        font-size: 15px;
+        color: #4a453e;
+        line-height: 1.5;
+        margin-top: 6px;
+      }
+
+      /* ================= SCENE 06: MONOLITHIC TITLE REVEAL (82.27s - 96.89s) ================= */
+      .scene06-stage {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 1920px;
+        height: 1080px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 10;
+      }
+
+      .scene06-title-plate {
+        background: rgba(24, 21, 18, 0.96);
+        border: 3px solid var(--highlight-gold);
+        border-radius: 4px;
+        padding: 60px 100px;
+        text-align: center;
+        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.85);
+        position: relative;
+      }
+
+      .s6-kicker-txt {
+        font-family: 'Courier Prime', monospace;
+        font-size: 16px;
+        letter-spacing: 6px;
+        color: var(--highlight-gold);
+        text-transform: uppercase;
+        margin-bottom: 20px;
+      }
+
+      .s6-monolithic-brand {
+        font-family: 'Oswald', sans-serif;
+        font-size: 130px;
+        font-weight: 900;
+        color: var(--gold-canvas-light);
+        letter-spacing: 8px;
+        line-height: 0.95;
+      }
+
+      .s6-sub-brand {
+        font-family: 'Oswald', sans-serif;
+        font-size: 42px;
+        font-weight: 600;
+        color: var(--highlight-gold);
+        letter-spacing: 6px;
+        margin-top: 16px;
+        text-transform: uppercase;
+      }
+
+      .s6-tag-sentence {
+        font-family: 'Noto Serif JP', serif;
+        font-size: 30px;
+        font-weight: 700;
+        color: #dcd6c8;
+        letter-spacing: 3px;
+        margin-top: 36px;
+      }
+
+      .s6-client-stamps {
+        margin-top: 45px;
+        display: flex;
+        gap: 32px;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 15px;
+        font-weight: 700;
+        color: #8c7e6c;
+        letter-spacing: 3px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="root" data-composition-id="main" data-width="1920" data-height="1080" data-duration="96.888">
+      <!-- Persistent Overlays for Unified Archival Workspace -->
+      <div class="persistent-vignette" data-layout-ignore></div>
+      <div class="persistent-grain" data-layout-ignore></div>
+
+      <!-- Persistent Top Dossier Bar -->
+      <div class="vox-top-bar" data-layout-ignore>
+        <div class="vox-dossier-left">
+          <span class="vox-red-tag">CASE DOSSIER</span>
+          <span class="vox-dossier-title">TSMC: THE GEOPOLITICAL CHOKEPOINT</span>
+        </div>
+        <div class="vox-dossier-right">
+          RECORD REF: 1987-TSMC // 24 FPS VOX STYLE
+        </div>
+      </div>
+
+      <!-- ================= SCENE 01: VEO 3 GOLD MAP VIDEO LAYER (0.00s - 8.42s) ================= -->
+      <video class="clip shot1-video-player" id="shot1-video" data-start="0.00" data-duration="8.42" data-track-index="1" src="assets/video/shot1_map_veo.mp4" muted playsinline></video>
+      <div class="scene01-stage clip" id="scene01-stage" data-start="0.00" data-duration="8.42" data-track-index="2" data-layout-allow-overflow>
+        <div class="shot1-dossier-card" id="shot1-target-card" data-layout-ignore>
+          <div class="shot1-card-kicker">STRATEGIC CHOKEPOINT // TAIWAN STRAIT</div>
+          <div class="shot1-card-title">台湾海峡 160KM</div>
+          <div class="shot1-card-desc">
+            新竹サイエンスパーク (Hsinchu Fab 12/20 Cluster)<br/>
+            世界先端半導体供給の90%以上が集中する最前線
+          </div>
+        </div>
+
+        <!-- Taiwan Strait Center Badge (100% Crisp Unicode Japanese Typography) -->
+        <div class="shot1-strait-badge" id="shot1-strait-badge" style="opacity: 0;" data-layout-ignore>
+          <div class="strait-badge-inner">
+            <span class="strait-en">TAIWAN STRAIT</span>
+            <span class="strait-sep">//</span>
+            <span class="strait-jp">台湾海峡 160KM</span>
+          </div>
+        </div>
+
+        <!-- Cleanroom Fab Buffer Scene HUD -->
+        <div class="shot1-cleanroom-hud" id="shot1-cleanroom-hud" style="opacity: 0;" data-layout-ignore>
+          <div class="cleanroom-hud-tag">TSMC GIGAFAB 12 // 3NM EUV CLEANROOM</div>
+          <div class="cleanroom-hud-sub">AUTOMATED OHT TRANSPORT · 100% UTILIZATION</div>
+        </div>
+      </div>
+
+      <!-- Subtitle 01 -->
+      <div class="vox-sub-box clip" id="sub1" data-start="0.00" data-duration="8.42" data-track-index="3" data-layout-allow-overflow>
+        <div class="vox-sub-text" data-layout-ignore>
+          もし明日、<span class="sub-gold">台湾海峡で戦争が勃発</span>し、たったひとつの企業が操業を停止したらどうなるでしょうか？
+        </div>
+      </div>
+      <audio class="clip" id="vo-01" data-start="0.00" data-duration="8.42" data-track-index="4" src="assets/audio/scene_01.mp3"></audio>
+      <audio class="clip" id="sfx-01-drone" data-start="0.00" data-duration="6.00" data-track-index="5" src="assets/sfx/sub_drone.wav"></audio>
+
+      <!-- ================= SCENE 02: DOMINO SUPPLY CHAIN DISRUPTION (8.42s - 23.57s) ================= -->
+      <div class="scene02-stage clip" id="scene02-stage" data-start="8.42" data-duration="15.15" data-track-index="1" data-layout-allow-overflow>
+        <div class="scene02-cards-row">
+          <!-- Card 1: Consumer Tech (Smartphones) -->
+          <div class="scene02-item" id="card-phone">
+            <div class="scotch-tape"></div>
+            <div class="stamp-holder" id="stamp-phone" style="opacity: 0;">
+              <div class="vox-rubber-stamp">HALTED</div>
+            </div>
+            <div class="scene02-img-wrap">
+              <img src="assets/images/andy_grove_vintage.jpg" alt="Consumer Tech Smartphone Chip" />
+            </div>
+            <div class="scene02-meta">
+              <div class="scene02-sector-num">DOSSIER ITEM #01 // CONSUMER TECH</div>
+              <div class="scene02-sector-title">SMARTPHONES</div>
+              <div class="scene02-sector-desc">Apple iPhone (A18 Pro) · Qualcomm Snapdragon<br/>世界中の最新スマートフォン生産ラインが完全停止</div>
+            </div>
+          </div>
+
+          <!-- Card 2: AI Accelerators (NVIDIA) -->
+          <div class="scene02-item" id="card-ai">
+            <div class="scotch-tape"></div>
+            <div class="stamp-holder" id="stamp-ai" style="opacity: 0;">
+              <div class="vox-rubber-stamp">FROZEN</div>
+            </div>
+            <div class="scene02-img-wrap">
+              <img src="assets/images/silicon_wafer_vintage.jpg" alt="AI GPU Chip Die" />
+            </div>
+            <div class="scene02-meta">
+              <div class="scene02-sector-num">DOSSIER ITEM #02 // FRONTIER AI</div>
+              <div class="scene02-sector-title">AI ACCELERATORS</div>
+              <div class="scene02-sector-desc">NVIDIA Blackwell / H100 · AMD MI300<br/>全フロンティアAIモデルの学習・開発が全世界で凍結</div>
+            </div>
+          </div>
+
+          <!-- Card 3: Global Data Centers -->
+          <div class="scene02-item" id="card-cloud">
+            <div class="scotch-tape"></div>
+            <div class="stamp-holder" id="stamp-cloud" style="opacity: 0;">
+              <div class="vox-rubber-stamp">COLLAPSED</div>
+            </div>
+            <div class="scene02-img-wrap">
+              <img src="assets/images/hsinchu_park_vintage.jpg" alt="Global Data Center Infrastructure" />
+            </div>
+            <div class="scene02-meta">
+              <div class="scene02-sector-num">DOSSIER ITEM #03 // INFRASTRUCTURE</div>
+              <div class="scene02-sector-title">DATA CENTERS</div>
+              <div class="scene02-sector-desc">AWS · Microsoft Azure · Google Cloud<br/>世界金融・防衛・基幹通信インフラが連鎖沈黙</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Global Loss Badge -->
+        <div class="scene02-ticker-badge" id="scene02-ticker-badge">
+          <div class="ticker-lbl">GLOBAL ECONOMIC CATASTROPHE:</div>
+          <div class="ticker-val">-10,000,000,000,000 USD (年間1500兆円の損失)</div>
+        </div>
+      </div>
+
+      <!-- Subtitle 02 -->
+      <div class="vox-sub-box clip" id="sub2" data-start="8.42" data-duration="15.15" data-track-index="2" data-layout-allow-overflow>
+        <div class="vox-sub-text" data-layout-ignore>
+          あなたの手元のスマートフォンは製造不能になり、<span class="sub-cyan">全世界のAI開発は完全凍結</span>。データセンターは沈黙し、世界経済は数週間で<span class="sub-red">数千兆円の壊滅的打撃</span>を受けます。
+        </div>
+      </div>
+      <audio class="clip" id="vo-02" data-start="8.42" data-duration="15.15" data-track-index="3" src="assets/audio/scene_02.mp3"></audio>
+      <audio class="clip" id="sfx-02-impact" data-start="8.60" data-duration="2.50" data-track-index="4" src="assets/sfx/impact_boom.wav"></audio>
+
+      <!-- ================= SCENE 03: TSMC REVEAL & 90% MONOPOLY INFOGRAPHIC (23.57s - 39.58s) ================= -->
+      <div class="scene03-stage clip" id="scene03-stage" data-start="23.57" data-duration="16.01" data-track-index="1" data-layout-allow-overflow>
+        <!-- Left: Technical Blueprint Gauge -->
+        <div class="scene03-gauge-card" id="scene03-gauge-card">
+          <div class="blueprint-grid"></div>
+          <div class="gauge-center-content">
+            <svg width="280" height="280" viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="42" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="11" />
+              <circle id="vox-donut-arc" cx="50" cy="50" r="42" fill="none" stroke="#f59e0b" stroke-width="11"
+                stroke-dasharray="264" stroke-dashoffset="264" stroke-linecap="round"
+                transform="rotate(-90 50 50)" />
+            </svg>
+            <div class="gauge-text-middle">
+              <div class="gauge-pct-num">90%</div>
+              <div class="gauge-sub-lbl">GLOBAL MONOPOLY</div>
+            </div>
+          </div>
+          <div class="gauge-box-title">最先端 3nm / 2nm プロセス供給比率</div>
+          <div class="gauge-box-desc">
+            世界シェア90%以上をTSMCが単独供給<br/>
+            代替不能な唯一無二の「チョークポイント（急所）」
+          </div>
+        </div>
+
+        <!-- Right: Archival Assessment Document -->
+        <div class="scene03-dossier-paper" id="scene03-dossier-paper">
+          <div class="dossier-paper-header">
+            <div class="dossier-firm-brand">
+              <span class="vox-marker">TSMC (台湾積体電路製造)</span>
+            </div>
+            <div class="dossier-file-tag">REPORT REF: TSMC-SHARE-1987</div>
+          </div>
+
+          <div class="dossier-bars-block">
+            <!-- TSMC -->
+            <div class="dossier-bar-card" style="border-left-color: var(--highlight-gold);">
+              <div class="bar-card-head">
+                <div class="firm-heading">TSMC（台湾積体電路製造）</div>
+                <div class="firm-percentage" style="color: #b45309;">90.0%</div>
+              </div>
+              <div class="bar-track-strip">
+                <div class="bar-fill-strip" id="fill-strip-tsmc" style="background: var(--highlight-gold);"></div>
+              </div>
+              <div class="firm-footnote">Apple A18/M4、NVIDIA Blackwell、AMD Zen5の全量を受託</div>
+            </div>
+
+            <!-- Samsung -->
+            <div class="dossier-bar-card" style="border-left-color: #3b82f6;">
+              <div class="bar-card-head">
+                <div class="firm-heading">SAMSUNG FOUNDRY</div>
+                <div class="firm-percentage" style="color: #2563eb;">8.0%</div>
+              </div>
+              <div class="bar-track-strip">
+                <div class="bar-fill-strip" id="fill-strip-samsung" style="background: #3b82f6;"></div>
+              </div>
+              <div class="firm-footnote">先端プロセスの歩留まり課題に直面・自社向け優先</div>
+            </div>
+
+            <!-- Intel -->
+            <div class="dossier-bar-card" style="border-left-color: #64748b;">
+              <div class="bar-card-head">
+                <div class="firm-heading">INTEL IFS & OTHERS</div>
+                <div class="firm-percentage" style="color: #475569;">2.0%</div>
+              </div>
+              <div class="bar-track-strip">
+                <div class="bar-fill-strip" id="fill-strip-intel" style="background: #64748b;"></div>
+              </div>
+              <div class="firm-footnote">外部顧客の獲得に苦戦・巨額赤字で再編中</div>
+            </div>
+          </div>
+
+          <div class="dossier-citation">
+            SOURCE: TRENDFORCE INDUSTRY RESEARCH // BOSTON CONSULTING GROUP (BCG) REPORT
+          </div>
+        </div>
+      </div>
+
+      <!-- Subtitle 03 -->
+      <div class="vox-sub-box clip" id="sub3" data-start="23.57" data-duration="16.01" data-track-index="2" data-layout-allow-overflow>
+        <div class="vox-sub-text" data-layout-ignore>
+          その企業の名前は、<span class="sub-gold">TSMC（台湾積体電路製造）</span>。世界の先端半導体の90％以上を独占する、人類史上最も危険で、最も不可欠な<span class="sub-cyan">「チョークポイント（急所）」</span>です。
+        </div>
+      </div>
+      <audio class="clip" id="vo-03" data-start="23.57" data-duration="16.01" data-track-index="3" src="assets/audio/scene_03.mp3"></audio>
+      <audio class="clip" id="sfx-03-marker" data-start="24.00" data-duration="1.50" data-track-index="4" src="assets/sfx/marker_wipe.wav"></audio>
+
+      <!-- ================= SCENE 04: JAPAN KUMAMOTO JASM (39.58s - 59.09s) ================= -->
+      <div class="scene04-stage clip" id="scene04-stage" data-start="39.58" data-duration="19.51" data-track-index="1" data-layout-allow-overflow>
+        <!-- Left: Kumamoto Fab Archival Photo -->
+        <div class="scene04-card" id="card-jasm">
+          <div class="scotch-tape"></div>
+          <div class="scene04-stamp-pos">
+            <div class="vox-rubber-stamp">1.2兆円投入</div>
+          </div>
+          <div class="scene04-photo-container">
+            <img src="assets/images/mount_aso_vintage.jpg" alt="Kumamoto Kikuyo JASM Fab Landscape" />
+          </div>
+          <div class="scene04-caption-box">
+            <div class="scene04-kicker">KUMAMOTO, JAPAN // 2024.02</div>
+            <div class="scene04-title">JASM 熊本第1工場 開所</div>
+            <div class="scene04-paragraph">
+              のどかなキャベツ畑の真ん中に突如現れた巨大半導体拠点。<br/>
+              日本政府が1兆2000億円の異例補助金を投じ、半導体復権へ賭けた歴史的プロジェクト。
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: 93-Year-Old Morris Chang Portrait (Uncropped) -->
+        <div class="scene04-card" id="card-morris-93">
+          <div class="scotch-tape"></div>
+          <div class="scene04-photo-container">
+            <img src="assets/images/morris_chang_93yo.jpg" alt="Morris Chang at Kumamoto Opening Ceremony" />
+          </div>
+          <div class="scene04-caption-box">
+            <div class="scene04-kicker">FOUNDER // 93 YEARS OLD</div>
+            <div class="scene04-title">モリス・チャン（張忠謀）</div>
+            <div class="scene04-paragraph">
+              「日本と台湾の半導体協力は、新たなルネサンスをもたらす」。<br/>
+              政財界のトップたちが93歳の老人に深々と頭を下げた瞬間。
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Subtitle 04 -->
+      <div class="vox-sub-box clip" id="sub4" data-start="39.58" data-duration="19.51" data-track-index="2" data-layout-allow-overflow>
+        <div class="vox-sub-text" data-layout-ignore>
+          2024年2月、日本の熊本県菊陽町。突如現れた巨大工場に、日本政府は異例の<span class="sub-gold">1兆2000億円を超える巨額補助金</span>を投じ、政財界のトップたちが<span class="sub-cyan">93歳の老人</span>に深々と頭を下げました。
+        </div>
+      </div>
+      <audio class="clip" id="vo-04" data-start="39.58" data-duration="19.51" data-track-index="3" src="assets/audio/scene_04.mp3"></audio>
+      <audio class="clip" id="sfx-04-impact" data-start="39.80" data-duration="2.50" data-track-index="4" src="assets/sfx/impact_boom.wav"></audio>
+
+      <!-- ================= SCENE 05: 1987 FLASHBACK DOSSIER (59.09s - 82.27s) ================= -->
+      <div class="scene05-stage clip" id="scene05-stage" data-start="59.09" data-duration="23.18" data-track-index="1" data-layout-allow-overflow>
+        <!-- Ruler Timeline Across Screen -->
+        <div class="scene05-ruler-timeline" id="timeline-ruler">
+          <div class="ruler-year-text" id="node-2024">2024 熊本開所</div>
+          <div class="ruler-year-text" id="node-2010">◀ 2010 スマホ革命</div>
+          <div class="ruler-year-text" id="node-1995">◀ 1995 上場</div>
+          <div class="ruler-year-text target-1987" id="node-1987">● 1987 TSMC創業</div>
+
+          <!-- Interactive Animated Mouse Cursor -->
+          <svg class="scene05-pointer" id="mouse-pointer" viewBox="0 0 24 24" fill="#181512" stroke="#faf7f0" stroke-width="1.5">
+            <path d="M4 2 L4 20 L9 15 L14 22 L17 20 L12 13 L18 13 Z" />
+          </svg>
+        </div>
+
+        <!-- 1987 Founding Dossier Cards Pair -->
+        <div class="scene05-cards-pair">
+          <!-- Left: 55-Year-Old Morris Chang Portrait (Uncropped) -->
+          <div class="scene05-card-item" id="card-morris-55">
+            <div class="scotch-tape"></div>
+            <div class="scene05-photo-wrap">
+              <img src="assets/images/morris_chang_1987.jpg" alt="Morris Chang in 1987 at age 55" />
+            </div>
+            <div class="scene05-info-meta">
+              <div class="scene05-title">モリス・チャン（当時55歳）</div>
+              <div class="scene05-desc">
+                米テキサス・インスツルメンツで出世街道を外れ、台湾政府の招聘で新竹へ渡った孤高のリーダー。
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: 1987 Humble Fab -->
+          <div class="scene05-card-item" id="card-fab-1987">
+            <div class="scotch-tape"></div>
+            <div class="stamp-holder" id="stamp-zero" style="opacity: 0;">
+              <div class="vox-rubber-stamp">技術・資金・名声ゼロ</div>
+            </div>
+            <div class="scene05-photo-wrap">
+              <img src="assets/images/hsinchu_park_vintage.jpg" alt="1987 Early Hsinchu Factory Fab" />
+            </div>
+            <div class="scene05-info-meta">
+              <div class="scene05-title">1987年 新竹サイエンスパーク</div>
+              <div class="scene05-desc">
+                「誰も見向きもしない下請け町工場」。当時の最新鋭工場に比べ、製造技術は2〜3世代遅れていた。
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Subtitle 05 -->
+      <div class="vox-sub-box clip" id="sub5" data-start="59.09" data-duration="23.18" data-track-index="2" data-layout-allow-overflow>
+        <div class="vox-sub-text" data-layout-ignore>
+          しかし、時計の針を37年前、1987年に戻してみてください。この会社は、<span class="sub-red">技術なし、資金なし、名声なし</span>。55歳で台湾に渡った一人の男が立ち上げた<span class="sub-gold">「誰も見向きもしない下請け工場」</span>でした。
+        </div>
+      </div>
+      <audio class="clip" id="vo-05" data-start="59.09" data-duration="23.18" data-track-index="3" src="assets/audio/scene_05.mp3"></audio>
+      <audio class="clip" id="sfx-05-clock" data-start="59.20" data-duration="6.00" data-track-index="4" src="assets/sfx/clock_tick.wav"></audio>
+      <audio class="clip" id="sfx-05-click" data-start="60.20" data-duration="0.50" data-track-index="5" src="assets/sfx/mouse_click.wav"></audio>
+      <audio class="clip" id="sfx-05-slap" data-start="61.00" data-duration="1.20" data-track-index="6" src="assets/sfx/paper_slap.wav"></audio>
+
+      <!-- ================= SCENE 06: MONOLITHIC TITLE REVEAL (82.27s - 96.89s) ================= -->
+      <div class="scene06-stage clip" id="scene06-stage" data-start="82.27" data-duration="14.62" data-track-index="1" data-layout-allow-overflow>
+        <div class="scene06-title-plate" id="scene06-title-plate">
+          <div class="s6-kicker-txt" id="s6-kicker">HISTORICAL DOCUMENTARY CASE STUDY</div>
+          <div class="s6-monolithic-brand" id="s6-title">TSMC</div>
+          <div class="s6-sub-brand" id="s6-sub">THE SEMICONDUCTOR EMPIRE</div>
+          <div class="s6-tag-sentence" id="s6-tag">常識を覆し続けた男の狂気の逆転劇 — 1987-2024</div>
+          <div class="s6-client-stamps" id="s6-clients">
+            <span>[ APPLE ]</span> · <span>[ NVIDIA ]</span> · <span>[ AMD ]</span> · <span>[ QUALCOMM ]</span> · <span>[ ASML ]</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Subtitle 06 -->
+      <div class="vox-sub-box clip" id="sub6" data-start="82.27" data-duration="14.62" data-track-index="2" data-layout-allow-overflow>
+        <div class="vox-sub-text" data-layout-ignore>
+          なぜ、誰にも相手にされなかった町工場が、AppleやNVIDIA、そして米日すらひれ伏す怪物になれたのか？これは、<span class="sub-gold">常識を覆し続けた男の狂気の逆転劇</span>です。
+        </div>
+      </div>
+      <audio class="clip" id="vo-06" data-start="82.27" data-duration="14.62" data-track-index="3" src="assets/audio/scene_06.mp3"></audio>
+      <audio class="clip" id="sfx-06-impact" data-start="82.50" data-duration="3.00" data-track-index="4" src="assets/sfx/impact_boom.wav"></audio>
+
+      <!-- Master Continuous Cinematic BGM Score -->
+      <audio class="clip" id="bgm-master" data-start="0.00" data-duration="96.888" data-track-index="25" src="assets/audio/cinematic_score.mp3"></audio>
+    </div>
+
+    <!-- ================= GSAP TIMELINE SCRIPT (FAST, ENGAGING VOX PACING) ================= -->
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+
+      // ================= SCENE 01: VEO 3 GOLD MAP VIDEO LAYER (0.00s - 8.42s) =================
+      // Fast dynamic target card entrance at 1.0s
+      tl.fromTo("#shot1-target-card", { y: -40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "back.out(1.6)" }, 1.0);
+      tl.fromTo("#shot1-target-card .shot1-card-title", { scale: 0.95 }, { scale: 1.05, duration: 0.3, yoyo: true, repeat: 1 }, 3.5);
+
+      // Taiwan Strait Center Badge (accurate timing over Taiwan Strait: 2.8s - 5.4s)
+      tl.fromTo("#shot1-strait-badge", { scale: 0.85, opacity: 0 }, { scale: 1.0, opacity: 1, duration: 0.4, ease: "back.out(1.6)" }, 2.8);
+      tl.to("#shot1-strait-badge", { opacity: 0, scale: 0.95, duration: 0.3 }, 5.4);
+
+      // Cleanroom Fab Buffer Scene HUD (6.6s - 8.42s)
+      tl.fromTo("#shot1-cleanroom-hud", { y: 25, opacity: 0 }, { y: 0, opacity: 1, duration: 0.45, ease: "power2.out" }, 6.6);
+
+      // ================= SCENE 02: DOMINO SUPPLY CHAIN DISRUPTION (8.42s - 23.57s) =================
+      // Dynamic rapid slamming of cards every 1.2s
+      tl.fromTo("#card-phone", { y: -80, rotation: -12, opacity: 0 }, { y: 0, rotation: -2, opacity: 1, duration: 0.45, ease: "back.out(1.6)" }, 8.7);
+      tl.fromTo("#card-ai", { y: -80, rotation: 10, opacity: 0 }, { y: 0, rotation: 1.5, opacity: 1, duration: 0.45, ease: "back.out(1.6)" }, 9.9);
+      tl.fromTo("#card-cloud", { y: -80, rotation: -8, opacity: 0 }, { y: 0, rotation: -1, opacity: 1, duration: 0.45, ease: "back.out(1.6)" }, 11.1);
+
+      // Rapid rhythmic stamping of red rubber stamps
+      tl.fromTo("#stamp-phone", { scale: 2.5, opacity: 0, rotation: -25 }, { scale: 1.0, opacity: 1, rotation: -10, duration: 0.25, ease: "back.out(2.2)" }, 12.5);
+      tl.fromTo("#stamp-ai", { scale: 2.5, opacity: 0, rotation: 20 }, { scale: 1.0, opacity: 1, rotation: 8, duration: 0.25, ease: "back.out(2.2)" }, 14.5);
+      tl.fromTo("#stamp-cloud", { scale: 2.5, opacity: 0, rotation: -20 }, { scale: 1.0, opacity: 1, rotation: -12, duration: 0.25, ease: "back.out(2.2)" }, 16.5);
+
+      // Loss Ticker badge pops in with rapid pulse
+      tl.fromTo("#scene02-ticker-badge", { scale: 0.85, opacity: 0 }, { scale: 1.0, opacity: 1, duration: 0.4, ease: "back.out(1.8)" }, 17.5);
+
+      // ================= SCENE 03: TSMC REVEAL & 90% MONOPOLY INFOGRAPHIC (23.57s - 39.58s) =================
+      tl.fromTo("#scene03-gauge-card", { x: -80, opacity: 0 }, { x: 0, opacity: 1, duration: 0.5, ease: "power2.out" }, 23.7);
+      tl.fromTo("#scene03-dossier-paper", { x: 80, opacity: 0 }, { x: 0, opacity: 1, duration: 0.5, ease: "power2.out" }, 23.9);
+
+      // Donut Gauge spins up rapidly
+      tl.fromTo("#vox-donut-arc", { strokeDashoffset: 264 }, { strokeDashoffset: 26.4, duration: 1.2, ease: "power3.out" }, 24.2);
+
+      // Bar charts shoot out dynamically
+      tl.to("#fill-strip-tsmc", { width: "90%", duration: 1.0, ease: "power2.out" }, 24.6);
+      tl.to("#fill-strip-samsung", { width: "8%", duration: 0.6, ease: "power2.out" }, 25.2);
+      tl.to("#fill-strip-intel", { width: "2%", duration: 0.5, ease: "power2.out" }, 25.5);
+
+      // ================= SCENE 04: JAPAN KUMAMOTO JASM (39.58s - 59.09s) =================
+      tl.fromTo("#card-jasm", { y: 60, rotation: -4, opacity: 0 }, { y: 0, rotation: -1.5, opacity: 1, duration: 0.5, ease: "power2.out" }, 39.7);
+      tl.fromTo("#card-morris-93", { y: 60, rotation: 4, opacity: 0 }, { y: 0, rotation: 1.5, opacity: 1, duration: 0.5, ease: "power2.out" }, 40.1);
+
+      // Red 1.2 Trillion stamp slams down
+      tl.fromTo(".scene04-stamp-pos", { scale: 2.2, opacity: 0, rotation: -25 }, { scale: 1.0, opacity: 1, rotation: -10, duration: 0.3, ease: "back.out(2.0)" }, 41.2);
+
+      // Photographic push-in on 93yo Morris Chang
+      tl.to("#card-morris-93 .scene04-photo-container img", { scale: 1.06, duration: 16.0, ease: "none" }, 41.5);
+
+      // ================= SCENE 05: 1987 FLASHBACK DOSSIER (59.09s - 82.27s) =================
+      tl.fromTo("#timeline-ruler", { y: -40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.35, ease: "power2.out" }, 59.2);
+
+      // Mouse Pointer slides across timeline: 2024 -> 1987
+      tl.fromTo("#mouse-pointer", { x: 0, opacity: 0 }, { x: 0, opacity: 1, duration: 0.15 }, 59.4);
+      tl.to("#mouse-pointer", { x: 1400, duration: 0.7, ease: "power2.inOut" }, 59.6);
+      // Mouse click bounce at 1987
+      tl.to("#mouse-pointer", { scale: 0.75, yoyo: true, repeat: 1, duration: 0.1 }, 60.2);
+
+      // Dossier Cards Appear
+      tl.fromTo("#card-morris-55", { y: 60, rotation: -4, opacity: 0 }, { y: 0, rotation: -1, opacity: 1, duration: 0.5, ease: "power2.out" }, 60.5);
+      tl.fromTo("#card-fab-1987", { y: 60, rotation: 4, opacity: 0 }, { y: 0, rotation: 1, opacity: 1, duration: 0.5, ease: "power2.out" }, 60.9);
+      tl.fromTo("#stamp-zero", { scale: 2.4, opacity: 0, rotation: -20 }, { scale: 1.0, opacity: 1, rotation: -10, duration: 0.35, ease: "back.out(2.2)" }, 61.5);
+
+      // ================= SCENE 06: MONOLITHIC TITLE REVEAL (82.27s - 96.89s) =================
+      tl.fromTo("#scene06-title-plate", { scale: 0.85, opacity: 0 }, { scale: 1.0, opacity: 1, duration: 0.6, ease: "back.out(1.4)" }, 82.5);
+      tl.fromTo("#s6-kicker", { y: -15, opacity: 0 }, { y: 0, opacity: 1, duration: 0.3, ease: "power2.out" }, 82.8);
+      tl.fromTo("#s6-title", { scale: 1.15, opacity: 0 }, { scale: 1.0, opacity: 1, duration: 0.5, ease: "power2.out" }, 83.1);
+      tl.fromTo("#s6-sub", { y: 15, opacity: 0 }, { y: 0, opacity: 1, duration: 0.35, ease: "power2.out" }, 83.5);
+      tl.fromTo("#s6-tag", { opacity: 0 }, { opacity: 1, duration: 0.4, ease: "power2.out" }, 83.9);
+      tl.fromTo("#s6-clients", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" }, 84.3);
+
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>

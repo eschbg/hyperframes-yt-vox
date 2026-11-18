@@ -1,0 +1,584 @@
+ffmpeg version 6.1.1-essentials_build-www.gyan.dev Copyright (c) 2000-2023 the FFmpeg developers
+  built with gcc 12.2.0 (Rev10, Built by MSYS2 project)
+  configuration: --enable-gpl --enable-version3 --enable-static --pkg-config=pkgconf --disable-w32threads --disable-autodetect --enable-fontconfig --enable-iconv --enable-gnutls --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-zlib --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-sdl2 --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxvid --enable-libaom --enable-libopenjpeg --enable-libvpx --enable-mediafoundation --enable-libass --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-ffnvcodec --enable-nvdec --enable-nvenc --enable-dxva2 --enable-d3d11va --enable-libvpl --enable-libgme --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libtheora --enable-libvo-amrwbenc --enable-libgsm --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-librubberband
+  libavutil      58. 29.100 / 58. 29.100
+  libavcodec     60. 31.102 / 60. 31.102
+  libavformat    60. 16.100 / 60. 16.100
+  libavdevice    60.  3.100 / 60.  3.100
+  libavfilter     9. 12.100 /  9. 12.100
+  libswscale      7.  5.100 /  7.  5.100
+  libswresample   4. 12.100 /  4. 12.100
+  libpostproc    57.  3.100 / 57.  3.100
+Input #0, png_pipe, from 'E:\Project\SideProject\Youtube\demo-vox-his\toyota-demo\assets\scene-01.png':
+  Duration: N/A, bitrate: N/A
+  Stream #0:0: Video: png, rgb24(pc, gbr/unknown/unknown), 1672x941, 25 fps, 25 tbr, 25 tbn
+Stream mapping:
+  Stream #0:0 -> #0:0 (png (native) -> h264 (libx264))
+Press [q] to stop, [?] for help
+[libx264 @ 000001cb78f85400] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+[libx264 @ 000001cb78f85400] profile High, level 4.0, 4:2:0, 8-bit
+[libx264 @ 000001cb78f85400] 264 - core 164 r3172 c1c9931 - H.264/MPEG-4 AVC codec - Copyleft 2003-2023 - http://www.videolan.org/x264.html - options: cabac=1 ref=3 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=7 psy=1 psy_rd=1.00:0.00 mixed_ref=1 me_range=16 chroma_me=1 trellis=1 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=-2 threads=18 lookahead_threads=3 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=2 keyint=250 keyint_min=25 scenecut=40 intra_refresh=0 rc_lookahead=40 rc=crf mbtree=1 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00
+Output #0, mp4, to 'E:\Project\SideProject\Youtube\demo-vox-his\toyota-demo\work\clip-0.mp4':
+  Metadata:
+    encoder         : Lavf60.16.100
+  Stream #0:0: Video: h264 (avc1 / 0x31637661), yuv420p(tv, progressive), 1920x1080, q=2-31, 30 fps, 15360 tbn
+    Metadata:
+      encoder         : Lavc60.31.102 libx264
+    Side data:
+      cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
+frame=    0 fps=0.0 q=0.0 size=       0kB time=N/A bitrate=N/A speed=N/A    
+frame=    0 fps=0.0 q=0.0 size=       0kB time=N/A bitrate=N/A dup=5 drop=0 speed=N/A    
+frame=    0 fps=0.0 q=0.0 size=       0kB time=N/A bitrate=N/A dup=10 drop=0 speed=N/A    
+frame=   23 fps= 15 q=29.0 size=     256kB time=00:00:00.70 bitrate=2996.5kbits/s dup=14 drop=0 speed=0.445x    
+frame=   53 fps= 25 q=29.0 size=     512kB time=00:00:01.70 bitrate=2467.5kbits/s dup=19 drop=0 speed=0.808x    
+frame=   82 fps= 31 q=29.0 size=     512kB time=00:00:02.66 bitrate=1573.0kbits/s dup=24 drop=0 speed=1.02x    
+[out#0/mp4 @ 000001cb78f7dc00] video:572kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.450300%
+frame=  150 fps= 47 q=-1.0 Lsize=     574kB time=00:00:04.90 bitrate= 960.4kbits/s dup=25 drop=0 speed=1.54x    
+[libx264 @ 000001cb78f85400] frame I:2     Avg QP:14.46  size: 44350
+[libx264 @ 000001cb78f85400] frame P:38    Avg QP:18.71  size: 11308
+[libx264 @ 000001cb78f85400] frame B:110   Avg QP:32.92  size:   605
+[libx264 @ 000001cb78f85400] consecutive B-frames:  1.3%  1.3%  4.0% 93.3%
+[libx264 @ 000001cb78f85400] mb I  I16..4: 59.4% 28.5% 12.1%
+[libx264 @ 000001cb78f85400] mb P  I16..4:  0.1%  1.5%  0.2%  P16..4:  7.9%  2.1%  2.3%  0.0%  0.0%    skip:86.0%
+[libx264 @ 000001cb78f85400] mb B  I16..4:  0.0%  0.0%  0.0%  B16..8:  2.8%  0.0%  0.0%  direct: 1.7%  skip:95.5%  L0: 8.3% L1:88.3% BI: 3.4%
+[libx264 @ 000001cb78f85400] 8x8 transform intra:42.4% inter:69.6%
+[libx264 @ 000001cb78f85400] coded y,uvDC,uvAC intra: 42.4% 14.8% 6.3% inter: 2.7% 2.5% 0.1%
+[libx264 @ 000001cb78f85400] i16 v,h,dc,p: 91%  5%  3%  1%
+[libx264 @ 000001cb78f85400] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 22% 18% 29%  6%  4%  3%  6%  4%  9%
+[libx264 @ 000001cb78f85400] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 36% 21% 15%  5%  5%  4%  6%  3%  4%
+[libx264 @ 000001cb78f85400] i8c dc,h,v,p: 87%  7%  5%  0%
+[libx264 @ 000001cb78f85400] Weighted P-Frames: Y:15.8% UV:15.8%
+[libx264 @ 000001cb78f85400] ref P L0: 84.8%  5.7%  8.8%  0.7%
+[libx264 @ 000001cb78f85400] ref B L0: 94.5%  4.9%  0.6%
+[libx264 @ 000001cb78f85400] ref B L1: 77.4% 22.6%
+[libx264 @ 000001cb78f85400] kb/s:935.87
+ffmpeg version 6.1.1-essentials_build-www.gyan.dev Copyright (c) 2000-2023 the FFmpeg developers
+  built with gcc 12.2.0 (Rev10, Built by MSYS2 project)
+  configuration: --enable-gpl --enable-version3 --enable-static --pkg-config=pkgconf --disable-w32threads --disable-autodetect --enable-fontconfig --enable-iconv --enable-gnutls --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-zlib --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-sdl2 --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxvid --enable-libaom --enable-libopenjpeg --enable-libvpx --enable-mediafoundation --enable-libass --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-ffnvcodec --enable-nvdec --enable-nvenc --enable-dxva2 --enable-d3d11va --enable-libvpl --enable-libgme --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libtheora --enable-libvo-amrwbenc --enable-libgsm --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-librubberband
+  libavutil      58. 29.100 / 58. 29.100
+  libavcodec     60. 31.102 / 60. 31.102
+  libavformat    60. 16.100 / 60. 16.100
+  libavdevice    60.  3.100 / 60.  3.100
+  libavfilter     9. 12.100 /  9. 12.100
+  libswscale      7.  5.100 /  7.  5.100
+  libswresample   4. 12.100 /  4. 12.100
+  libpostproc    57.  3.100 / 57.  3.100
+Input #0, png_pipe, from 'E:\Project\SideProject\Youtube\demo-vox-his\toyota-demo\assets\scene-02.png':
+  Duration: N/A, bitrate: N/A
+  Stream #0:0: Video: png, rgb24(pc, gbr/unknown/unknown), 1672x941, 25 fps, 25 tbr, 25 tbn
+Stream mapping:
+  Stream #0:0 -> #0:0 (png (native) -> h264 (libx264))
+Press [q] to stop, [?] for help
+[libx264 @ 000001693d625400] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+[libx264 @ 000001693d625400] profile High, level 4.0, 4:2:0, 8-bit
+[libx264 @ 000001693d625400] 264 - core 164 r3172 c1c9931 - H.264/MPEG-4 AVC codec - Copyleft 2003-2023 - http://www.videolan.org/x264.html - options: cabac=1 ref=3 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=7 psy=1 psy_rd=1.00:0.00 mixed_ref=1 me_range=16 chroma_me=1 trellis=1 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=-2 threads=18 lookahead_threads=3 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=2 keyint=250 keyint_min=25 scenecut=40 intra_refresh=0 rc_lookahead=40 rc=crf mbtree=1 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00
+Output #0, mp4, to 'E:\Project\SideProject\Youtube\demo-vox-his\toyota-demo\work\clip-1.mp4':
+  Metadata:
+    encoder         : Lavf60.16.100
+  Stream #0:0: Video: h264 (avc1 / 0x31637661), yuv420p(tv, progressive), 1920x1080, q=2-31, 30 fps, 15360 tbn
+    Metadata:
+      encoder         : Lavc60.31.102 libx264
+    Side data:
+      cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
+frame=    0 fps=0.0 q=0.0 size=       0kB time=N/A bitrate=N/A speed=N/A    
+frame=    0 fps=0.0 q=0.0 size=       0kB time=N/A bitrate=N/A dup=5 drop=0 speed=N/A    
+frame=    0 fps=0.0 q=0.0 size=       0kB time=N/A bitrate=N/A dup=9 drop=0 speed=N/A    
+frame=   21 fps= 14 q=29.0 size=     256kB time=00:00:00.63 bitrate=3311.9kbits/s dup=14 drop=0 speed=0.409x    
+frame=   52 fps= 25 q=29.0 size=     256kB time=00:00:01.63 bitrate=1284.2kbits/s dup=19 drop=0 speed=0.797x    
+frame=   83 fps= 32 q=29.0 size=     256kB time=00:00:02.70 bitrate= 776.9kbits/s dup=24 drop=0 speed=1.06x    
+frame=  115 fps= 37 q=29.0 size=     256kB time=00:00:03.76 bitrate= 556.9kbits/s dup=30 drop=0 speed=1.23x    
+[out#0/mp4 @ 000001693d61dc00] video:540kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.545228%
+frame=  180 fps= 49 q=-1.0 Lsize=     543kB time=00:00:05.90 bitrate= 753.4kbits/s dup=30 drop=0 speed=1.62x    
+[libx264 @ 000001693d625400] frame I:2     Avg QP:14.90  size: 32520
+[libx264 @ 000001693d625400] frame P:45    Avg QP:18.43  size:  8991
+[libx264 @ 000001693d625400] frame B:133   Avg QP:30.64  size:   619
+[libx264 @ 000001693d625400] consecutive B-frames:  1.1%  1.1%  0.0% 97.8%
+[libx264 @ 000001693d625400] mb I  I16..4: 62.4% 29.1%  8.6%
+[libx264 @ 000001693d625400] mb P  I16..4:  0.2%  1.6%  0.2%  P16..4:  7.6%  1.6%  1.8%  0.0%  0.0%    skip:87.0%
+[libx264 @ 000001693d625400] mb B  I16..4:  0.0%  0.0%  0.0%  B16..8:  2.9%  0.0%  0.0%  direct: 1.9%  skip:95.1%  L0:15.7% L1:77.6% BI: 6.6%
+[libx264 @ 000001693d625400] 8x8 transform intra:45.0% inter:77.1%
+[libx264 @ 000001693d625400] coded y,uvDC,uvAC intra: 39.0% 13.3% 5.1% inter: 2.3% 2.8% 0.1%
+[libx264 @ 000001693d625400] i16 v,h,dc,p: 87%  8%  3%  2%
+[libx264 @ 000001693d625400] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 20% 22% 30%  5%  3%  2%  5%  3%  9%
+[libx264 @ 000001693d625400] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 32% 26% 16%  5%  5%  3%  5%  3%  5%
+[libx264 @ 000001693d625400] i8c dc,h,v,p: 86%  8%  5%  1%
+[libx264 @ 000001693d625400] Weighted P-Frames: Y:13.3% UV:13.3%
+[libx264 @ 000001693d625400] ref P L0: 83.0%  4.0% 11.9%  1.0%
+[libx264 @ 000001693d625400] ref B L0: 84.6%  9.7%  5.7%
+[libx264 @ 000001693d625400] ref B L1: 78.9% 21.1%
+[libx264 @ 000001693d625400] kb/s:735.90
+ffmpeg version 6.1.1-essentials_build-www.gyan.dev Copyright (c) 2000-2023 the FFmpeg developers
+  built with gcc 12.2.0 (Rev10, Built by MSYS2 project)
+  configuration: --enable-gpl --enable-version3 --enable-static --pkg-config=pkgconf --disable-w32threads --disable-autodetect --enable-fontconfig --enable-iconv --enable-gnutls --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-zlib --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-sdl2 --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxvid --enable-libaom --enable-libopenjpeg --enable-libvpx --enable-mediafoundation --enable-libass --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-ffnvcodec --enable-nvdec --enable-nvenc --enable-dxva2 --enable-d3d11va --enable-libvpl --enable-libgme --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libtheora --enable-libvo-amrwbenc --enable-libgsm --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-librubberband
+  libavutil      58. 29.100 / 58. 29.100
+  libavcodec     60. 31.102 / 60. 31.102
+  libavformat    60. 16.100 / 60. 16.100
+  libavdevice    60.  3.100 / 60.  3.100
+  libavfilter     9. 12.100 /  9. 12.100
+  libswscale      7.  5.100 /  7.  5.100
+  libswresample   4. 12.100 /  4. 12.100
+  libpostproc    57.  3.100 / 57.  3.100
+Input #0, png_pipe, from 'E:\Project\SideProject\Youtube\demo-vox-his\toyota-demo\assets\scene-03.png':
+  Duration: N/A, bitrate: N/A
+  Stream #0:0: Video: png, rgb24(pc, gbr/unknown/unknown), 1672x941, 25 fps, 25 tbr, 25 tbn
+Stream mapping:
+  Stream #0:0 -> #0:0 (png (native) -> h264 (libx264))
+Press [q] to stop, [?] for help
+[libx264 @ 000001b8ee7f5400] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+[libx264 @ 000001b8ee7f5400] profile High, level 4.0, 4:2:0, 8-bit
+[libx264 @ 000001b8ee7f5400] 264 - core 164 r3172 c1c9931 - H.264/MPEG-4 AVC codec - Copyleft 2003-2023 - http://www.videolan.org/x264.html - options: cabac=1 ref=3 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=7 psy=1 psy_rd=1.00:0.00 mixed_ref=1 me_range=16 chroma_me=1 trellis=1 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=-2 threads=18 lookahead_threads=3 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=2 keyint=250 keyint_min=25 scenecut=40 intra_refresh=0 rc_lookahead=40 rc=crf mbtree=1 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00
+Output #0, mp4, to 'E:\Project\SideProject\Youtube\demo-vox-his\toyota-demo\work\clip-2.mp4':
+  Metadata:
+    encoder         : Lavf60.16.100
+  Stream #0:0: Video: h264 (avc1 / 0x31637661), yuv420p(tv, progressive), 1920x1080, q=2-31, 30 fps, 15360 tbn
+    Metadata:
+      encoder         : Lavc60.31.102 libx264
+    Side data:
+      cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
+frame=    0 fps=0.0 q=0.0 size=       0kB time=N/A bitrate=N/A speed=N/A    
+frame=    0 fps=0.0 q=0.0 size=       0kB time=N/A bitrate=N/A dup=5 drop=0 speed=N/A    
+frame=    0 fps=0.0 q=0.0 size=       0kB time=N/A bitrate=N/A dup=10 drop=0 speed=N/A    
+frame=   26 fps= 17 q=29.0 size=     256kB time=00:00:00.80 bitrate=2621.9kbits/s dup=15 drop=0 speed=0.514x    
+frame=   57 fps= 28 q=29.0 size=     256kB time=00:00:01.83 bitrate=1144.1kbits/s dup=20 drop=0 speed=0.888x    
+frame=   92 fps= 36 q=29.0 size=     256kB time=00:00:02.96 bitrate= 707.0kbits/s dup=26 drop=0 speed=1.15x    
+frame=  122 fps= 39 q=29.0 size=     256kB time=00:00:04.00 bitrate= 524.4kbits/s dup=31 drop=0 speed=1.29x    
+frame=  154 fps= 43 q=29.0 size=     256kB time=00:00:05.03 bitrate= 416.7kbits/s dup=36 drop=0 speed=1.39x    
+[out#0/mp4 @ 000001b8ee7edc00] video:505kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.722092%
+frame=  240 fps= 53 q=-1.0 Lsize=     508kB time=00:00:07.90 bitrate= 527.3kbits/s dup=40 drop=0 speed=1.73x    
+[libx264 @ 000001b8ee7f5400] frame I:2     Avg QP:15.26  size: 31935
+[libx264 @ 000001b8ee7f5400] frame P:60    Avg QP:17.14  size:  6228
+[libx264 @ 000001b8ee7f5400] frame B:178   Avg QP:26.08  size:   442
+[libx264 @ 000001b8ee7f5400] consecutive B-frames:  0.8%  0.8%  0.0% 98.3%
+[libx264 @ 000001b8ee7f5400] mb I  I16..4: 65.4% 26.6%  8.0%
+[libx264 @ 000001b8ee7f5400] mb P  I16..4:  0.3%  1.2%  0.1%  P16..4:  5.7%  1.1%  1.2%  0.0%  0.0%    skip:90.3%
+[libx264 @ 000001b8ee7f5400] mb B  I16..4:  0.0%  0.0%  0.0%  B16..8:  1.6%  0.0%  0.0%  direct: 1.1%  skip:97.3%  L0: 5.0% L1:78.5% BI:16.5%
+[libx264 @ 000001b8ee7f5400] 8x8 transform intra:42.6% inter:75.7%
+[libx264 @ 000001b8ee7f5400] coded y,uvDC,uvAC intra: 37.7% 12.6% 4.9% inter: 1.7% 1.7% 0.0%
+[libx264 @ 000001b8ee7f5400] i16 v,h,dc,p: 88%  7%  3%  2%
+[libx264 @ 000001b8ee7f5400] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 18% 22% 28%  5%  5%  3%  7%  4%  8%
+[libx264 @ 000001b8ee7f5400] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 30% 24% 14%  5%  7%  5%  7%  3%  5%
+[libx264 @ 000001b8ee7f5400] i8c dc,h,v,p: 87%  7%  5%  1%
+[libx264 @ 000001b8ee7f5400] Weighted P-Frames: Y:10.0% UV:10.0%
+[libx264 @ 000001b8ee7f5400] ref P L0: 86.7%  5.7%  6.8%  0.8%
+[libx264 @ 000001b8ee7f5400] ref B L0: 55.5% 29.1% 15.5%
+[libx264 @ 000001b8ee7f5400] ref B L1: 77.0% 23.0%
+[libx264 @ 000001b8ee7f5400] kb/s:516.28
+ffmpeg version 6.1.1-essentials_build-www.gyan.dev Copyright (c) 2000-2023 the FFmpeg developers
+  built with gcc 12.2.0 (Rev10, Built by MSYS2 project)
+  configuration: --enable-gpl --enable-version3 --enable-static --pkg-config=pkgconf --disable-w32threads --disable-autodetect --enable-fontconfig --enable-iconv --enable-gnutls --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-zlib --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-sdl2 --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxvid --enable-libaom --enable-libopenjpeg --enable-libvpx --enable-mediafoundation --enable-libass --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-ffnvcodec --enable-nvdec --enable-nvenc --enable-dxva2 --enable-d3d11va --enable-libvpl --enable-libgme --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libtheora --enable-libvo-amrwbenc --enable-libgsm --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-librubberband
+  libavutil      58. 29.100 / 58. 29.100
+  libavcodec     60. 31.102 / 60. 31.102
+  libavformat    60. 16.100 / 60. 16.100
+  libavdevice    60.  3.100 / 60.  3.100
+  libavfilter     9. 12.100 /  9. 12.100
+  libswscale      7.  5.100 /  7.  5.100
+  libswresample   4. 12.100 /  4. 12.100
+  libpostproc    57.  3.100 / 57.  3.100
+Input #0, png_pipe, from 'E:\Project\SideProject\Youtube\demo-vox-his\toyota-demo\assets\scene-04.png':
+  Duration: N/A, bitrate: N/A
+  Stream #0:0: Video: png, rgb24(pc, gbr/unknown/unknown), 1672x941, 25 fps, 25 tbr, 25 tbn
+Stream mapping:
+  Stream #0:0 -> #0:0 (png (native) -> h264 (libx264))
+Press [q] to stop, [?] for help
+[libx264 @ 0000020b3ff55400] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+[libx264 @ 0000020b3ff55400] profile High, level 4.0, 4:2:0, 8-bit
+[libx264 @ 0000020b3ff55400] 264 - core 164 r3172 c1c9931 - H.264/MPEG-4 AVC codec - Copyleft 2003-2023 - http://www.videolan.org/x264.html - options: cabac=1 ref=3 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=7 psy=1 psy_rd=1.00:0.00 mixed_ref=1 me_range=16 chroma_me=1 trellis=1 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=-2 threads=18 lookahead_threads=3 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=2 keyint=250 keyint_min=25 scenecut=40 intra_refresh=0 rc_lookahead=40 rc=crf mbtree=1 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00
+Output #0, mp4, to 'E:\Project\SideProject\Youtube\demo-vox-his\toyota-demo\work\clip-3.mp4':
+  Metadata:
+    encoder         : Lavf60.16.100
+  Stream #0:0: Video: h264 (avc1 / 0x31637661), yuv420p(tv, progressive), 1920x1080, q=2-31, 30 fps, 15360 tbn
+    Metadata:
+      encoder         : Lavc60.31.102 libx264
+    Side data:
+      cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
+frame=    0 fps=0.0 q=0.0 size=       0kB time=N/A bitrate=N/A speed=N/A    
+frame=    0 fps=0.0 q=0.0 size=       0kB time=N/A bitrate=N/A dup=5 drop=0 speed=N/A    
+frame=    0 fps=0.0 q=0.0 size=       0kB time=N/A bitrate=N/A dup=10 drop=0 speed=N/A    
+frame=   26 fps= 17 q=29.0 size=     512kB time=00:00:00.76 bitrate=5471.3kbits/s dup=15 drop=0 speed=0.488x    
+frame=   57 fps= 27 q=29.0 size=     512kB time=00:00:01.83 bitrate=2288.0kbits/s dup=20 drop=0 speed=0.877x    
+frame=   89 fps= 34 q=29.0 size=     512kB time=00:00:02.90 bitrate=1446.4kbits/s dup=25 drop=0 speed=1.12x    
+frame=  119 fps= 38 q=29.0 size=     512kB time=00:00:03.90 bitrate=1075.6kbits/s dup=30 drop=0 speed=1.26x    
+[out#0/mp4 @ 0000020b3ff4dc00] video:588kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.557191%
+frame=  210 fps= 52 q=-1.0 Lsize=     592kB time=00:00:06.90 bitrate= 702.4kbits/s dup=35 drop=0 speed=1.71x    
+[libx264 @ 0000020b3ff55400] frame I:2     Avg QP:15.68  size: 33991
+[libx264 @ 0000020b3ff55400] frame P:53    Avg QP:18.11  size:  8708
+[libx264 @ 0000020b3ff55400] frame B:155   Avg QP:26.15  size:   466
+[libx264 @ 0000020b3ff55400] consecutive B-frames:  1.0%  1.0%  2.9% 95.2%
+[libx264 @ 0000020b3ff55400] mb I  I16..4: 68.4% 23.5%  8.1%
+[libx264 @ 0000020b3ff55400] mb P  I16..4:  0.2%  1.4%  0.2%  P16..4:  6.2%  0.9%  1.2%  0.0%  0.0%    skip:89.9%
+[libx264 @ 0000020b3ff55400] mb B  I16..4:  0.0%  0.0%  0.0%  B16..8:  1.7%  0.0%  0.0%  direct: 1.5%  skip:96.8%  L0: 0.7% L1:95.5% BI: 3.8%
+[libx264 @ 0000020b3ff55400] 8x8 transform intra:41.0% inter:74.3%
+[libx264 @ 0000020b3ff55400] coded y,uvDC,uvAC intra: 37.4% 16.0% 5.7% inter: 1.9% 2.1% 0.1%
+[libx264 @ 0000020b3ff55400] i16 v,h,dc,p: 85%  9%  4%  2%
+[libx264 @ 0000020b3ff55400] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 16% 21% 32%  5%  5%  3%  6%  3%  8%
+[libx264 @ 0000020b3ff55400] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 26% 26% 16%  5%  7%  4%  7%  3%  5%
+[libx264 @ 0000020b3ff55400] i8c dc,h,v,p: 84%  9%  6%  1%
+[libx264 @ 0000020b3ff55400] Weighted P-Frames: Y:11.3% UV:11.3%
+[libx264 @ 0000020b3ff55400] ref P L0: 86.6%  4.2%  8.1%  1.1%
+[libx264 @ 0000020b3ff55400] ref B L0: 64.9% 34.9%  0.2%
+[libx264 @ 0000020b3ff55400] ref B L1: 70.5% 29.5%
+[libx264 @ 0000020b3ff55400] kb/s:687.77
+ffmpeg version 6.1.1-essentials_build-www.gyan.dev Copyright (c) 2000-2023 the FFmpeg developers
+  built with gcc 12.2.0 (Rev10, Built by MSYS2 project)
+  configuration: --enable-gpl --enable-version3 --enable-static --pkg-config=pkgconf --disable-w32threads --disable-autodetect --enable-fontconfig --enable-iconv --enable-gnutls --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-zlib --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-sdl2 --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxvid --enable-libaom --enable-libopenjpeg --enable-libvpx --enable-mediafoundation --enable-libass --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-ffnvcodec --enable-nvdec --enable-nvenc --enable-dxva2 --enable-d3d11va --enable-libvpl --enable-libgme --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libtheora --enable-libvo-amrwbenc --enable-libgsm --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-librubberband
+  libavutil      58. 29.100 / 58. 29.100
+  libavcodec     60. 31.102 / 60. 31.102
+  libavformat    60. 16.100 / 60. 16.100
+  libavdevice    60.  3.100 / 60.  3.100
+  libavfilter     9. 12.100 /  9. 12.100
+  libswscale      7.  5.100 /  7.  5.100
+  libswresample   4. 12.100 /  4. 12.100
+  libpostproc    57.  3.100 / 57.  3.100
+Input #0, png_pipe, from 'E:\Project\SideProject\Youtube\demo-vox-his\toyota-demo\assets\scene-04.png':
+  Duration: N/A, bitrate: N/A
+  Stream #0:0: Video: png, rgb24(pc, gbr/unknown/unknown), 1672x941, 25 fps, 25 tbr, 25 tbn
+Stream mapping:
+  Stream #0:0 -> #0:0 (png (native) -> h264 (libx264))
+Press [q] to stop, [?] for help
+[libx264 @ 0000027bf4eb5400] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+[libx264 @ 0000027bf4eb5400] profile High, level 4.0, 4:2:0, 8-bit
+[libx264 @ 0000027bf4eb5400] 264 - core 164 r3172 c1c9931 - H.264/MPEG-4 AVC codec - Copyleft 2003-2023 - http://www.videolan.org/x264.html - options: cabac=1 ref=3 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=7 psy=1 psy_rd=1.00:0.00 mixed_ref=1 me_range=16 chroma_me=1 trellis=1 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=-2 threads=18 lookahead_threads=3 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=2 keyint=250 keyint_min=25 scenecut=40 intra_refresh=0 rc_lookahead=40 rc=crf mbtree=1 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00
+Output #0, mp4, to 'E:\Project\SideProject\Youtube\demo-vox-his\toyota-demo\work\clip-4.mp4':
+  Metadata:
+    encoder         : Lavf60.16.100
+  Stream #0:0: Video: h264 (avc1 / 0x31637661), yuv420p(tv, progressive), 1920x1080, q=2-31, 30 fps, 15360 tbn
+    Metadata:
+      encoder         : Lavc60.31.102 libx264
+    Side data:
+      cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
+frame=    0 fps=0.0 q=0.0 size=       0kB time=N/A bitrate=N/A speed=N/A    
+frame=    0 fps=0.0 q=0.0 size=       0kB time=N/A bitrate=N/A dup=5 drop=0 speed=N/A    
+frame=    0 fps=0.0 q=0.0 size=       0kB time=N/A bitrate=N/A dup=10 drop=0 speed=N/A    
+frame=   26 fps= 17 q=29.0 size=     512kB time=00:00:00.80 bitrate=5243.4kbits/s dup=15 drop=0 speed=0.509x    
+frame=   56 fps= 27 q=29.0 size=     512kB time=00:00:01.80 bitrate=2330.4kbits/s dup=20 drop=0 speed=0.867x    
+[out#0/mp4 @ 0000027bf4eadc00] video:581kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.385089%
+frame=  120 fps= 46 q=-1.0 Lsize=     584kB time=00:00:03.90 bitrate=1226.1kbits/s dup=20 drop=0 speed=1.48x    
+[libx264 @ 0000027bf4eb5400] frame I:2     Avg QP:15.67  size: 33774
+[libx264 @ 0000027bf4eb5400] frame P:30    Avg QP:18.42  size: 15196
+[libx264 @ 0000027bf4eb5400] frame B:88    Avg QP:25.90  size:   810
+[libx264 @ 0000027bf4eb5400] consecutive B-frames:  1.7%  1.7%  0.0% 96.7%
+[libx264 @ 0000027bf4eb5400] mb I  I16..4: 68.6% 23.3%  8.1%
+[libx264 @ 0000027bf4eb5400] mb P  I16..4:  0.3%  2.5%  0.3%  P16..4: 10.2%  1.6%  2.2%  0.0%  0.0%    skip:82.8%
+[libx264 @ 0000027bf4eb5400] mb B  I16..4:  0.0%  0.0%  0.0%  B16..8:  3.1%  0.0%  0.0%  direct: 2.7%  skip:94.2%  L0: 0.8% L1:91.9% BI: 7.4%
+[libx264 @ 0000027bf4eb5400] 8x8 transform intra:41.2% inter:73.1%
+[libx264 @ 0000027bf4eb5400] coded y,uvDC,uvAC intra: 37.3% 16.0% 5.6% inter: 3.3% 3.7% 0.1%
+[libx264 @ 0000027bf4eb5400] i16 v,h,dc,p: 85%  9%  4%  2%
+[libx264 @ 0000027bf4eb5400] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 16% 21% 33%  5%  5%  3%  6%  4%  8%
+[libx264 @ 0000027bf4eb5400] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 26% 26% 16%  5%  6%  5%  7%  3%  5%
+[libx264 @ 0000027bf4eb5400] i8c dc,h,v,p: 84%  9%  6%  1%
+[libx264 @ 0000027bf4eb5400] Weighted P-Frames: Y:20.0% UV:20.0%
+[libx264 @ 0000027bf4eb5400] ref P L0: 85.9%  4.6%  8.6%  1.0%
+[libx264 @ 0000027bf4eb5400] ref B L0: 38.5% 45.0% 16.6%
+[libx264 @ 0000027bf4eb5400] ref B L1: 71.4% 28.6%
+[libx264 @ 0000027bf4eb5400] kb/s:1189.51
+ffmpeg version 6.1.1-essentials_build-www.gyan.dev Copyright (c) 2000-2023 the FFmpeg developers
+  built with gcc 12.2.0 (Rev10, Built by MSYS2 project)
+  configuration: --enable-gpl --enable-version3 --enable-static --pkg-config=pkgconf --disable-w32threads --disable-autodetect --enable-fontconfig --enable-iconv --enable-gnutls --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-zlib --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-sdl2 --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxvid --enable-libaom --enable-libopenjpeg --enable-libvpx --enable-mediafoundation --enable-libass --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-ffnvcodec --enable-nvdec --enable-nvenc --enable-dxva2 --enable-d3d11va --enable-libvpl --enable-libgme --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libtheora --enable-libvo-amrwbenc --enable-libgsm --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-librubberband
+  libavutil      58. 29.100 / 58. 29.100
+  libavcodec     60. 31.102 / 60. 31.102
+  libavformat    60. 16.100 / 60. 16.100
+  libavdevice    60.  3.100 / 60.  3.100
+  libavfilter     9. 12.100 /  9. 12.100
+  libswscale      7.  5.100 /  7.  5.100
+  libswresample   4. 12.100 /  4. 12.100
+  libpostproc    57.  3.100 / 57.  3.100
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0000019e14e804c0] Auto-inserting h264_mp4toannexb bitstream filter
+Input #0, concat, from 'E:\Project\SideProject\Youtube\demo-vox-his\toyota-demo\work\concat.txt':
+  Duration: N/A, start: 0.000000, bitrate: 936 kb/s
+  Stream #0:0(und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(progressive), 1920x1080, 936 kb/s, 30 fps, 30 tbr, 15360 tbn
+    Metadata:
+      handler_name    : VideoHandler
+      vendor_id       : [0][0][0][0]
+      encoder         : Lavc60.31.102 libx264
+Input #1, lavfi, from 'anullsrc=channel_layout=stereo:sample_rate=48000':
+  Duration: N/A, start: 0.000000, bitrate: 768 kb/s
+  Stream #1:0: Audio: pcm_u8, 48000 Hz, stereo, u8, 768 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (h264 (native) -> h264 (libx264))
+  Stream #1:0 -> #0:1 (pcm_u8 (native) -> aac (native))
+Press [q] to stop, [?] for help
+[libx264 @ 0000019e14ea6f80] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+[libx264 @ 0000019e14ea6f80] profile High, level 4.0, 4:2:0, 8-bit
+[libx264 @ 0000019e14ea6f80] 264 - core 164 r3172 c1c9931 - H.264/MPEG-4 AVC codec - Copyleft 2003-2023 - http://www.videolan.org/x264.html - options: cabac=1 ref=3 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=7 psy=1 psy_rd=1.00:0.00 mixed_ref=1 me_range=16 chroma_me=1 trellis=1 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=-2 threads=18 lookahead_threads=3 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=2 keyint=250 keyint_min=25 scenecut=40 intra_refresh=0 rc_lookahead=40 rc=crf mbtree=1 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00
+Output #0, mp4, to 'E:\Project\SideProject\Youtube\demo-vox-his\output\toyota-history-demo-30s.mp4':
+  Metadata:
+    encoder         : Lavf60.16.100
+  Stream #0:0(und): Video: h264 (avc1 / 0x31637661), yuv420p(progressive), 1920x1080, q=2-31, 30 fps, 15360 tbn
+    Metadata:
+      handler_name    : VideoHandler
+      vendor_id       : [0][0][0][0]
+      encoder         : Lavc60.31.102 libx264
+    Side data:
+      cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
+  Stream #0:1: Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 128 kb/s
+    Metadata:
+      encoder         : Lavc60.31.102 aac
+frame=    0 fps=0.0 q=0.0 size=       0kB time=N/A bitrate=N/A speed=N/A    
+frame=    7 fps=0.0 q=29.0 size=       0kB time=00:00:02.21 bitrate=   0.2kbits/s speed=4.09x    
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0000019e1bb9ed00] Auto-inserting h264_mp4toannexb bitstream filter
+frame=   92 fps= 87 q=29.0 size=     512kB time=00:00:05.05 bitrate= 829.6kbits/s speed=4.77x    
+frame=  157 fps= 98 q=29.0 size=     768kB time=00:00:07.23 bitrate= 870.0kbits/s speed=4.49x    
+frame=  244 fps=115 q=29.0 size=    1024kB time=00:00:10.11 bitrate= 829.6kbits/s speed=4.78x    
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0000019e1bb9ed00] Auto-inserting h264_mp4toannexb bitstream filter
+frame=  320 fps=122 q=29.0 size=    1024kB time=00:00:12.65 bitrate= 663.1kbits/s speed=4.83x    
+frame=  382 fps=122 q=29.0 size=    1536kB time=00:00:14.72 bitrate= 854.8kbits/s speed=4.72x    
+frame=  476 fps=131 q=29.0 size=    1536kB time=00:00:17.87 bitrate= 703.9kbits/s speed=4.94x    
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0000019e1bb9ed00] Auto-inserting h264_mp4toannexb bitstream filter
+frame=  555 fps=135 q=26.0 size=    1536kB time=00:00:20.48 bitrate= 614.4kbits/s speed=4.96x    
+frame=  616 fps=132 q=29.0 size=    2304kB time=00:00:22.52 bitrate= 837.8kbits/s speed=4.84x    
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0000019e16ef7240] Auto-inserting h264_mp4toannexb bitstream filter
+frame=  709 fps=138 q=29.0 size=    2304kB time=00:00:25.62 bitrate= 736.7kbits/s speed=4.97x    
+frame=  777 fps=137 q=29.0 size=    2304kB time=00:00:27.88 bitrate= 676.9kbits/s speed=4.93x    
+frame=  838 fps=136 q=29.0 size=    3328kB time=00:00:29.48 bitrate= 924.7kbits/s speed=4.77x    
+[mp4 @ 0000019e14ea6280] Starting second pass: moving the moov atom to the beginning of the file
+[out#0/mp4 @ 0000019e14ea6080] video:3427kB audio:8kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.976727%
+frame=  900 fps=139 q=-1.0 Lsize=    3469kB time=00:00:29.99 bitrate= 947.5kbits/s speed=4.64x    
+[libx264 @ 0000019e14ea6f80] frame I:6     Avg QP:14.82  size:128193
+[libx264 @ 0000019e14ea6f80] frame P:237   Avg QP:18.33  size: 10460
+[libx264 @ 0000019e14ea6f80] frame B:657   Avg QP:28.12  size:   397
+[libx264 @ 0000019e14ea6f80] consecutive B-frames:  0.9%  3.6%  5.3% 90.2%
+[libx264 @ 0000019e14ea6f80] mb I  I16..4: 30.9% 53.7% 15.4%
+[libx264 @ 0000019e14ea6f80] mb P  I16..4:  0.3%  1.7%  0.1%  P16..4:  8.4%  2.0%  2.1%  0.0%  0.0%    skip:85.4%
+[libx264 @ 0000019e14ea6f80] mb B  I16..4:  0.2%  0.0%  0.0%  B16..8:  2.8%  0.0%  0.0%  direct: 1.0%  skip:96.0%  L0:12.4% L1:85.4% BI: 2.2%
+[libx264 @ 0000019e14ea6f80] 8x8 transform intra:59.5% inter:68.1%
+[libx264 @ 0000019e14ea6f80] coded y,uvDC,uvAC intra: 44.2% 20.5% 6.4% inter: 2.1% 2.5% 0.1%
+[libx264 @ 0000019e14ea6f80] i16 v,h,dc,p: 75% 15%  7%  4%
+[libx264 @ 0000019e14ea6f80] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 26% 21% 29%  4%  4%  2%  5%  3%  6%
+[libx264 @ 0000019e14ea6f80] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 28% 24% 13%  5%  7%  5%  7%  4%  6%
+[libx264 @ 0000019e14ea6f80] i8c dc,h,v,p: 78% 12%  9%  1%
+[libx264 @ 0000019e14ea6f80] Weighted P-Frames: Y:16.5% UV:16.5%
+[libx264 @ 0000019e14ea6f80] ref P L0: 81.7%  5.9%  8.5%  3.8%
+[libx264 @ 0000019e14ea6f80] ref B L0: 85.9% 10.6%  3.4%
+[libx264 @ 0000019e14ea6f80] ref B L1: 84.4% 15.6%
+[libx264 @ 0000019e14ea6f80] kb/s:935.69
+[aac @ 0000019e154fa880] Qavg: 65536.000
+ffmpeg version 6.1.1-essentials_build-www.gyan.dev Copyright (c) 2000-2023 the FFmpeg developers
+  built with gcc 12.2.0 (Rev10, Built by MSYS2 project)
+  configuration: --enable-gpl --enable-version3 --enable-static --pkg-config=pkgconf --disable-w32threads --disable-autodetect --enable-fontconfig --enable-iconv --enable-gnutls --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-zlib --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-sdl2 --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxvid --enable-libaom --enable-libopenjpeg --enable-libvpx --enable-mediafoundation --enable-libass --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-ffnvcodec --enable-nvdec --enable-nvenc --enable-dxva2 --enable-d3d11va --enable-libvpl --enable-libgme --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libtheora --enable-libvo-amrwbenc --enable-libgsm --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-librubberband
+  libavutil      58. 29.100 / 58. 29.100
+  libavcodec     60. 31.102 / 60. 31.102
+  libavformat    60. 16.100 / 60. 16.100
+  libavdevice    60.  3.100 / 60.  3.100
+  libavfilter     9. 12.100 /  9. 12.100
+  libswscale      7.  5.100 /  7.  5.100
+  libswresample   4. 12.100 /  4. 12.100
+  libpostproc    57.  3.100 / 57.  3.100
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'E:\Project\SideProject\Youtube\demo-vox-his\output\toyota-history-demo-30s.mp4':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf60.16.100
+  Duration: 00:00:30.00, start: 0.000000, bitrate: 947 kb/s
+  Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(progressive), 1920x1080, 935 kb/s, 30 fps, 30 tbr, 15360 tbn (default)
+    Metadata:
+      handler_name    : VideoHandler
+      vendor_id       : [0][0][0][0]
+      encoder         : Lavc60.31.102 libx264
+  Stream #0:1[0x2](und): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 2 kb/s (default)
+    Metadata:
+      handler_name    : SoundHandler
+      vendor_id       : [0][0][0][0]
+Stream mapping:
+  Stream #0:0 -> #0:0 (h264 (native) -> png (native))
+Press [q] to stop, [?] for help
+Output #0, image2, to 'E:\Project\SideProject\Youtube\demo-vox-his\toyota-demo\work\frame-00.png':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf60.16.100
+  Stream #0:0(und): Video: png, rgb24(pc, gbr/unknown/unknown, progressive), 1920x1080, q=2-31, 200 kb/s, 30 fps, 30 tbn (default)
+    Metadata:
+      handler_name    : VideoHandler
+      vendor_id       : [0][0][0][0]
+      encoder         : Lavc60.31.102 png
+frame=    0 fps=0.0 q=-0.0 size=       0kB time=00:00:00.00 bitrate=N/A speed=   0x    
+[image2 @ 000001c6eff25180] The specified filename 'E:\Project\SideProject\Youtube\demo-vox-his\toyota-demo\work\frame-00.png' does not contain an image sequence pattern or a pattern is invalid.
+[image2 @ 000001c6eff25180] Use a pattern such as %03d for an image sequence or use the -update option (with -frames:v 1 if needed) to write a single image.
+[out#0/image2 @ 000001c6efa3e140] video:6kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: unknown
+frame=    1 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.00 bitrate=N/A speed=   0x    
+ffmpeg version 6.1.1-essentials_build-www.gyan.dev Copyright (c) 2000-2023 the FFmpeg developers
+  built with gcc 12.2.0 (Rev10, Built by MSYS2 project)
+  configuration: --enable-gpl --enable-version3 --enable-static --pkg-config=pkgconf --disable-w32threads --disable-autodetect --enable-fontconfig --enable-iconv --enable-gnutls --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-zlib --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-sdl2 --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxvid --enable-libaom --enable-libopenjpeg --enable-libvpx --enable-mediafoundation --enable-libass --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-ffnvcodec --enable-nvdec --enable-nvenc --enable-dxva2 --enable-d3d11va --enable-libvpl --enable-libgme --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libtheora --enable-libvo-amrwbenc --enable-libgsm --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-librubberband
+  libavutil      58. 29.100 / 58. 29.100
+  libavcodec     60. 31.102 / 60. 31.102
+  libavformat    60. 16.100 / 60. 16.100
+  libavdevice    60.  3.100 / 60.  3.100
+  libavfilter     9. 12.100 /  9. 12.100
+  libswscale      7.  5.100 /  7.  5.100
+  libswresample   4. 12.100 /  4. 12.100
+  libpostproc    57.  3.100 / 57.  3.100
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'E:\Project\SideProject\Youtube\demo-vox-his\output\toyota-history-demo-30s.mp4':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf60.16.100
+  Duration: 00:00:30.00, start: 0.000000, bitrate: 947 kb/s
+  Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(progressive), 1920x1080, 935 kb/s, 30 fps, 30 tbr, 15360 tbn (default)
+    Metadata:
+      handler_name    : VideoHandler
+      vendor_id       : [0][0][0][0]
+      encoder         : Lavc60.31.102 libx264
+  Stream #0:1[0x2](und): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 2 kb/s (default)
+    Metadata:
+      handler_name    : SoundHandler
+      vendor_id       : [0][0][0][0]
+Stream mapping:
+  Stream #0:0 -> #0:0 (h264 (native) -> png (native))
+Press [q] to stop, [?] for help
+Output #0, image2, to 'E:\Project\SideProject\Youtube\demo-vox-his\toyota-demo\work\frame-05.png':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf60.16.100
+  Stream #0:0(und): Video: png, rgb24(pc, gbr/unknown/unknown, progressive), 1920x1080, q=2-31, 200 kb/s, 30 fps, 30 tbn (default)
+    Metadata:
+      handler_name    : VideoHandler
+      vendor_id       : [0][0][0][0]
+      encoder         : Lavc60.31.102 png
+frame=    0 fps=0.0 q=-0.0 size=       0kB time=00:00:00.00 bitrate=N/A speed=   0x    
+[image2 @ 000001da8e005180] The specified filename 'E:\Project\SideProject\Youtube\demo-vox-his\toyota-demo\work\frame-05.png' does not contain an image sequence pattern or a pattern is invalid.
+[image2 @ 000001da8e005180] Use a pattern such as %03d for an image sequence or use the -update option (with -frames:v 1 if needed) to write a single image.
+[out#0/image2 @ 000001da8db2e040] video:6kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: unknown
+frame=    1 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.00 bitrate=N/A speed=   0x    
+ffmpeg version 6.1.1-essentials_build-www.gyan.dev Copyright (c) 2000-2023 the FFmpeg developers
+  built with gcc 12.2.0 (Rev10, Built by MSYS2 project)
+  configuration: --enable-gpl --enable-version3 --enable-static --pkg-config=pkgconf --disable-w32threads --disable-autodetect --enable-fontconfig --enable-iconv --enable-gnutls --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-zlib --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-sdl2 --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxvid --enable-libaom --enable-libopenjpeg --enable-libvpx --enable-mediafoundation --enable-libass --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-ffnvcodec --enable-nvdec --enable-nvenc --enable-dxva2 --enable-d3d11va --enable-libvpl --enable-libgme --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libtheora --enable-libvo-amrwbenc --enable-libgsm --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-librubberband
+  libavutil      58. 29.100 / 58. 29.100
+  libavcodec     60. 31.102 / 60. 31.102
+  libavformat    60. 16.100 / 60. 16.100
+  libavdevice    60.  3.100 / 60.  3.100
+  libavfilter     9. 12.100 /  9. 12.100
+  libswscale      7.  5.100 /  7.  5.100
+  libswresample   4. 12.100 /  4. 12.100
+  libpostproc    57.  3.100 / 57.  3.100
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'E:\Project\SideProject\Youtube\demo-vox-his\output\toyota-history-demo-30s.mp4':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf60.16.100
+  Duration: 00:00:30.00, start: 0.000000, bitrate: 947 kb/s
+  Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(progressive), 1920x1080, 935 kb/s, 30 fps, 30 tbr, 15360 tbn (default)
+    Metadata:
+      handler_name    : VideoHandler
+      vendor_id       : [0][0][0][0]
+      encoder         : Lavc60.31.102 libx264
+  Stream #0:1[0x2](und): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 2 kb/s (default)
+    Metadata:
+      handler_name    : SoundHandler
+      vendor_id       : [0][0][0][0]
+Stream mapping:
+  Stream #0:0 -> #0:0 (h264 (native) -> png (native))
+Press [q] to stop, [?] for help
+Output #0, image2, to 'E:\Project\SideProject\Youtube\demo-vox-his\toyota-demo\work\frame-11.png':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf60.16.100
+  Stream #0:0(und): Video: png, rgb24(pc, gbr/unknown/unknown, progressive), 1920x1080, q=2-31, 200 kb/s, 30 fps, 30 tbn (default)
+    Metadata:
+      handler_name    : VideoHandler
+      vendor_id       : [0][0][0][0]
+      encoder         : Lavc60.31.102 png
+frame=    0 fps=0.0 q=-0.0 size=       0kB time=00:00:00.00 bitrate=N/A speed=   0x    
+[image2 @ 00000297a1bb5180] The specified filename 'E:\Project\SideProject\Youtube\demo-vox-his\toyota-demo\work\frame-11.png' does not contain an image sequence pattern or a pattern is invalid.
+[image2 @ 00000297a1bb5180] Use a pattern such as %03d for an image sequence or use the -update option (with -frames:v 1 if needed) to write a single image.
+[out#0/image2 @ 00000297a164e480] video:6kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: unknown
+frame=    1 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.00 bitrate=N/A speed=   0x    
+ffmpeg version 6.1.1-essentials_build-www.gyan.dev Copyright (c) 2000-2023 the FFmpeg developers
+  built with gcc 12.2.0 (Rev10, Built by MSYS2 project)
+  configuration: --enable-gpl --enable-version3 --enable-static --pkg-config=pkgconf --disable-w32threads --disable-autodetect --enable-fontconfig --enable-iconv --enable-gnutls --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-zlib --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-sdl2 --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxvid --enable-libaom --enable-libopenjpeg --enable-libvpx --enable-mediafoundation --enable-libass --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-ffnvcodec --enable-nvdec --enable-nvenc --enable-dxva2 --enable-d3d11va --enable-libvpl --enable-libgme --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libtheora --enable-libvo-amrwbenc --enable-libgsm --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-librubberband
+  libavutil      58. 29.100 / 58. 29.100
+  libavcodec     60. 31.102 / 60. 31.102
+  libavformat    60. 16.100 / 60. 16.100
+  libavdevice    60.  3.100 / 60.  3.100
+  libavfilter     9. 12.100 /  9. 12.100
+  libswscale      7.  5.100 /  7.  5.100
+  libswresample   4. 12.100 /  4. 12.100
+  libpostproc    57.  3.100 / 57.  3.100
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'E:\Project\SideProject\Youtube\demo-vox-his\output\toyota-history-demo-30s.mp4':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf60.16.100
+  Duration: 00:00:30.00, start: 0.000000, bitrate: 947 kb/s
+  Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(progressive), 1920x1080, 935 kb/s, 30 fps, 30 tbr, 15360 tbn (default)
+    Metadata:
+      handler_name    : VideoHandler
+      vendor_id       : [0][0][0][0]
+      encoder         : Lavc60.31.102 libx264
+  Stream #0:1[0x2](und): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 2 kb/s (default)
+    Metadata:
+      handler_name    : SoundHandler
+      vendor_id       : [0][0][0][0]
+Stream mapping:
+  Stream #0:0 -> #0:0 (h264 (native) -> png (native))
+Press [q] to stop, [?] for help
+Output #0, image2, to 'E:\Project\SideProject\Youtube\demo-vox-his\toyota-demo\work\frame-19.png':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf60.16.100
+  Stream #0:0(und): Video: png, rgb24(pc, gbr/unknown/unknown, progressive), 1920x1080, q=2-31, 200 kb/s, 30 fps, 30 tbn (default)
+    Metadata:
+      handler_name    : VideoHandler
+      vendor_id       : [0][0][0][0]
+      encoder         : Lavc60.31.102 png
+frame=    0 fps=0.0 q=-0.0 size=       0kB time=00:00:00.00 bitrate=N/A speed=   0x    
+[image2 @ 000002c62de35180] The specified filename 'E:\Project\SideProject\Youtube\demo-vox-his\toyota-demo\work\frame-19.png' does not contain an image sequence pattern or a pattern is invalid.
+[image2 @ 000002c62de35180] Use a pattern such as %03d for an image sequence or use the -update option (with -frames:v 1 if needed) to write a single image.
+[out#0/image2 @ 000002c62d8ee580] video:6kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: unknown
+frame=    1 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.00 bitrate=N/A speed=   0x    
+ffmpeg version 6.1.1-essentials_build-www.gyan.dev Copyright (c) 2000-2023 the FFmpeg developers
+  built with gcc 12.2.0 (Rev10, Built by MSYS2 project)
+  configuration: --enable-gpl --enable-version3 --enable-static --pkg-config=pkgconf --disable-w32threads --disable-autodetect --enable-fontconfig --enable-iconv --enable-gnutls --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-zlib --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-sdl2 --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxvid --enable-libaom --enable-libopenjpeg --enable-libvpx --enable-mediafoundation --enable-libass --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-ffnvcodec --enable-nvdec --enable-nvenc --enable-dxva2 --enable-d3d11va --enable-libvpl --enable-libgme --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libtheora --enable-libvo-amrwbenc --enable-libgsm --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-librubberband
+  libavutil      58. 29.100 / 58. 29.100
+  libavcodec     60. 31.102 / 60. 31.102
+  libavformat    60. 16.100 / 60. 16.100
+  libavdevice    60.  3.100 / 60.  3.100
+  libavfilter     9. 12.100 /  9. 12.100
+  libswscale      7.  5.100 /  7.  5.100
+  libswresample   4. 12.100 /  4. 12.100
+  libpostproc    57.  3.100 / 57.  3.100
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'E:\Project\SideProject\Youtube\demo-vox-his\output\toyota-history-demo-30s.mp4':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf60.16.100
+  Duration: 00:00:30.00, start: 0.000000, bitrate: 947 kb/s
+  Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(progressive), 1920x1080, 935 kb/s, 30 fps, 30 tbr, 15360 tbn (default)
+    Metadata:
+      handler_name    : VideoHandler
+      vendor_id       : [0][0][0][0]
+      encoder         : Lavc60.31.102 libx264
+  Stream #0:1[0x2](und): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 2 kb/s (default)
+    Metadata:
+      handler_name    : SoundHandler
+      vendor_id       : [0][0][0][0]
+Stream mapping:
+  Stream #0:0 -> #0:0 (h264 (native) -> png (native))
+Press [q] to stop, [?] for help
+Output #0, image2, to 'E:\Project\SideProject\Youtube\demo-vox-his\toyota-demo\work\frame-26.png':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf60.16.100
+  Stream #0:0(und): Video: png, rgb24(pc, gbr/unknown/unknown, progressive), 1920x1080, q=2-31, 200 kb/s, 30 fps, 30 tbn (default)
+    Metadata:
+      handler_name    : VideoHandler
+      vendor_id       : [0][0][0][0]
+      encoder         : Lavc60.31.102 png
+frame=    0 fps=0.0 q=-0.0 size=       0kB time=00:00:00.00 bitrate=N/A speed=   0x    
+[image2 @ 0000017422df5180] The specified filename 'E:\Project\SideProject\Youtube\demo-vox-his\toyota-demo\work\frame-26.png' does not contain an image sequence pattern or a pattern is invalid.
+[image2 @ 0000017422df5180] Use a pattern such as %03d for an image sequence or use the -update option (with -frames:v 1 if needed) to write a single image.
+[out#0/image2 @ 000001742285e7c0] video:6kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: unknown
+frame=    1 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.00 bitrate=N/A speed=   0x    

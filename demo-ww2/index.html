@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="vi" data-resolution="landscape">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Quân Phạm Quang - 30s Exact Recreated Demo</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --yellow-hl: #ffb700;
+        --dark-box: #151515;
+        --font-headline: 'Oswald', sans-serif;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html, body {
+        margin: 0;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: #000;
+        font-family: var(--font-headline);
+      }
+      #root {
+        position: relative;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: #000;
+      }
+
+      .scene {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+      .bg-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      /* ================= SCENE 1 STYLING ================= */
+      .badge-container {
+        position: absolute;
+        top: 36px;
+        left: 56px;
+        display: flex;
+        align-items: center;
+        z-index: 10;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+      }
+      .badge-yellow {
+        background: var(--yellow-hl);
+        color: #000;
+        font-family: var(--font-headline);
+        font-size: 58px;
+        font-weight: 700;
+        padding: 4px 28px;
+        letter-spacing: 0.5px;
+      }
+      .badge-black {
+        background: var(--dark-box);
+        color: #fff;
+        font-family: var(--font-headline);
+        font-size: 58px;
+        font-weight: 700;
+        padding: 4px 28px;
+        letter-spacing: 1px;
+      }
+
+      .map-callout-bottom {
+        position: absolute;
+        bottom: 120px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #111;
+        color: #fff;
+        font-family: var(--font-headline);
+        font-size: 46px;
+        font-weight: 700;
+        padding: 8px 44px;
+        border: 2px solid rgba(255,255,255,0.18);
+        border-radius: 4px;
+        box-shadow: 0 12px 30px rgba(0,0,0,0.8);
+        z-index: 20;
+      }
+
+      /* ================= SCENE 2 & 3: SCRAPBOOK STYLING ================= */
+      .headline-container {
+        position: absolute;
+        top: 32px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        z-index: 20;
+      }
+      .headline-row {
+        display: flex;
+        align-items: center;
+        font-size: 72px;
+        font-weight: 700;
+        color: #0b0f14;
+        letter-spacing: 2px;
+        line-height: 1.1;
+      }
+      .hl-box {
+        position: relative;
+        display: inline-block;
+        padding: 0 12px;
+        margin: 0 10px;
+        isolation: isolate;
+      }
+      .hl-bg {
+        position: absolute;
+        top: 6px;
+        left: 0;
+        width: 100%;
+        height: 82%;
+        background: var(--yellow-hl);
+        z-index: -1;
+        transform-origin: left center;
+      }
+      .black-sub-box {
+        background: #111;
+        color: #fff;
+        font-size: 46px;
+        font-weight: 700;
+        padding: 4px 32px;
+        letter-spacing: 1.5px;
+        margin-top: 10px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      }
+
+      /* Individual Polaroids positioned exactly as in competitor frame */
+      .polaroid-img {
+        position: absolute;
+        box-shadow: 0 20px 45px rgba(0,0,0,0.35);
+        z-index: 10;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="30"
+      data-width="1920"
+      data-height="1080"
+    >
+      <!-- Audio Track with Competitor Voiceover & Audio Design -->
+      <audio id="audio" src="assets/competitor_audio.mp3" data-start="0" data-duration="30"></audio>
+
+      <!-- ================= SCENE 1: MAP SCENE (0 - 13s) ================= -->
+      <div
+        id="scene1"
+        class="clip scene"
+        data-start="0"
+        data-duration="13"
+        data-track-index="1"
+      >
+        <div id="s1-content" style="width:100%; height:100%; position:relative;">
+          <img class="bg-img" id="s1-bg" src="assets/competitor_map.jpg" alt="Map" />
+
+          <!-- Top-Left Badge -->
+          <div class="badge-container" id="s1-badge">
+            <div class="badge-yellow">TỐI 31/8/1939</div>
+            <div class="badge-black">GLEIWITZ</div>
+          </div>
+
+          <!-- Bottom Callout (Appears at 7s) -->
+          <div class="map-callout-bottom" id="s1-callout">
+            7 NGƯỜI MẶC ĐỒ BA LAN
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= SCENE 2: SCRAPBOOK 1 (13 - 22s) ================= -->
+      <div
+        id="scene2"
+        class="clip scene"
+        data-start="13"
+        data-duration="9"
+        data-track-index="1"
+      >
+        <div id="s2-content" style="width:100%; height:100%; position:relative;">
+          <!-- 100% Clean Crumpled Paper Texture Background -->
+          <img class="bg-img" src="assets/clean_paper_bg.jpg" alt="Paper" />
+
+          <!-- Top Center Headline: NỔ SÚNG [KHỐNG CHẾ] ĐÀI -->
+          <div class="headline-container" id="s2-headline">
+            <div class="headline-row">
+              <span>NỔ SÚNG</span>
+              <span class="hl-box">
+                <span class="hl-bg" id="s2-hl"></span>
+                <span>KHỐNG CHẾ</span>
+              </span>
+              <span>ĐÀI</span>
+            </div>
+          </div>
+
+          <!-- Announcer in Studio (Left) -->
+          <img
+            class="polaroid-img"
+            id="s2-img-left"
+            src="assets/photo_announcer.jpg"
+            style="top: 170px; left: 130px; width: 750px; height: 720px;"
+            alt="Announcer"
+          />
+
+          <!-- Gleiwitz Radio Tower (Right) -->
+          <img
+            class="polaroid-img"
+            id="s2-img-right"
+            src="assets/photo_tower.jpg"
+            style="top: 170px; left: 1150px; width: 560px; height: 720px;"
+            alt="Tower"
+          />
+        </div>
+      </div>
+
+      <!-- ================= SCENE 3: SCRAPBOOK 2 (22 - 30s) ================= -->
+      <div
+        id="scene3"
+        class="clip scene"
+        data-start="22"
+        data-duration="8"
+        data-track-index="1"
+      >
+        <div id="s3-content" style="width:100%; height:100%; position:relative;">
+          <!-- Clean Crumpled Paper Texture Background -->
+          <img class="bg-img" src="assets/clean_paper_bg.jpg" alt="Paper" />
+
+          <!-- Headline: ĐỂ LẠI [XÁC MẶC] ĐỒ BA LAN -->
+          <div class="headline-container" id="s3-headline">
+            <div class="headline-row">
+              <span>ĐỂ LẠI</span>
+              <span class="hl-box">
+                <span class="hl-bg" id="s3-hl"></span>
+                <span>XÁC MẶC</span>
+              </span>
+            </div>
+            <div class="black-sub-box" id="s3-sub-box">ĐỒ BA LAN</div>
+          </div>
+
+          <!-- Ditch Bodies (Left) -->
+          <img
+            class="polaroid-img"
+            id="s3-img-left"
+            src="assets/photo_bodies.jpg"
+            style="top: 250px; left: 70px; width: 890px; height: 570px;"
+            alt="Bodies"
+          />
+
+          <!-- Armored Vehicle (Right) -->
+          <img
+            class="polaroid-img"
+            id="s3-img-right"
+            src="assets/photo_armored.jpg"
+            style="top: 180px; left: 1040px; width: 800px; height: 700px;"
+            alt="Armored Car"
+          />
+        </div>
+      </div>
+    </div>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+
+      // ----------------- Scene 1 Animations (0 - 13s) -----------------
+      tl.fromTo("#s1-bg", { scale: 1.0, x: 0, y: 0 }, { scale: 1.05, x: -20, y: -10, duration: 13, ease: "none" }, 0);
+      tl.fromTo("#s1-badge", { y: -50, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power2.out" }, 0.2);
+      tl.fromTo("#s1-callout", { scale: 0.8, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.4, ease: "back.out(2)" }, 7.5);
+
+      // ----------------- Scene 2 Animations (13 - 22s) -----------------
+      tl.fromTo("#s2-content", { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "power2.out" }, 13.0);
+      tl.fromTo("#s2-img-left", { y: -30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, 13.2);
+      tl.fromTo("#s2-img-right", { y: -30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, 13.3);
+      // Highlighter wipe on "KHỐNG CHẾ"
+      tl.fromTo("#s2-hl", { scaleX: 0 }, { scaleX: 1, duration: 0.45, ease: "power2.out" }, 14.5);
+
+      // ----------------- Scene 3 Animations (22 - 30s) -----------------
+      tl.fromTo("#s3-content", { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "power2.out" }, 22.0);
+      tl.fromTo("#s3-img-left", { y: -30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, 22.2);
+      tl.fromTo("#s3-img-right", { y: -30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, 22.3);
+      // Highlighter wipe on "XÁC MẶC"
+      tl.fromTo("#s3-hl", { scaleX: 0 }, { scaleX: 1, duration: 0.45, ease: "power2.out" }, 23.5);
+      tl.fromTo("#s3-sub-box", { scale: 0.8, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.4, ease: "back.out(2)" }, 24.2);
+
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>

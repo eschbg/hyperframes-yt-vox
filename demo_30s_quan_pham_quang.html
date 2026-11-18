@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo 30s Motion Video - Chuẩn Phong Cách Quân Phạm Quang</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Special+Elite&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; user-select: none; }
+    body {
+      background-color: #080c10;
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      overflow-x: hidden;
+      padding: 16px;
+    }
+    .header-bar {
+      margin-bottom: 12px;
+      text-align: center;
+    }
+    .header-bar h1 {
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: 1.5px;
+      color: #ffd700;
+      text-transform: uppercase;
+      text-shadow: 0 0 12px rgba(255, 215, 0, 0.4);
+    }
+    .header-bar p {
+      font-size: 13px;
+      color: #94a3b8;
+      margin-top: 4px;
+    }
+    .video-viewport {
+      position: relative;
+      width: 1080px;
+      height: 608px;
+      background: #0d131a;
+      border: 3px solid #1e293b;
+      border-radius: 8px;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9), 0 0 35px rgba(217, 4, 41, 0.25);
+      overflow: hidden;
+    }
+    canvas#stage {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+    /* Film Grain Overlay */
+    .film-grain {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 5;
+      opacity: 0.14;
+      background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><filter id="noiseFilter"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noiseFilter)"/></svg>');
+    }
+    /* Vignette & Cinematic Lighting */
+    .vignette {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 6;
+      box-shadow: inset 0 0 140px rgba(0, 0, 0, 0.9);
+      background: radial-gradient(circle, transparent 50%, rgba(0,0,0,0.75) 100%);
+    }
+    /* Controls bar */
+    .controls-panel {
+      width: 1080px;
+      margin-top: 14px;
+      background: #111823;
+      border: 1px solid #1e293b;
+      border-radius: 8px;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .btn-play {
+      background: #d90429;
+      color: white;
+      border: none;
+      padding: 10px 24px;
+      font-size: 14px;
+      font-weight: 800;
+      border-radius: 6px;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn-play:hover {
+      background: #ef233c;
+      transform: translateY(-1px);
+      box-shadow: 0 0 15px rgba(217, 4, 41, 0.5);
+    }
+    .timeline-container {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .timeline-bar {
+      position: relative;
+      width: 100%;
+      height: 8px;
+      background: #1e293b;
+      border-radius: 4px;
+      cursor: pointer;
+      overflow: hidden;
+    }
+    .timeline-progress {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #ffb703, #d90429);
+      transition: width 0.05s linear;
+    }
+    .time-display {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      color: #94a3b8;
+      font-family: monospace;
+      font-weight: bold;
+    }
+    .cue-label {
+      color: #ffb703;
+      font-weight: 700;
+    }
+    /* Live Subtitle Card */
+    .vo-subtitle-card {
+      width: 1080px;
+      margin-top: 10px;
+      background: #0f1622;
+      border-left: 4px solid #ffd700;
+      padding: 12px 20px;
+      border-radius: 0 6px 6px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .vo-tag {
+      font-size: 11px;
+      font-weight: 800;
+      color: #ffd700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .vo-text {
+      font-size: 15px;
+      line-height: 1.4;
+      color: #f1f5f9;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header-bar">
+    <h1>🎬 DEMO 30S ĐỒ HỌA TƯ LIỆU THẬT - PHONG CÁCH QUÂN PHẠM QUANG</h1>
+    <p>Tích hợp hình ảnh tư liệu lịch sử thực tế, bản đồ tác chiến chuẩn xác, chuyển động Ken Burns & âm thanh A/V</p>
+  </div>
+
+  <div class="video-viewport" id="viewport">
+    <canvas id="stage" width="1280" height="720"></canvas>
+    <div class="film-grain"></div>
+    <div class="vignette"></div>
+  </div>
+
+  <div class="controls-panel">
+    <button class="btn-play" id="playBtn">▶ PHÁT VIDEO DEMO (30S)</button>
+    <div class="timeline-container">
+      <div class="timeline-bar" id="timelineBar">
+        <div class="timeline-progress" id="timelineProgress"></div>
+      </div>
+      <div class="time-display">
+        <span id="currentTime">00:00.00 / 00:30.00</span>
+        <span class="cue-label" id="currentCue">CẢNH 1: MÀN KỊCH GLEIWITZ (0:00 - 0:06)</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="vo-subtitle-card">
+    <div class="vo-tag" id="voTag">[VO] LỜI THOẠI TRỰC TIẾP</div>
+    <div class="vo-text" id="voText">Nhấn nút "Phát Video Demo" để trải nghiệm toàn bộ âm thanh, hình ảnh tư liệu thật và nhịp dựng 30 giây...</div>
+  </div>
+
+  <script>
+    const canvas = document.getElementById('stage');
+    const ctx = canvas.getContext('2d');
+    const playBtn = document.getElementById('playBtn');
+    const progressBar = document.getElementById('timelineProgress');
+    const currentTimeText = document.getElementById('currentTime');
+    const currentCueText = document.getElementById('currentCue');
+    const voText = document.getElementById('voText');
+    const voTag = document.getElementById('voTag');
+
+    const TOTAL_DURATION = 30.0;
+    let isPlaying = false;
+    let startTime = 0;
+    let elapsed = 0;
+    let animFrameId = null;
+
+    // Load authentic image assets
+    const images = {};
+    const assetSources = {
+      gleiwitz: 'assets/gleiwitz_incident.jpg',
+      map: 'assets/battle_poland.png',
+      border: 'assets/border_crossing.jpg',
+      warship: 'assets/warship.jpg',
+      stuka: 'assets/stuka.jpg',
+      beethoven: 'assets/ludwig_van_beethoven.jpg',
+      hitler: 'assets/hitler.jpg'
+    };
+
+    let assetsLoaded = 0;
+    const totalAssets = Object.keys(assetSources).length;
+    for (let key in assetSources) {
+      const img = new Image();
+      img.src = assetSources[key];
+      img.onload = () => {
+        assetsLoaded++;
+        if (assetsLoaded === totalAssets) {
+          render(0);
+        }
+      };
+      images[key] = img;
+    }
+
+    // --- Web Audio Synthesizer (Realistic SFX) ---
+    let audioCtx = null;
+    function initAudio() {
+      if (!audioCtx) {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      }
+      if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+    }
+
+    function playBassDrop() {
+      if (!audioCtx) return;
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(140, audioCtx.currentTime);
+      osc.frequency.exponentialRampToValueAtTime(28, audioCtx.currentTime + 1.2);
+      gain.gain.setValueAtTime(0.8, audioCtx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 1.2);
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+      osc.start();
+      osc.stop(audioCtx.currentTime + 1.2);
+    }
+
+    function playWhoosh() {
+      if (!audioCtx) return;
+      const bufferSize = audioCtx.sampleRate * 0.4;
+      const buffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+      const data = buffer.getChannelData(0);
+      for (let i = 0; i < bufferSize; i++) data[i] = Math.random() * 2 - 1;
+      const noise = audioCtx.createBufferSource();
+      noise.buffer = buffer;
+      const filter = audioCtx.createBiquadFilter();
+      filter.type = 'bandpass';
+      filter.frequency.setValueAtTime(250, audioCtx.currentTime);
+      filter.frequency.exponentialRampToValueAtTime(2800, audioCtx.currentTime + 0.2);
+      filter.frequency.exponentialRampToValueAtTime(120, audioCtx.currentTime + 0.4);
+      const gain = audioCtx.createGain();
+      gain.gain.setValueAtTime(0.5, audioCtx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.4);
+      noise.connect(filter);
+      filter.connect(gain);
+      gain.connect(audioCtx.destination);
+      noise.start();
+    }
+
+    function playRadioTone() {
+      if (!audioCtx) return;
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(950, audioCtx.currentTime);
+      gain.gain.setValueAtTime(0.18, audioCtx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.2);
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+      osc.start();
+      osc.stop(audioCtx.currentTime + 0.2);
+    }
+
+    const soundTriggers = [
+      { time: 0.1, fired: false, action: () => playRadioTone() },
+      { time: 2.2, fired: false, action: () => playWhoosh() },
+      { time: 6.0, fired: false, action: () => playBassDrop() },
+      { time: 13.5, fired: false, action: () => playBassDrop() },
+      { time: 21.0, fired: false, action: () => playWhoosh() },
+      { time: 22.0, fired: false, action: () => playRadioTone() }
+    ];
+
+    function resetTriggers() {
+      soundTriggers.forEach(t => t.fired = false);
+    }
+
+    // Script Cues
+    const scriptCues = [
+      {
+        start: 0, end: 6.0,
+        cueTitle: "CẢNH 1: MÀN KỊCH GLEIWITZ (0:00 - 0:06)",
+        vo: "Vào đúng 8 giờ tối ngày 31 tháng 8 năm 1939... Một màn kịch vỏn vẹn đúng 4 phút tại đài phát thanh Gleiwitz...",
+      },
+      {
+        start: 6.0, end: 13.5,
+        cueTitle: "CẢNH 2: BLITZKRIEG XÂM LƯỢC BA LAN (0:06 - 0:13)",
+        vo: "...đã chính thức châm ngòi cho thảm họa kinh hoàng nhất lịch sử nhân loại: CHIẾN TRANH THẾ GIỚI THỨ HAI!",
+      },
+      {
+        start: 13.5, end: 22.0,
+        cueTitle: "CẢNH 3: CON SỐ MÁU 85 TRIỆU NGƯỜI (0:13 - 0:22)",
+        vo: "Kéo dài đúng 6 năm, cuốn hơn 60 quốc gia vào vòng khói lửa, và cướp đi sinh mạng của hơn 85 TRIỆU NGƯỜI!",
+      },
+      {
+        start: 22.0, end: 30.0,
+        cueTitle: "CẢNH 4: NGHỊCH LÝ MỞ ĐẦU (0:22 - 0:30)",
+        vo: "Nhưng tại sao một dân tộc văn minh với những triết gia vĩ đại... lại tự nguyện trao vận mệnh vào tay một kẻ độc tài?",
+      }
+    ];
+
+    // Helper: Draw Ken Burns Image
+    function drawKenBurns(img, tProg, zStart, zEnd, panX, panY, destW = 1280, destH = 720) {
+      if (!img.complete || img.naturalWidth === 0) return;
+      const zoom = zStart + (zEnd - zStart) * tProg;
+      const w = img.naturalWidth;
+      const h = img.naturalHeight;
+      const cropW = w / zoom;
+      const cropH = h / zoom;
+      const cx = w * (0.5 + panX * tProg);
+      const cy = h * (0.5 + panY * tProg);
+      const sx = Math.max(0, Math.min(cx - cropW / 2, w - cropW));
+      const sy = Math.max(0, Math.min(cy - cropH / 2, h - cropH));
+      ctx.drawImage(img, sx, sy, cropW, cropH, 0, 0, destW, destH);
+    }
+
+    function render(t) {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      let currentCue = scriptCues.find(c => t >= c.start && t < c.end) || scriptCues[scriptCues.length - 1];
+      currentCueText.innerText = currentCue.cueTitle;
+      voText.innerText = `"${currentCue.vo}"`;
+
+      soundTriggers.forEach(tr => {
+        if (t >= tr.time && !tr.fired) {
+          tr.fired = true;
+          tr.action();
+        }
+      });
+
+      // Camera shake on bass drop
+      let shakeX = 0, shakeY = 0;
+      if (t >= 6.0 && t <= 6.8) {
+        const decay = 1 - (t - 6.0) / 0.8;
+        shakeX = (Math.random() - 0.5) * 20 * decay;
+        shakeY = (Math.random() - 0.5) * 20 * decay;
+      }
+
+      ctx.save();
+      ctx.translate(shakeX, shakeY);
+
+      if (t < 6.0) {
+        renderScene1(t);
+      } else if (t < 13.5) {
+        renderScene2(t - 6.0);
+      } else if (t < 22.0) {
+        renderScene3(t - 13.5);
+      } else {
+        renderScene4(t - 22.0);
+      }
+
+      ctx.restore();
+
+      // Top-Right Tactical HUD
+      renderTacticalHUD(t);
+    }
+
+    // SCENE 1: Authentic Gleiwitz Radio Tower
+    function renderScene1(t) {
+      const prog = t / 6.0;
+      drawKenBurns(images.gleiwitz, prog, 1.0, 1.18, 0.04, -0.04);
+
+      // Dark military navy overlay
+      ctx.fillStyle = 'rgba(10, 18, 28, 0.65)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      // Pulse wave from mast
+      const r = (t * 120) % 360;
+      ctx.strokeStyle = `rgba(217, 4, 41, ${1 - r/360})`;
+      ctx.lineWidth = 3;
+      ctx.beginPath();
+      ctx.arc(420, 260, r, 0, Math.PI * 2);
+      ctx.stroke();
+
+      // Dossier card on right
+      const bx = 680, by = 130;
+      ctx.fillStyle = 'rgba(13, 20, 30, 0.9)';
+      ctx.fillRect(bx, by, 520, 360);
+      ctx.strokeStyle = '#d90429';
+      ctx.lineWidth = 2;
+      ctx.strokeRect(bx, by, 520, 360);
+
+      ctx.fillStyle = '#d90429';
+      ctx.font = '900 16px Montserrat';
+      ctx.fillText('[ TỐI MẬT - CHIẾN DỊCH HIMMLER ]', bx + 30, by + 45);
+
+      const dateStr = "31.08.1939 | 20:00";
+      const typedLen = Math.min(dateStr.length, Math.floor(t * 10));
+      ctx.fillStyle = '#ffd700';
+      ctx.font = '900 36px Montserrat';
+      ctx.fillText(dateStr.substring(0, typedLen), bx + 30, by + 95);
+
+      ctx.fillStyle = '#f1f5f9';
+      ctx.font = '700 20px Montserrat';
+      ctx.fillText('ĐỊA ĐIỂM: ĐÀI PHÁT THANH GLEIWITZ', bx + 30, by + 145);
+      ctx.fillStyle = '#94a3b8';
+      ctx.font = '16px Montserrat';
+      ctx.fillText('(Biên giới Đức - Ba Lan)', bx + 30, by + 175);
+
+      // Yellow highlighter wipe
+      const hw = Math.min(460, Math.max(0, (t - 2.5) * 260));
+      if (hw > 0) {
+        ctx.fillStyle = '#ffd700';
+        ctx.fillRect(bx + 25, by + 210, hw, 50);
+        ctx.fillStyle = '#0b0f14';
+        ctx.font = '900 20px Montserrat';
+        ctx.fillText('THỜI GIAN: VỎN VẸN 4 PHÚT', bx + 40, by + 242);
+      }
+
+      ctx.fillStyle = '#cbd5e1';
+      ctx.font = '16px Montserrat';
+      ctx.fillText('Màn kịch lính SS giả danh quân Ba Lan nổ súng...', bx + 30, by + 300);
+    }
+
+    // SCENE 2: Real Invasion Map & Border Crossing Photo
+    function renderScene2(t) {
+      const prog = t / 7.5;
+      drawKenBurns(images.map, prog, 1.15, 1.35, 0.08, 0.06);
+
+      ctx.fillStyle = 'rgba(12, 20, 32, 0.45)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      // Border crossing photo frame (polaroid / sticker style)
+      const bx = 810, by = 170, bw = 410, bh = 270;
+      ctx.fillStyle = 'rgba(15, 23, 42, 0.9)';
+      ctx.fillRect(bx - 10, by - 10, bw + 20, bh + 45);
+      ctx.strokeStyle = '#d90429';
+      ctx.lineWidth = 2;
+      ctx.strokeRect(bx - 10, by - 10, bw + 20, bh + 45);
+      if (images.border.complete) {
+        ctx.drawImage(images.border, bx, by, bw, bh);
+      }
+      ctx.fillStyle = '#ffd700';
+      ctx.font = '800 14px Montserrat';
+      ctx.fillText('Quân Đức phá rào chắn biên giới Ba Lan (1/9/1939)', bx + 10, by + bh + 24);
+
+      // Blitzkrieg Attack Arrows
+      const arrowLen = Math.min(380, prog * 550);
+      ctx.strokeStyle = '#ffd700';
+      ctx.lineWidth = 8;
+      ctx.lineCap = 'round';
+      [310, 410, 510].forEach(y => {
+        ctx.beginPath();
+        ctx.moveTo(240, y);
+        ctx.lineTo(240 + arrowLen, y);
+        ctx.stroke();
+
+        if (arrowLen > 25) {
+          ctx.fillStyle = '#ffd700';
+          ctx.beginPath();
+          ctx.moveTo(240 + arrowLen + 18, y);
+          ctx.lineTo(240 + arrowLen - 6, y - 12);
+          ctx.lineTo(240 + arrowLen - 6, y + 12);
+          ctx.fill();
+        }
+      });
+
+      // Main Top Banner
+      ctx.fillStyle = 'rgba(13, 20, 30, 0.92)';
+      ctx.fillRect(140, 45, 1000, 75);
+      ctx.strokeStyle = '#d90429';
+      ctx.lineWidth = 3;
+      ctx.strokeRect(140, 45, 1000, 75);
+      ctx.fillStyle = '#ffffff';
+      ctx.font = '900 32px Montserrat';
+      ctx.textAlign = 'center';
+      ctx.fillText('CHIẾN TRANH THẾ GIỚI THỨ HAI BÙNG NỔ', 640, 95);
+      ctx.textAlign = 'left';
+    }
+
+    // SCENE 3: Dual Archival Warships & 85 Million Deaths
+    function renderScene3(t) {
+      const prog = t / 8.5;
+      drawKenBurns(images.warship, prog, 1.0, 1.25, -0.06, 0.0);
+
+      // Dark red vignette
+      ctx.fillStyle = 'rgba(25, 5, 5, 0.72)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      const count = Math.min(85, Math.floor(prog * 120));
+      ctx.textAlign = 'center';
+      ctx.fillStyle = '#ef4444';
+      ctx.font = '900 20px Montserrat';
+      ctx.fillText('CON SỐ THƯƠNG VONG TÀN KHỐC NHẤT LỊCH SỬ', 640, 160);
+
+      ctx.fillStyle = '#ffd700';
+      ctx.font = '900 82px Montserrat';
+      ctx.fillText(`${count}.000.000`, 640, 260);
+
+      ctx.fillStyle = '#ffffff';
+      ctx.font = '900 36px Montserrat';
+      ctx.fillText('SINH MẠNG BỊ CƯỚP ĐI', 640, 335);
+
+      // Badges
+      const bw = 360, bh = 70;
+      ctx.fillStyle = 'rgba(15, 23, 42, 0.88)';
+      ctx.fillRect(640 - bw - 20, 410, bw, bh);
+      ctx.fillRect(640 + 20, 410, bw, bh);
+      ctx.strokeStyle = '#ffd700';
+      ctx.lineWidth = 2;
+      ctx.strokeRect(640 - bw - 20, 410, bw, bh);
+      ctx.strokeRect(640 + 20, 410, bw, bh);
+
+      ctx.fillStyle = '#f1f5f9';
+      ctx.font = '800 20px Montserrat';
+      ctx.fillText('⏱ KÉO DÀI ĐÚNG 6 NĂM', 640 - bw/2 - 20, 452);
+      ctx.fillText('🌍 HƠN 60 QUỐC GIA', 640 + bw/2 + 20, 452);
+      ctx.textAlign = 'left';
+    }
+
+    // SCENE 4: Beethoven vs Hitler Split Screen
+    function renderScene4(t) {
+      const prog = t / 8.0;
+
+      // Left Beethoven
+      ctx.save();
+      ctx.beginPath();
+      ctx.rect(0, 0, 640, 720);
+      ctx.clip();
+      drawKenBurns(images.beethoven, prog, 1.0, 1.15, 0.0, -0.04, 1280, 720);
+      ctx.fillStyle = 'rgba(14, 30, 50, 0.6)';
+      ctx.fillRect(0, 0, 640, 720);
+      ctx.restore();
+
+      // Right Hitler
+      ctx.save();
+      ctx.beginPath();
+      ctx.rect(640, 0, 640, 720);
+      ctx.clip();
+      ctx.translate(640, 0);
+      drawKenBurns(images.hitler, prog, 1.0, 1.15, 0.0, -0.04, 640, 720);
+      ctx.fillStyle = 'rgba(50, 10, 10, 0.65)';
+      ctx.fillRect(0, 0, 640, 720);
+      ctx.restore();
+
+      // Gold Divider line
+      ctx.strokeStyle = '#ffd700';
+      ctx.lineWidth = 4;
+      ctx.beginPath();
+      ctx.moveTo(640, 0); ctx.lineTo(640, 720);
+      ctx.stroke();
+
+      // Left Card
+      ctx.fillStyle = 'rgba(10, 22, 40, 0.88)';
+      ctx.fillRect(50, 75, 540, 85);
+      ctx.strokeStyle = '#38bdf8';
+      ctx.lineWidth = 2;
+      ctx.strokeRect(50, 75, 540, 85);
+      ctx.textAlign = 'center';
+      ctx.fillStyle = '#38bdf8';
+      ctx.font = '900 20px Montserrat';
+      ctx.fillText('ĐẤT NƯỚC CỦA TRIẾT GIA & VĂN MINH', 320, 110);
+      ctx.fillStyle = '#e2e8f0';
+      ctx.font = '700 16px Montserrat';
+      ctx.fillText('Kant • Beethoven • Goethe • Bach', 320, 140);
+
+      // Right Card
+      ctx.fillStyle = 'rgba(40, 10, 10, 0.88)';
+      ctx.fillRect(690, 75, 540, 85);
+      ctx.strokeStyle = '#d90429';
+      ctx.strokeRect(690, 75, 540, 85);
+      ctx.fillStyle = '#ef4444';
+      ctx.font = '900 20px Montserrat';
+      ctx.fillText('CỖ MÁY ĐỘC TÀI PHÁT XÍT', 960, 110);
+      ctx.fillStyle = '#fca5a5';
+      ctx.font = '700 16px Montserrat';
+      ctx.fillText('Quân phiệt • Cuồng tín • Diệt chủng', 960, 140);
+
+      // Big Bottom Yellow Ribbon
+      ctx.fillStyle = '#ffd700';
+      ctx.fillRect(80, 520, 1120, 75);
+      ctx.fillStyle = '#0b0f14';
+      ctx.font = '900 28px Montserrat';
+      ctx.fillText('TẠI SAO NGƯỜI ĐỨC LẠI TỰ NGUYỆN TRAO QUYỀN LỰC?', 640, 567);
+      ctx.textAlign = 'left';
+    }
+
+    function renderTacticalHUD(t) {
+      ctx.save();
+      ctx.textAlign = 'right';
+      ctx.fillStyle = '#ffd700';
+      ctx.font = '900 13px Montserrat';
+      ctx.fillText('QUÂN PHẠM QUANG • A/V ENGINE', canvas.width - 35, 35);
+      ctx.fillStyle = '#94a3b8';
+      ctx.font = 'bold 12px monospace';
+      ctx.fillText(`TIMECODE: 00:${String(Math.floor(t)).padStart(2,'0')}.${String(Math.floor((t%1)*100)).padStart(2,'0')}`, canvas.width - 35, 55);
+      ctx.restore();
+    }
+
+    // Playback loop
+    function loop(timestamp) {
+      if (!startTime) startTime = timestamp;
+      elapsed = (timestamp - startTime) / 1000;
+
+      if (elapsed >= TOTAL_DURATION) {
+        elapsed = TOTAL_DURATION;
+        render(elapsed);
+        stopPlayback();
+        return;
+      }
+
+      render(elapsed);
+      updateUI(elapsed);
+      animFrameId = requestAnimationFrame(loop);
+    }
+
+    function updateUI(t) {
+      const pct = (t / TOTAL_DURATION) * 100;
+      progressBar.style.width = `${pct}%`;
+      const s = Math.floor(t);
+      const ms = Math.floor((t % 1) * 100);
+      currentTimeText.innerText = `00:${String(s).padStart(2, '0')}.${String(ms).padStart(2, '0')} / 00:30.00`;
+    }
+
+    function startPlayback() {
+      initAudio();
+      resetTriggers();
+      isPlaying = true;
+      startTime = performance.now() - (elapsed * 1000);
+      playBtn.innerText = '⏸ TẠM DỪNG';
+      playBtn.style.background = '#eab308';
+      animFrameId = requestAnimationFrame(loop);
+    }
+
+    function stopPlayback() {
+      isPlaying = false;
+      playBtn.innerText = '▶ PHÁT LẠI DEMO';
+      playBtn.style.background = '#d90429';
+      if (animFrameId) cancelAnimationFrame(animFrameId);
+    }
+
+    playBtn.addEventListener('click', () => {
+      if (isPlaying) {
+        stopPlayback();
+      } else {
+        if (elapsed >= TOTAL_DURATION) elapsed = 0;
+        startPlayback();
+      }
+    });
+  </script>
+</body>
+</html>

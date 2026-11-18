@@ -1,0 +1,42 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Nested Git Repositories
+hyperframes/
+
+# HyperFrames Cache & Runtime States
+.hyperframes/
+.cache/
+.transcode-cache/
+**/.transcode-cache/
+
+# Python Cache & Virtual Environments
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+env/
+venv/
+
+# Build & Rendered Output Artifacts
+output/
+**/output/
+output_*.mp4
+**/output_*.mp4
+*.tmp
+*.mp4.tmp
+tmp_*
+*raw.mp4
+**/assets/video/*raw.mp4
+demo-tsmc/output_tsmc_act1.mp4
+
+# Root video test renders & sample downloads
+/*.mp4
+/*.webm
+demo-ww2/*.mp4
+
+# OS generated files
+.DS_Store
+Thumbs.db
+desktop.ini
