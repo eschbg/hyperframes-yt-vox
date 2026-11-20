@@ -7,9 +7,26 @@ hyperframes/
 
 # HyperFrames Cache & Runtime States
 .hyperframes/
+**/.hyperframes/
 .cache/
+**/.cache/
 .transcode-cache/
 **/.transcode-cache/
+.thumbnails/
+**/.thumbnails/
+.waveform-cache/
+**/.waveform-cache/
+renders/
+**/renders/
+
+# Temporary and backup files
+*.bak
+*.bak.*
+*.orig.*
+temp_*/
+snapshots_*/
+ref_*_frames/
+**/assets/sfx_original_backup/
 
 # Python Cache & Virtual Environments
 __pycache__/

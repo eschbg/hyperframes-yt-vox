@@ -12,11 +12,11 @@
 
     <style>
       :root {
-        /* Authentic Vox Vintage Gold Palette */
-        --gold-canvas-light: #f3e8d2;
-        --gold-canvas-mid: #eadbc4;
-        --gold-canvas-dark: #d8c39e;
-        --gold-canvas-shadow: #bfa47a;
+        /* Clean Modern Manila Archival Office Dossier Palette (#F3E8D2) */
+        --gold-canvas-light: #fbf7ee;
+        --gold-canvas-mid: #f3e8d2; /* Exact user recommended Manila Folder tone */
+        --gold-canvas-dark: #ebe0c8;
+        --gold-canvas-shadow: #dfd2b5;
         --ink-black: #181512;
         --ink-slate: #2c2925;
         --stamp-red: #c02626;
@@ -64,16 +64,31 @@
         z-index: 80;
       }
 
-      /* Tea-Stain Aged Vignette */
+      /* Clean Modern Archival Vignette (No medieval burnt edges) */
       .persistent-vignette {
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background: radial-gradient(ellipse at center, transparent 40%, rgba(138, 106, 62, 0.45) 85%, rgba(87, 63, 33, 0.75) 100%);
+        background: radial-gradient(ellipse at center, transparent 60%, rgba(180, 165, 135, 0.18) 85%, rgba(150, 130, 100, 0.35) 100%);
         pointer-events: none;
         z-index: 85;
+      }
+
+      /* Tech & Business Grid Blueprint Overlay */
+      .tech-grid-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: 
+          linear-gradient(to right, rgba(160, 140, 105, 0.07) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(160, 140, 105, 0.07) 1px, transparent 1px);
+        background-size: 60px 60px;
+        pointer-events: none;
+        z-index: 82;
       }
 
       /* ================= TOP VOX ARCHIVAL DOSSIER BAR ================= */
@@ -320,6 +335,123 @@
         color: var(--highlight-gold);
       }
 
+      /* ================= SCENE 01: MAP PIN & TACTICAL HINT ================= */
+      .shot1-map-pin {
+        position: absolute;
+        left: 350px;
+        top: 330px;
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+        z-index: 30;
+      }
+
+      .pin-target-reticle {
+        position: relative;
+        width: 36px;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .pin-center-dot {
+        width: 14px;
+        height: 14px;
+        background: #ef4444;
+        border: 2.5px solid #ffffff;
+        border-radius: 50%;
+        box-shadow: 0 0 16px rgba(239, 68, 68, 0.95), 0 0 30px rgba(245, 158, 11, 0.6);
+        z-index: 2;
+      }
+
+      .pin-sonar-ring {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 52px;
+        height: 52px;
+        margin-top: -26px;
+        margin-left: -26px;
+        border: 2px solid rgba(239, 68, 68, 0.85);
+        border-radius: 50%;
+        animation: pin-pulse 1.6s cubic-bezier(0.2, 0.8, 0.2, 1) infinite;
+      }
+
+      .pin-sonar-ring-2 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 80px;
+        height: 80px;
+        margin-top: -40px;
+        margin-left: -40px;
+        border: 1.5px dashed rgba(245, 158, 11, 0.6);
+        border-radius: 50%;
+        animation: pin-pulse 1.6s cubic-bezier(0.2, 0.8, 0.2, 1) infinite 0.4s;
+      }
+
+      @keyframes pin-pulse {
+        0% { transform: scale(0.3); opacity: 1; }
+        100% { transform: scale(1.9); opacity: 0; }
+      }
+
+      .shot1-connector-svg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 1920px;
+        height: 1080px;
+        pointer-events: none;
+        z-index: 22;
+      }
+
+      .shot1-map-hint-card {
+        position: absolute;
+        top: 170px;
+        left: 720px;
+        background: rgba(15, 20, 26, 0.94);
+        border: 2px solid var(--highlight-gold);
+        border-left: 6px solid var(--stamp-red);
+        padding: 22px 30px;
+        border-radius: 4px;
+        max-width: 500px;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.75);
+        backdrop-filter: blur(8px);
+        z-index: 25;
+      }
+
+      .hint-tag-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        margin-bottom: 6px;
+      }
+
+      .hint-coords {
+        font-family: 'Oswald', sans-serif;
+        font-size: 13px;
+        color: #94a3b8;
+        letter-spacing: 1.5px;
+      }
+
+      .hint-title {
+        font-family: 'Oswald', sans-serif;
+        font-size: 32px;
+        font-weight: 800;
+        color: #ffffff;
+        letter-spacing: 1.5px;
+        margin-top: 2px;
+      }
+
+      .hint-sub {
+        font-family: 'Noto Sans JP', sans-serif;
+        font-size: 17px;
+        font-weight: 700;
+        color: var(--highlight-gold);
+        margin-top: 2px;
+      }
+
       /* TSMC Headquarters Buffer Card */
       .shot1-tsmc-card {
         position: absolute;
@@ -381,7 +513,7 @@
         top: 85px;
         left: 80px;
         right: 80px;
-        bottom: 120px;
+        bottom: 50px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -492,7 +624,7 @@
         top: 85px;
         left: 80px;
         right: 80px;
-        bottom: 120px;
+        bottom: 50px;
         display: flex;
         gap: 50px;
         align-items: center;
@@ -686,7 +818,7 @@
         top: 85px;
         left: 80px;
         right: 80px;
-        bottom: 120px;
+        bottom: 50px;
         display: flex;
         gap: 50px;
         align-items: center;
@@ -762,7 +894,7 @@
         top: 85px;
         left: 80px;
         right: 80px;
-        bottom: 120px;
+        bottom: 50px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -932,14 +1064,862 @@
         color: #8c7e6c;
         letter-spacing: 3px;
       }
+    
+      /* ================= ENHANCED VOX TACTILE SCRAPBOOK (KOREA WAR STYLE) ================= */
+      /* Corner Washi / Masking Tape across 2 opposing corners */
+      .tape-corner-tl {
+        position: absolute;
+        top: -12px;
+        left: -18px;
+        width: 105px;
+        height: 28px;
+        transform: rotate(-38deg);
+        background: rgba(238, 226, 202, 0.78);
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
+        border-left: 1px dashed rgba(0, 0, 0, 0.15);
+        border-right: 1px dashed rgba(0, 0, 0, 0.15);
+        z-index: 25;
+        pointer-events: none;
+      }
+
+      .tape-corner-br {
+        position: absolute;
+        bottom: -10px;
+        right: -16px;
+        width: 105px;
+        height: 28px;
+        transform: rotate(-38deg);
+        background: rgba(238, 226, 202, 0.78);
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
+        border-left: 1px dashed rgba(0, 0, 0, 0.15);
+        border-right: 1px dashed rgba(0, 0, 0, 0.15);
+        z-index: 25;
+        pointer-events: none;
+      }
+
+      .tape-corner-tr {
+        position: absolute;
+        top: -12px;
+        right: -18px;
+        width: 105px;
+        height: 28px;
+        transform: rotate(38deg);
+        background: rgba(238, 226, 202, 0.78);
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
+        border-left: 1px dashed rgba(0, 0, 0, 0.15);
+        border-right: 1px dashed rgba(0, 0, 0, 0.15);
+        z-index: 25;
+        pointer-events: none;
+      }
+
+      /* Archival Source Badge (NARA / Reuters / Archive Style) */
+      .vox-source-tag {
+        position: absolute;
+        bottom: 8px;
+        left: 10px;
+        background: rgba(18, 15, 12, 0.85);
+        color: #f1ede4;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        padding: 3px 8px;
+        border-radius: 2px;
+        text-transform: uppercase;
+        border-left: 3px solid var(--highlight-gold);
+        z-index: 18;
+      }
+
+      /* Authentic Vox Highlighter Box Effect (High-contrast Black on Yellow Amber) */
+      .vox-highlight-box {
+        display: inline-block;
+        background: #f59e0b;
+        color: #181512 !important;
+        padding: 1px 8px;
+        border-radius: 2px;
+        font-weight: 900;
+        box-shadow: 0 2px 8px rgba(245, 158, 11, 0.35);
+        transform-origin: left center;
+        letter-spacing: 0.5px;
+      }
+
+      /* Red Pill Chapter/Section Badges */
+      .vox-pill-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        background: var(--stamp-red);
+        color: #ffffff;
+        font-family: 'Oswald', sans-serif;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        padding: 4px 14px;
+        border-radius: 12px;
+        text-transform: uppercase;
+        box-shadow: 0 4px 12px rgba(192, 38, 38, 0.3);
+      }
+
+      .vox-pill-gold {
+        background: #f59e0b;
+        color: #181512;
+      }
+
+      .vox-pill-dark {
+        background: #181512;
+        color: #f3e8d2;
+      }
+
+      /* Heavy Archival Double-Border Rubber Stamp */
+      .vox-rubber-stamp {
+        border: 3.5px double var(--stamp-red) !important;
+        color: var(--stamp-red) !important;
+        font-family: 'Oswald', sans-serif !important;
+        font-weight: 900 !important;
+        font-size: 20px !important;
+        letter-spacing: 3px !important;
+        padding: 6px 20px !important;
+        text-transform: uppercase !important;
+        border-radius: 3px !important;
+        transform: rotate(-12deg);
+        box-shadow: 0 6px 20px rgba(192, 38, 38, 0.35) !important;
+        background: rgba(192, 38, 38, 0.16) !important;
+        backdrop-filter: blur(2px);
+      }
+
+      /* Strategic Map Radar Pin */
+      .map-radar-pin {
+        position: absolute;
+        top: 485px;
+        left: 1040px;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background: rgba(245, 158, 11, 0.25);
+        border: 2px solid #f59e0b;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 20;
+        animation: radarPulse 1.8s infinite ease-out;
+      }
+
+      .map-radar-dot {
+        width: 8px;
+        height: 8px;
+        background: #f59e0b;
+        border-radius: 50%;
+        box-shadow: 0 0 10px #f59e0b;
+      }
+
+      @keyframes radarPulse {
+        0% { transform: scale(0.9); opacity: 1; }
+        70% { transform: scale(2.2); opacity: 0; }
+        100% { transform: scale(2.2); opacity: 0; }
+      }
+
+    
+      /* ================= EXTRA DYNAMIC VOX SCENE CUTS & OVERLAYS ================= */
+      /* Mini Partner Photo Badges (Sticker Style) */
+      .mini-partner-badge {
+        position: absolute;
+        width: 140px;
+        background: var(--paper-white);
+        border: 2px solid rgba(0,0,0,0.15);
+        padding: 6px;
+        border-radius: 3px;
+        box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+        z-index: 30;
+      }
+
+      .mini-partner-badge img {
+        width: 100%;
+        height: 110px;
+        object-fit: cover;
+        filter: grayscale(0.8) contrast(1.15);
+        border: 1px solid rgba(0,0,0,0.1);
+      }
+
+      .mini-partner-label {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--ink-black);
+        letter-spacing: 1px;
+        margin-top: 4px;
+        text-align: center;
+        text-transform: uppercase;
+      }
+
+      /* Scene 02 Phase D: Global Crisis Center Card */
+      .scene02-crisis-card {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 1100px;
+        background: #181512;
+        border: 3px solid var(--stamp-red);
+        border-radius: 4px;
+        padding: 32px 48px;
+        box-shadow: 0 35px 80px rgba(0, 0, 0, 0.9);
+        z-index: 50;
+        display: flex;
+        gap: 36px;
+        align-items: center;
+      }
+
+      .crisis-card-photo {
+        width: 380px;
+        height: 240px;
+        overflow: hidden;
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        position: relative;
+        flex-shrink: 0;
+      }
+
+      .crisis-card-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: grayscale(0.85) contrast(1.2);
+      }
+
+      .crisis-card-content {
+        flex: 1;
+      }
+
+      .crisis-headline {
+        font-family: 'Oswald', sans-serif;
+        font-size: 44px;
+        font-weight: 900;
+        color: #ff6b6b;
+        letter-spacing: 2px;
+        line-height: 1.1;
+      }
+
+      .crisis-desc {
+        font-family: 'Noto Sans JP', sans-serif;
+        font-size: 18px;
+        color: #e2e8f0;
+        line-height: 1.55;
+        margin-top: 14px;
+      }
+
+      /* Scene 03 Phase B: Vox 1-vs-1 Comparison Analogy Card */
+      .scene03-analogy-modal {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 1350px;
+        background: var(--paper-white);
+        border: 2px solid var(--ink-black);
+        border-radius: 4px;
+        padding: 36px 48px;
+        box-shadow: 0 35px 80px rgba(0, 0, 0, 0.55);
+        z-index: 50;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+      }
+
+      .analogy-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 2px solid var(--ink-black);
+        padding-bottom: 14px;
+      }
+
+      .analogy-title {
+        font-family: 'Oswald', sans-serif;
+        font-size: 32px;
+        font-weight: 800;
+        color: var(--ink-black);
+        letter-spacing: 1.5px;
+      }
+
+      .analogy-comparison-row {
+        display: flex;
+        gap: 36px;
+      }
+
+      .analogy-col-tsmc {
+        flex: 1.3;
+        background: #fef3c7;
+        border: 2px solid var(--highlight-gold);
+        border-radius: 4px;
+        padding: 24px;
+      }
+
+      .analogy-col-others {
+        flex: 1;
+        background: #f1f5f9;
+        border: 2px solid #94a3b8;
+        border-radius: 4px;
+        padding: 24px;
+      }
+
+      .analogy-col-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+      }
+
+      .analogy-col-name {
+        font-family: 'Oswald', sans-serif;
+        font-size: 26px;
+        font-weight: 700;
+        color: var(--ink-black);
+      }
+
+      .analogy-col-num {
+        font-family: 'Oswald', sans-serif;
+        font-size: 42px;
+        font-weight: 900;
+      }
+
+      .analogy-col-desc {
+        font-family: 'Noto Sans JP', sans-serif;
+        font-size: 15px;
+        line-height: 1.5;
+        margin-top: 12px;
+        color: #334155;
+      }
+
+      /* Scene 04 Phase B: Morris Chang Declaration Card */
+      .scene04-declaration-card {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 1400px;
+        background: rgba(24, 21, 18, 0.96);
+        border: 2px solid var(--highlight-gold);
+        border-radius: 4px;
+        padding: 24px 40px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+        z-index: 45;
+        display: flex;
+        gap: 32px;
+        align-items: center;
+      }
+
+      .decl-tag {
+        font-family: 'Oswald', sans-serif;
+        font-size: 14px;
+        font-weight: 700;
+        color: #ff6b6b;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+
+      .decl-quote {
+        font-family: 'Noto Serif JP', serif;
+        font-size: 24px;
+        font-weight: 700;
+        color: #f3e8d2;
+        line-height: 1.45;
+        letter-spacing: 1px;
+      }
+
+      /* Scene 05 Phase C: Andy Grove Intel Rejection Dossier */
+      .scene05-rejection-card {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 1200px;
+        background: var(--paper-white);
+        border: 2px solid var(--ink-black);
+        border-radius: 4px;
+        padding: 32px 44px;
+        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+        z-index: 50;
+        display: flex;
+        gap: 36px;
+        align-items: center;
+      }
+
+      .rejection-photo {
+        width: 320px;
+        height: 280px;
+        overflow: hidden;
+        border: 1px solid rgba(0,0,0,0.2);
+        position: relative;
+        flex-shrink: 0;
+      }
+
+      .rejection-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: grayscale(0.8) contrast(1.15);
+      }
+
+      .rejection-details {
+        flex: 1;
+      }
+
+      .rejection-stamp {
+        border: 3.5px double var(--stamp-red);
+        color: var(--stamp-red);
+        font-family: 'Oswald', sans-serif;
+        font-size: 26px;
+        font-weight: 900;
+        letter-spacing: 3px;
+        padding: 6px 20px;
+        display: inline-block;
+        transform: rotate(-8deg);
+        background: rgba(192, 38, 38, 0.12);
+        margin-bottom: 14px;
+      }
+
+      .rejection-heading {
+        font-family: 'Oswald', sans-serif;
+        font-size: 34px;
+        font-weight: 800;
+        color: var(--ink-black);
+        letter-spacing: 1px;
+      }
+
+      .rejection-desc {
+        font-family: 'Noto Sans JP', sans-serif;
+        font-size: 16px;
+        color: #475569;
+        line-height: 1.55;
+        margin-top: 10px;
+      }
+
+
+      /* ================= ACT 2 STYLES (96.888s - 213.864s) ================= */
+      .act2-stage {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 10;
+        opacity: 0;
+      }
+
+      .act2-top-bar {
+        position: absolute;
+        top: 36px;
+        left: 60px;
+        right: 60px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 2px solid rgba(197, 160, 89, 0.4);
+        padding-bottom: 12px;
+        z-index: 20;
+      }
+
+      .act2-top-kicker {
+        font-family: 'Courier Prime', monospace;
+        font-size: 15px;
+        letter-spacing: 4px;
+        color: var(--highlight-gold);
+        text-transform: uppercase;
+        font-weight: 700;
+      }
+
+      .act2-top-time {
+        font-family: 'Oswald', sans-serif;
+        font-size: 16px;
+        letter-spacing: 2px;
+        color: rgba(24, 21, 18, 0.6);
+        font-weight: 600;
+      }
+
+      .act2-telop-card {
+        position: absolute;
+        bottom: 50px;
+        left: 60px;
+        background: rgba(24, 21, 18, 0.94);
+        border-left: 6px solid var(--highlight-gold);
+        border-radius: 4px;
+        padding: 16px 28px;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.45);
+        max-width: 960px;
+        z-index: 25;
+      }
+
+      .act2-telop-badge {
+        display: inline-block;
+        font-family: 'Courier Prime', monospace;
+        font-size: 13px;
+        letter-spacing: 3px;
+        color: var(--highlight-gold);
+        text-transform: uppercase;
+        margin-bottom: 6px;
+      }
+      .act2-telop-badge.crisis {
+        color: #ff5252;
+      }
+      .act2-telop-badge.gold {
+        color: #ffd54f;
+      }
+
+      .act2-telop-title {
+        font-family: 'Oswald', sans-serif;
+        font-size: 32px;
+        font-weight: 700;
+        color: #fff;
+        letter-spacing: 2px;
+        line-height: 1.2;
+        margin: 0;
+      }
+
+      .act2-telop-sub {
+        font-family: 'Inter', sans-serif;
+        font-size: 17px;
+        color: rgba(255, 255, 255, 0.85);
+        margin: 6px 0 0 0;
+        line-height: 1.4;
+      }
+
+      /* Scene 07 Layout: Dossier Scrapbook */
+      .s7-container {
+        display: flex;
+        width: 1680px;
+        height: 720px;
+        margin-top: 50px;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .s7-portrait-card {
+        width: 540px;
+        height: 680px;
+        background: #fdfaf3;
+        border: 1px solid rgba(197, 160, 89, 0.4);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+        padding: 24px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        transform: rotate(-1.5deg);
+      }
+
+      .s7-portrait-img {
+        width: 100%;
+        height: 520px;
+        object-fit: cover;
+        filter: contrast(1.1) grayscale(0.2);
+        border: 1px solid rgba(0, 0, 0, 0.15);
+      }
+
+      .s7-portrait-caption {
+        margin-top: 16px;
+        font-family: 'Courier Prime', monospace;
+        font-size: 14px;
+        color: #333;
+        line-height: 1.4;
+      }
+
+      .s7-credentials-col {
+        width: 1060px;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+      }
+
+      .s7-credential-card {
+        background: rgba(255, 255, 255, 0.94);
+        border: 1px solid rgba(197, 160, 89, 0.35);
+        border-left: 6px solid var(--highlight-gold);
+        border-radius: 4px;
+        padding: 20px 30px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .s7-cred-year {
+        font-family: 'Oswald', sans-serif;
+        font-size: 32px;
+        font-weight: 700;
+        color: var(--highlight-gold);
+        width: 160px;
+      }
+
+      .s7-cred-info h3 {
+        font-family: 'Oswald', sans-serif;
+        font-size: 22px;
+        margin: 0;
+        color: #1a1a1a;
+        letter-spacing: 1px;
+      }
+
+      .s7-cred-info p {
+        font-family: 'Inter', sans-serif;
+        font-size: 14px;
+        color: #555;
+        margin: 4px 0 0 0;
+      }
+
+      .s7-stamp-vp {
+        border: 3px solid #b71c1c;
+        color: #b71c1c;
+        font-family: 'Oswald', sans-serif;
+        font-size: 18px;
+        font-weight: 800;
+        letter-spacing: 2px;
+        padding: 6px 14px;
+        text-transform: uppercase;
+        transform: rotate(4deg);
+      }
+
+      /* Scene 08 Layout: 1985 Turning Point Map & Summons */
+      .s8-container {
+        display: flex;
+        width: 1680px;
+        height: 720px;
+        margin-top: 50px;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .s8-doc-card {
+        width: 560px;
+        height: 600px;
+        background: #fffdf8;
+        border: 1px solid rgba(0,0,0,0.15);
+        box-shadow: 0 20px 45px rgba(0,0,0,0.2);
+        padding: 32px;
+        transform: rotate(-1deg);
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .s8-stamp-resigned {
+        position: absolute;
+        top: 60px;
+        right: 30px;
+        border: 4px solid #c62828;
+        color: #c62828;
+        font-family: 'Oswald', sans-serif;
+        font-size: 28px;
+        font-weight: 900;
+        padding: 8px 20px;
+        letter-spacing: 3px;
+        transform: rotate(-12deg);
+      }
+
+      .s8-map-board {
+        width: 1040px;
+        height: 600px;
+        background: rgba(24, 21, 18, 0.95);
+        border: 2px solid rgba(197, 160, 89, 0.5);
+        border-radius: 6px;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 25px 60px rgba(0,0,0,0.4);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* Scene 09 Layout: Vox Explanatory IDM Model */
+      .s9-container {
+        width: 1680px;
+        height: 720px;
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .s9-idm-box {
+        width: 1440px;
+        height: 500px;
+        background: rgba(255, 255, 255, 0.96);
+        border: 3px solid var(--highlight-gold);
+        border-radius: 8px;
+        box-shadow: 0 25px 60px rgba(0,0,0,0.15);
+        padding: 36px 48px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .s9-idm-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 2px solid rgba(197, 160, 89, 0.3);
+        padding-bottom: 14px;
+      }
+
+      .s9-idm-stages {
+        display: flex;
+        flex: 1;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 30px;
+      }
+
+      .s9-stage-block {
+        width: 580px;
+        height: 280px;
+        background: #fbf7ee;
+        border: 2px dashed rgba(197, 160, 89, 0.6);
+        border-radius: 6px;
+        padding: 24px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+
+      /* Scene 10 Layout: Vox Split & Morph - Pure-play Foundry */
+      .s10-container {
+        width: 1680px;
+        height: 720px;
+        margin-top: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .s10-left-fabless {
+        width: 780px;
+        height: 560px;
+        background: rgba(255, 255, 255, 0.96);
+        border: 2px solid rgba(197, 160, 89, 0.4);
+        border-radius: 8px;
+        padding: 32px;
+        box-shadow: 0 20px 45px rgba(0,0,0,0.12);
+        display: flex;
+        flex-direction: column;
+      }
+
+      .s10-right-foundry {
+        width: 820px;
+        height: 560px;
+        background: rgba(24, 21, 18, 0.96);
+        border: 3px solid var(--highlight-gold);
+        border-radius: 8px;
+        padding: 32px;
+        box-shadow: 0 25px 60px rgba(0,0,0,0.35);
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* Scene 11 Layout: Customer Trust & Lock IP */
+      .s11-container {
+        width: 1680px;
+        height: 720px;
+        margin-top: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+      }
+
+      .s11-card {
+        width: 780px;
+        height: 560px;
+        background: #fcf9f2;
+        border: 2px solid rgba(197, 160, 89, 0.5);
+        border-radius: 8px;
+        padding: 40px;
+        box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .s11-stamp-iron-rule {
+        position: absolute;
+        top: 35px;
+        right: 35px;
+        border: 4px solid #b71c1c;
+        color: #b71c1c;
+        font-family: 'Oswald', sans-serif;
+        font-size: 24px;
+        font-weight: 900;
+        letter-spacing: 2px;
+        padding: 8px 18px;
+        transform: rotate(-6deg);
+      }
+
+      /* Scene 12 Layout: Zero Orders Crisis & Bleeding Ledger */
+      .s12-container {
+        width: 1680px;
+        height: 720px;
+        margin-top: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .s12-factory-visual {
+        width: 820px;
+        height: 560px;
+        background: #111;
+        border: 2px solid rgba(255, 82, 82, 0.5);
+        border-radius: 6px;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 25px 60px rgba(0,0,0,0.5);
+      }
+
+      .s12-ledger-card {
+        width: 780px;
+        height: 560px;
+        background: #fbf7ee;
+        border: 2px solid rgba(197, 160, 89, 0.4);
+        border-radius: 6px;
+        padding: 36px;
+        box-shadow: 0 20px 45px rgba(0,0,0,0.2);
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .s12-stamp-crisis {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(-12deg);
+        border: 5px solid #b71c1c;
+        color: #b71c1c;
+        font-family: 'Oswald', sans-serif;
+        font-size: 46px;
+        font-weight: 900;
+        letter-spacing: 4px;
+        padding: 16px 36px;
+        background: rgba(255, 235, 238, 0.95);
+        box-shadow: 0 20px 50px rgba(183, 28, 28, 0.4);
+        text-align: center;
+      }
+
     </style>
   </head>
 
   <body>
-    <div id="root" data-composition-id="main" data-width="1920" data-height="1080" data-duration="96.888">
+    <div id="root" data-composition-id="main" data-width="1920" data-height="1080" data-duration="1126.62">
       <!-- Persistent Overlays for Unified Archival Workspace -->
       <div class="persistent-vignette" data-layout-ignore></div>
       <div class="persistent-grain" data-layout-ignore></div>
+      <div class="tech-grid-overlay" data-layout-ignore></div>
 
       <!-- Persistent Top Dossier Bar -->
       <div class="vox-top-bar" data-layout-ignore>
@@ -953,22 +1933,52 @@
       </div>
 
       <!-- ================= SCENE 01: VEO 3 GOLD MAP VIDEO LAYER (0.00s - 8.42s) ================= -->
-      <video class="clip shot1-video-player" id="shot1-video" data-start="0.00" data-duration="8.42" data-track-index="1" src="assets/video/shot1_map_veo.mp4" muted playsinline></video>
-      <div class="scene01-stage clip" id="scene01-stage" data-start="0.00" data-duration="8.42" data-track-index="2" data-layout-allow-overflow>
-        <!-- Single High-Impact Callout Card (Taiwan Strait 160KM) -->
+      <video class="clip shot1-video-player" id="shot1-video" data-start="0.00" data-duration="35.64" data-track-index="1" src="assets/video/shot1_map_veo.mp4" muted playsinline></video>
+      <div class="scene01-stage clip" id="scene01-stage" data-start="0.00" data-duration="35.64" data-track-index="2" data-layout-allow-overflow>
+        <!-- Single High-Impact Callout Card (Taiwan Strait 160KM) during initial zoom -->
         <div class="shot1-callout-card" id="shot1-strait-callout" style="opacity: 0;" data-layout-ignore>
-          <div class="callout-tag">STRATEGIC CHOKEPOINT // チョークポイント</div>
-          <div class="callout-title">台湾海峡 <span class="callout-dist">160KM</span></div>
+          <div class="callout-tag"><span class="vox-pill-badge">CHOKEPOINT</span> 台湾海峡 160KM</div>
+          <div class="callout-title">台湾海峡 <span class="callout-dist vox-highlight-box">160KM</span></div>
           <div class="callout-divider"></div>
           <div class="callout-desc">
-            新竹サイエンスパーク（TSMC本社）<br/>
-            <strong>世界最先端半導体の90%以上</strong>が集中する海峡
+            台湾西海岸から中国大陸までわずか160km<br/>
+            世界の海上貿易の要衝
           </div>
         </div>
 
-        <!-- Buffer Scene: TSMC Headquarters Building Card -->
+        <!-- SVG Tactical Leader Line connecting Pin to Hint Card -->
+        <svg class="shot1-connector-svg" id="shot1-connector-svg" style="opacity: 0;" data-layout-ignore>
+          <polyline id="shot1-leader-line" points="350,330 480,230 720,230" stroke="#f59e0b" stroke-width="2.5" fill="none" stroke-dasharray="450" stroke-dashoffset="450"/>
+          <circle cx="350" cy="330" r="5" fill="#f59e0b" />
+        </svg>
+
+        <!-- Pin & Sonar Pulse Target (Chấm vào bản đồ vị trí công ty) -->
+        <div class="shot1-map-pin" id="shot1-map-pin" style="opacity: 0;" data-layout-ignore>
+          <div class="pin-target-reticle">
+            <div class="pin-sonar-ring"></div>
+            <div class="pin-sonar-ring-2"></div>
+            <div class="pin-center-dot"></div>
+          </div>
+        </div>
+
+        <!-- Tactical Hint Card (Có hint) -->
+        <div class="shot1-map-hint-card" id="shot1-map-hint" style="opacity: 0;" data-layout-ignore>
+          <div class="hint-tag-row">
+            <span class="vox-pill-badge vox-pill-red">📍 TARGET ACQUIRED</span>
+            <span class="hint-coords">24°46'N · 121°00'E</span>
+          </div>
+          <div class="hint-title">TSMC 本社 & FAB 12</div>
+          <div class="hint-sub">新竹サイエンスパーク (Hsinchu Science Park)</div>
+          <div class="callout-divider"></div>
+          <div class="hint-desc" style="font-family: 'Noto Sans JP', sans-serif; font-size: 15px; color: #e2e8f0; line-height: 1.5;">
+            台湾北西部の最先端ハイテク拠点<br/>
+            <span class="vox-highlight-box" style="font-size: 15px; margin-top: 4px;">世界最先端半導体の90%以上</span>が集中する場所
+          </div>
+        </div>
+
+        <!-- Buffer Scene: TSMC Headquarters Building Card (Revealed after zoom-in) -->
         <div class="shot1-tsmc-card" id="shot1-tsmc-card" style="opacity: 0;" data-layout-ignore>
-          <div class="tsmc-card-badge">THE CRITICAL MONOPOLY // たったひとつの企業</div>
+          <div class="tsmc-card-badge"><span class="vox-pill-badge vox-pill-gold">MONOPOLY</span> たったひとつの企業</div>
           <div class="tsmc-card-title-row">
             <span class="tsmc-card-title">TSMC</span>
             <span class="tsmc-card-subtitle">台湾積体電路製造</span>
@@ -977,27 +1987,23 @@
           <div class="tsmc-card-tagline">世界の最先端チップを独占する巨人 — ここが止まれば、世界経済が止まる</div>
         </div>
       </div>
-
-      <!-- Subtitle 01 -->
-      <div class="vox-sub-box clip" id="sub1" data-start="0.00" data-duration="8.42" data-track-index="3" data-layout-allow-overflow>
-        <div class="vox-sub-text" data-layout-ignore>
-          もし明日、<span class="sub-gold">台湾海峡で戦争が勃発</span>し、たったひとつの企業が操業を停止したらどうなるでしょうか？
-        </div>
-      </div>
       <audio class="clip" id="vo-01" data-start="0.00" data-duration="8.42" data-track-index="4" src="assets/audio/scene_01.mp3"></audio>
-      <audio class="clip" id="sfx-01-drone" data-start="0.00" data-duration="6.00" data-track-index="5" src="assets/sfx/sub_drone.wav"></audio>
+      <audio class="clip" id="sfx-01-drone" data-start="0.00" data-duration="8.42" data-track-index="5" src="assets/sfx/sub_drone.wav"></audio>
+      <audio class="clip" id="sfx-01-sonar" data-start="3.10" data-duration="1.60" data-track-index="6" src="assets/sfx/sonar_ping.wav"></audio>
 
       <!-- ================= SCENE 02: DOMINO SUPPLY CHAIN DISRUPTION (8.42s - 23.57s) ================= -->
-      <div class="scene02-stage clip" id="scene02-stage" data-start="8.42" data-duration="15.15" data-track-index="1" data-layout-allow-overflow>
+      <div class="scene02-stage clip" id="scene02-stage" data-start="35.64" data-duration="35.24" data-track-index="1" data-layout-allow-overflow>
         <div class="scene02-cards-row">
           <!-- Card 1: Consumer Tech (Smartphones) -->
           <div class="scene02-item" id="card-phone">
-            <div class="scotch-tape"></div>
+            <div class="tape-corner-tl"></div>
+            <div class="tape-corner-br"></div>
             <div class="stamp-holder" id="stamp-phone" style="opacity: 0;">
               <div class="vox-rubber-stamp">HALTED</div>
             </div>
-            <div class="scene02-img-wrap">
-              <img src="assets/images/andy_grove_vintage.jpg" alt="Consumer Tech Smartphone Chip" />
+            <div class="scene02-img-wrap" style="position: relative;">
+              <img src="assets/images/tim_cook_vintage.jpg" alt="Tim Cook Apple CEO" />
+              <div class="vox-source-tag">APPLE ARCHIVE // TIM COOK · A18 PRO</div>
             </div>
             <div class="scene02-meta">
               <div class="scene02-sector-num">DOSSIER ITEM #01 // CONSUMER TECH</div>
@@ -1008,12 +2014,14 @@
 
           <!-- Card 2: AI Accelerators (NVIDIA) -->
           <div class="scene02-item" id="card-ai">
-            <div class="scotch-tape"></div>
+            <div class="tape-corner-tl"></div>
+            <div class="tape-corner-br"></div>
             <div class="stamp-holder" id="stamp-ai" style="opacity: 0;">
               <div class="vox-rubber-stamp">FROZEN</div>
             </div>
-            <div class="scene02-img-wrap">
-              <img src="assets/images/silicon_wafer_vintage.jpg" alt="AI GPU Chip Die" />
+            <div class="scene02-img-wrap" style="position: relative;">
+              <img src="assets/images/jensen_huang_vintage.jpg" alt="Jensen Huang NVIDIA CEO" />
+              <div class="vox-source-tag">NVIDIA ARCHIVE // JENSEN HUANG · B200</div>
             </div>
             <div class="scene02-meta">
               <div class="scene02-sector-num">DOSSIER ITEM #02 // FRONTIER AI</div>
@@ -1024,12 +2032,14 @@
 
           <!-- Card 3: Global Data Centers -->
           <div class="scene02-item" id="card-cloud">
-            <div class="scotch-tape"></div>
+            <div class="tape-corner-tl"></div>
+            <div class="tape-corner-br"></div>
             <div class="stamp-holder" id="stamp-cloud" style="opacity: 0;">
               <div class="vox-rubber-stamp">COLLAPSED</div>
             </div>
-            <div class="scene02-img-wrap">
-              <img src="assets/images/hsinchu_park_vintage.jpg" alt="Global Data Center Infrastructure" />
+            <div class="scene02-img-wrap" style="position: relative;">
+              <img src="assets/images/silicon_wafer_vintage.jpg" alt="TSMC 3nm Silicon Wafer" />
+              <div class="vox-source-tag">TSMC SILICON // 300MM MONOLITHIC WAFER</div>
             </div>
             <div class="scene02-meta">
               <div class="scene02-sector-num">DOSSIER ITEM #03 // INFRASTRUCTURE</div>
@@ -1039,24 +2049,46 @@
           </div>
         </div>
 
+        <!-- Partner Badges Floating on Cards -->
+        <div class="mini-partner-badge" id="badge-timcook" style="top: -20px; left: 240px; transform: rotate(-6deg); opacity: 0;">
+          <img src="assets/images/steve_jobs_vintage.jpg" alt="Steve Jobs Apple Founder" />
+          <div class="mini-partner-label">APPLE // STEVE JOBS</div>
+        </div>
+        <div class="mini-partner-badge" id="badge-jensen" style="top: -20px; left: 810px; transform: rotate(8deg); opacity: 0;">
+          <img src="assets/images/silicon_wafer_vintage.jpg" alt="NVIDIA AI Chip Die" />
+          <div class="mini-partner-label">AI SILICON // B200 DIE</div>
+        </div>
+
+        <!-- Global Crisis Modal (Phase D: 19.5s - 23.57s) -->
+        <div class="scene02-crisis-card" id="scene02-crisis-modal" style="opacity: 0; pointer-events: none;">
+          <div class="crisis-card-photo">
+            <img src="assets/images/lehman_brothers_vintage.jpg" alt="Global Financial Disruption" />
+            <div class="vox-source-tag">GLOBAL FINANCIAL CRISIS • CATASTROPHE</div>
+          </div>
+          <div class="crisis-card-content">
+            <div class="vox-pill-badge" style="margin-bottom: 12px;">SYSTEMIC MELTDOWN</div>
+            <div class="crisis-headline">年間1500兆円の壊滅的損失</div>
+            <div class="crisis-desc">
+              世界中のサプライチェーンが瞬時に断絶。<br/>
+              単一の企業に世界全体のデジタル文明が依存しているという<span class="vox-highlight-box">人類史上最大の地政学リスク</span>。
+            </div>
+          </div>
+        </div>
+
         <!-- Global Loss Badge -->
         <div class="scene02-ticker-badge" id="scene02-ticker-badge">
-          <div class="ticker-lbl">GLOBAL ECONOMIC CATASTROPHE:</div>
-          <div class="ticker-val">-10,000,000,000,000 USD (年間1500兆円の損失)</div>
+          <span class="vox-pill-badge">CRISIS ESTIMATE</span>
+          <div class="ticker-lbl">GLOBAL ECONOMIC LOSS:</div>
+          <div class="ticker-val"><span class="vox-highlight-box">-10,000,000,000,000 USD</span> (年間1500兆円の損失)</div>
         </div>
       </div>
-
-      <!-- Subtitle 02 -->
-      <div class="vox-sub-box clip" id="sub2" data-start="8.42" data-duration="15.15" data-track-index="2" data-layout-allow-overflow>
-        <div class="vox-sub-text" data-layout-ignore>
-          あなたの手元のスマートフォンは製造不能になり、<span class="sub-cyan">全世界のAI開発は完全凍結</span>。データセンターは沈黙し、世界経済は数週間で<span class="sub-red">数千兆円の壊滅的打撃</span>を受けます。
-        </div>
-      </div>
-      <audio class="clip" id="vo-02" data-start="8.42" data-duration="15.15" data-track-index="3" src="assets/audio/scene_02.mp3"></audio>
-      <audio class="clip" id="sfx-02-impact" data-start="8.60" data-duration="2.50" data-track-index="4" src="assets/sfx/impact_boom.wav"></audio>
+      <audio class="clip" id="vo-02" data-start="36.84" data-duration="25.54" data-track-index="3" src="assets/audio/scene_02.mp3"></audio>
+      <audio class="clip" id="sfx-02-impact" data-start="8.42" data-duration="2.50" data-track-index="4" src="assets/sfx/impact_boom.wav"></audio>
+      <audio class="clip" id="sfx-02-stamp-foley" data-start="14.50" data-duration="0.35" data-track-index="5" src="assets/sfx/paper_slap.wav"></audio>
+      <audio class="clip" id="sfx-02-crisis-slam" data-start="19.70" data-duration="2.50" data-track-index="6" src="assets/sfx/impact_boom.wav"></audio>
 
       <!-- ================= SCENE 03: TSMC REVEAL & 90% MONOPOLY INFOGRAPHIC (23.57s - 39.58s) ================= -->
-      <div class="scene03-stage clip" id="scene03-stage" data-start="23.57" data-duration="16.01" data-track-index="1" data-layout-allow-overflow>
+      <div class="scene03-stage clip" id="scene03-stage" data-start="70.88" data-duration="34.68" data-track-index="1" data-layout-allow-overflow>
         <!-- Left: Technical Blueprint Gauge -->
         <div class="scene03-gauge-card" id="scene03-gauge-card">
           <div class="blueprint-grid"></div>
@@ -1083,7 +2115,8 @@
         <div class="scene03-dossier-paper" id="scene03-dossier-paper">
           <div class="dossier-paper-header">
             <div class="dossier-firm-brand">
-              <span class="vox-marker">TSMC (台湾積体電路製造)</span>
+              <span class="vox-pill-badge vox-pill-dark" style="margin-right: 8px;">GLOBAL CHOKEPOINT</span>
+              <span class="vox-highlight-box">TSMC (台湾積体電路製造)</span>
             </div>
             <div class="dossier-file-tag">REPORT REF: TSMC-SHARE-1987</div>
           </div>
@@ -1130,66 +2163,107 @@
             SOURCE: TRENDFORCE INDUSTRY RESEARCH // BOSTON CONSULTING GROUP (BCG) REPORT
           </div>
         </div>
-      </div>
 
-      <!-- Subtitle 03 -->
-      <div class="vox-sub-box clip" id="sub3" data-start="23.57" data-duration="16.01" data-track-index="2" data-layout-allow-overflow>
-        <div class="vox-sub-text" data-layout-ignore>
-          その企業の名前は、<span class="sub-gold">TSMC（台湾積体電路製造）</span>。世界の先端半導体の90％以上を独占する、人類史上最も危険で、最も不可欠な<span class="sub-cyan">「チョークポイント（急所）」</span>です。
+        <!-- Scene 03 Phase B: Vox 1-vs-1 Comparison Analogy Card (28.5s - 39.58s) -->
+        <div class="scene03-analogy-modal" id="scene03-analogy-modal" style="opacity: 0; pointer-events: none;">
+          <div class="analogy-header">
+            <div class="analogy-title"><span class="vox-pill-badge">MARKET ANALOGY</span> 最先端チップ供給構造の真実</div>
+            <div class="dossier-file-tag">3NM / 2NM FRONTIER NODE EXCLUSIVE REPORT</div>
+          </div>
+          <div class="analogy-comparison-row">
+            <div class="analogy-col-tsmc">
+              <div class="analogy-col-head">
+                <div class="analogy-col-name">TSMC（台湾）</div>
+                <div class="analogy-col-num" style="color: #b45309;">90%</div>
+              </div>
+              <div class="bar-track-strip" style="margin-top: 10px;">
+                <div class="bar-fill-strip" style="width: 100%; background: var(--highlight-gold);"></div>
+              </div>
+              <div class="analogy-col-desc">
+                <strong>完全独占供給:</strong> Apple A18 Pro, NVIDIA Blackwell, AMD Zen5, Qualcomm Snapdragon Elite.<br/>
+                代わりを作れる工場は地球上に存在しない。
+              </div>
+            </div>
+            <div class="analogy-col-others">
+              <div class="analogy-col-head">
+                <div class="analogy-col-name">全世界の競合合計</div>
+                <div class="analogy-col-num" style="color: #64748b;">10%</div>
+              </div>
+              <div class="bar-track-strip" style="margin-top: 10px;">
+                <div class="bar-fill-strip" style="width: 11%; background: #64748b;"></div>
+              </div>
+              <div class="analogy-col-desc">
+                <strong>代替不能:</strong> サムスン（8%・歩留まり苦戦）、インテル（2%・巨額赤字）。<br/>
+                世界最先端の需要を引き受ける余力はゼロ。
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <audio class="clip" id="vo-03" data-start="23.57" data-duration="16.01" data-track-index="3" src="assets/audio/scene_03.mp3"></audio>
-      <audio class="clip" id="sfx-03-marker" data-start="24.00" data-duration="1.50" data-track-index="4" src="assets/sfx/marker_wipe.wav"></audio>
+      <audio class="clip" id="vo-03" data-start="72.08" data-duration="24.98" data-track-index="3" src="assets/audio/scene_03.mp3"></audio>
+      <audio class="clip" id="sfx-03-marker" data-start="24.00" data-duration="0.40" data-track-index="4" src="assets/sfx/marker_wipe.wav"></audio>
+      <audio class="clip" id="sfx-03-slap" data-start="28.80" data-duration="0.35" data-track-index="5" src="assets/sfx/paper_slap.wav"></audio>
 
       <!-- ================= SCENE 04: JAPAN KUMAMOTO JASM (39.58s - 59.09s) ================= -->
-      <div class="scene04-stage clip" id="scene04-stage" data-start="39.58" data-duration="19.51" data-track-index="1" data-layout-allow-overflow>
+      <div class="scene04-stage clip" id="scene04-stage" data-start="105.56" data-duration="41.38" data-track-index="1" data-layout-allow-overflow>
         <!-- Left: Kumamoto Fab Archival Photo -->
         <div class="scene04-card" id="card-jasm">
-          <div class="scotch-tape"></div>
+          <div class="tape-corner-tl"></div>
+          <div class="tape-corner-br"></div>
           <div class="scene04-stamp-pos">
-            <div class="vox-rubber-stamp">1.2兆円投入</div>
+            <div class="vox-rubber-stamp">1.2兆円 投入</div>
           </div>
-          <div class="scene04-photo-container">
+          <div class="scene04-photo-container" style="position: relative;">
             <img src="assets/images/mount_aso_vintage.jpg" alt="Kumamoto Kikuyo JASM Fab Landscape" />
+            <div class="vox-source-tag">KIKUYO, KUMAMOTO • 2024.02 • REUTERS</div>
           </div>
           <div class="scene04-caption-box">
-            <div class="scene04-kicker">KUMAMOTO, JAPAN // 2024.02</div>
+            <div class="scene04-kicker"><span class="vox-pill-badge vox-pill-dark">JAPAN SUBSIDY</span> KUMAMOTO // 2024.02</div>
             <div class="scene04-title">JASM 熊本第1工場 開所</div>
             <div class="scene04-paragraph">
               のどかなキャベツ畑の真ん中に突如現れた巨大半導体拠点。<br/>
-              日本政府が1兆2000億円の異例補助金を投じ、半導体復権へ賭けた歴史的プロジェクト。
+              日本政府が<span class="vox-highlight-box">1兆2000億円の異例補助金</span>を投じ、半導体復権へ賭けた歴史的プロジェクト。
             </div>
           </div>
         </div>
 
         <!-- Right: 93-Year-Old Morris Chang Portrait (Uncropped) -->
         <div class="scene04-card" id="card-morris-93">
-          <div class="scotch-tape"></div>
-          <div class="scene04-photo-container">
+          <div class="tape-corner-tr"></div>
+          <div class="tape-corner-br"></div>
+          <div class="scene04-photo-container" style="position: relative;">
             <img src="assets/images/morris_chang_93yo.jpg" alt="Morris Chang at Kumamoto Opening Ceremony" />
+            <div class="vox-source-tag">MORRIS CHANG • 93 YEARS OLD • AP</div>
           </div>
           <div class="scene04-caption-box">
-            <div class="scene04-kicker">FOUNDER // 93 YEARS OLD</div>
+            <div class="scene04-kicker"><span class="vox-pill-badge">THE ARCHITECT</span> 93 YEARS OLD</div>
             <div class="scene04-title">モリス・チャン（張忠謀）</div>
             <div class="scene04-paragraph">
               「日本と台湾の半導体協力は、新たなルネサンスをもたらす」。<br/>
-              政財界のトップたちが93歳の老人に深々と頭を下げた瞬間。
+              政財界のトップたちが<span class="vox-highlight-box">93歳の老人</span>に深々と頭を下げた瞬間。
+            </div>
+          </div>
+        </div>
+
+        <!-- Scene 04 Phase B: Morris Chang Historic Declaration Card (48.0s - 59.09s) -->
+        <div class="scene04-declaration-card" id="scene04-decl-card" style="opacity: 0; pointer-events: none;">
+          <div style="flex-shrink: 0;">
+            <div class="decl-tag"><span class="vox-pill-badge vox-pill-gold">HISTORIC STATEMENT</span> 2024.02</div>
+          </div>
+          <div class="decl-quote">
+            「日本と台湾の半導体協力は、<span class="vox-highlight-box">世界に新たなルネサンス</span>をもたらすだろう」
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #94a3b8; margin-top: 6px;">
+              — モリス・チャン（張忠謀・93歳）TSMC創業者 // 熊本第1工場 開所式典にて
             </div>
           </div>
         </div>
       </div>
-
-      <!-- Subtitle 04 -->
-      <div class="vox-sub-box clip" id="sub4" data-start="39.58" data-duration="19.51" data-track-index="2" data-layout-allow-overflow>
-        <div class="vox-sub-text" data-layout-ignore>
-          2024年2月、日本の熊本県菊陽町。突如現れた巨大工場に、日本政府は異例の<span class="sub-gold">1兆2000億円を超える巨額補助金</span>を投じ、政財界のトップたちが<span class="sub-cyan">93歳の老人</span>に深々と頭を下げました。
-        </div>
-      </div>
-      <audio class="clip" id="vo-04" data-start="39.58" data-duration="19.51" data-track-index="3" src="assets/audio/scene_04.mp3"></audio>
-      <audio class="clip" id="sfx-04-impact" data-start="39.80" data-duration="2.50" data-track-index="4" src="assets/sfx/impact_boom.wav"></audio>
+      <audio class="clip" id="vo-04" data-start="107.56" data-duration="26.88" data-track-index="3" src="assets/audio/scene_04.mp3"></audio>
+      <audio class="clip" id="sfx-04-impact" data-start="41.20" data-duration="2.50" data-track-index="4" src="assets/sfx/impact_boom.wav"></audio>
+      <audio class="clip" id="sfx-04-decl-slap" data-start="48.30" data-duration="0.35" data-track-index="5" src="assets/sfx/paper_slap.wav"></audio>
 
       <!-- ================= SCENE 05: 1987 FLASHBACK DOSSIER (59.09s - 82.27s) ================= -->
-      <div class="scene05-stage clip" id="scene05-stage" data-start="59.09" data-duration="23.18" data-track-index="1" data-layout-allow-overflow>
+      <div class="scene05-stage clip" id="scene05-stage" data-start="146.94" data-duration="35.45" data-track-index="1" data-layout-allow-overflow>
         <!-- Ruler Timeline Across Screen -->
         <div class="scene05-ruler-timeline" id="timeline-ruler">
           <div class="ruler-year-text" id="node-2024">2024 熊本開所</div>
@@ -1207,12 +2281,14 @@
         <div class="scene05-cards-pair">
           <!-- Left: 55-Year-Old Morris Chang Portrait (Uncropped) -->
           <div class="scene05-card-item" id="card-morris-55">
-            <div class="scotch-tape"></div>
-            <div class="scene05-photo-wrap">
+            <div class="tape-corner-tl"></div>
+            <div class="tape-corner-br"></div>
+            <div class="scene05-photo-wrap" style="position: relative;">
               <img src="assets/images/morris_chang_1987.jpg" alt="Morris Chang in 1987 at age 55" />
+              <div class="vox-source-tag">MORRIS CHANG • 1987 (AGE 55) • ARCHIVE</div>
             </div>
             <div class="scene05-info-meta">
-              <div class="scene05-title">モリス・チャン（当時55歳）</div>
+              <div class="scene05-title"><span class="vox-pill-badge vox-pill-dark">1987 FOUNDING</span> モリス・チャン（当時55歳）</div>
               <div class="scene05-desc">
                 米テキサス・インスツルメンツで出世街道を外れ、台湾政府の招聘で新竹へ渡った孤高のリーダー。
               </div>
@@ -1221,58 +2297,1049 @@
 
           <!-- Right: 1987 Humble Fab -->
           <div class="scene05-card-item" id="card-fab-1987">
-            <div class="scotch-tape"></div>
+            <div class="tape-corner-tr"></div>
+            <div class="tape-corner-br"></div>
             <div class="stamp-holder" id="stamp-zero" style="opacity: 0;">
               <div class="vox-rubber-stamp">技術・資金・名声ゼロ</div>
             </div>
-            <div class="scene05-photo-wrap">
+            <div class="scene05-photo-wrap" style="position: relative;">
               <img src="assets/images/hsinchu_park_vintage.jpg" alt="1987 Early Hsinchu Factory Fab" />
+              <div class="vox-source-tag">HSINCHU FAB 1 • 1987 • TSMC ARCHIVE</div>
             </div>
             <div class="scene05-info-meta">
               <div class="scene05-title">1987年 新竹サイエンスパーク</div>
               <div class="scene05-desc">
-                「誰も見向きもしない下請け町工場」。当時の最新鋭工場に比べ、製造技術は2〜3世代遅れていた。
+                <span class="vox-highlight-box">「誰も見向きもしない下請け町工場」</span>。当時の世界最新鋭に比べ、製造技術は2〜3世代遅れていた。
               </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- Subtitle 05 -->
-      <div class="vox-sub-box clip" id="sub5" data-start="59.09" data-duration="23.18" data-track-index="2" data-layout-allow-overflow>
-        <div class="vox-sub-text" data-layout-ignore>
-          しかし、時計の針を37年前、1987年に戻してみてください。この会社は、<span class="sub-red">技術なし、資金なし、名声なし</span>。55歳で台湾に渡った一人の男が立ち上げた<span class="sub-gold">「誰も見向きもしない下請け工場」</span>でした。
+        <!-- Scene 05 Phase C: Andy Grove Intel Rejection Dossier (70.0s - 82.27s) -->
+        <div class="scene05-rejection-card" id="scene05-rejection-modal" style="opacity: 0; pointer-events: none;">
+          <div class="rejection-photo">
+            <img src="assets/images/andy_grove_vintage.jpg" alt="Andy Grove Intel CEO 1980s" />
+            <div class="vox-source-tag">INTEL ARCHIVE • ANDY GROVE</div>
+          </div>
+          <div class="rejection-details">
+            <div class="rejection-stamp">REJECTED // 相手にされず</div>
+            <div class="rejection-heading">インテルCEO アンディ・グローブの冷笑</div>
+            <div class="rejection-desc">
+              1980年代後半、創業時のモリス・チャンは資金と技術を求めて米シリコンバレーを行脚。<br/>
+              しかしインテルら巨人たちは<span class="vox-highlight-box">「技術が2〜3世代遅れた下請け町工場」</span>と見なし、完全拒絶した。
+            </div>
+          </div>
         </div>
       </div>
-      <audio class="clip" id="vo-05" data-start="59.09" data-duration="23.18" data-track-index="3" src="assets/audio/scene_05.mp3"></audio>
-      <audio class="clip" id="sfx-05-clock" data-start="59.20" data-duration="6.00" data-track-index="4" src="assets/sfx/clock_tick.wav"></audio>
-      <audio class="clip" id="sfx-05-click" data-start="60.20" data-duration="0.50" data-track-index="5" src="assets/sfx/mouse_click.wav"></audio>
-      <audio class="clip" id="sfx-05-slap" data-start="61.00" data-duration="1.20" data-track-index="6" src="assets/sfx/paper_slap.wav"></audio>
+      <audio class="clip" id="vo-05" data-start="148.14" data-duration="25.75" data-track-index="3" src="assets/audio/scene_05.mp3"></audio>
+      <audio class="clip" id="sfx-05-click" data-start="60.20" data-duration="0.06" data-track-index="4" src="assets/sfx/mouse_click.wav"></audio>
+      <audio class="clip" id="sfx-05-stamp-zero" data-start="61.50" data-duration="2.50" data-track-index="5" src="assets/sfx/impact_boom.wav"></audio>
+      <audio class="clip" id="sfx-05-intel-reject" data-start="71.00" data-duration="0.35" data-track-index="6" src="assets/sfx/paper_slap.wav"></audio>
 
       <!-- ================= SCENE 06: MONOLITHIC TITLE REVEAL (82.27s - 96.89s) ================= -->
-      <div class="scene06-stage clip" id="scene06-stage" data-start="82.27" data-duration="14.62" data-track-index="1" data-layout-allow-overflow>
+      <div class="scene06-stage clip" id="scene06-stage" data-start="182.39" data-duration="34.54" data-track-index="1" data-layout-allow-overflow>
         <div class="scene06-title-plate" id="scene06-title-plate">
-          <div class="s6-kicker-txt" id="s6-kicker">HISTORICAL DOCUMENTARY CASE STUDY</div>
+          <div class="s6-kicker-txt" id="s6-kicker"><span class="vox-pill-badge">VOX HISTORICAL CASE</span> TSMC CASE FILE #01</div>
           <div class="s6-monolithic-brand" id="s6-title">TSMC</div>
           <div class="s6-sub-brand" id="s6-sub">THE SEMICONDUCTOR EMPIRE</div>
-          <div class="s6-tag-sentence" id="s6-tag">常識を覆し続けた男の狂気の逆転劇 — 1987-2024</div>
+          <div class="s6-tag-sentence" id="s6-tag">常識を覆し続けた男の<span class="vox-highlight-box" style="margin: 0 8px;">狂気の逆転劇</span> — 1987-2024</div>
           <div class="s6-client-stamps" id="s6-clients">
             <span>[ APPLE ]</span> · <span>[ NVIDIA ]</span> · <span>[ AMD ]</span> · <span>[ QUALCOMM ]</span> · <span>[ ASML ]</span>
           </div>
         </div>
       </div>
+      <audio class="clip" id="vo-06" data-start="184.39" data-duration="20.04" data-track-index="3" src="assets/audio/scene_06.mp3"></audio>
+      <audio class="clip" id="sfx-06-impact" data-start="82.50" data-duration="2.50" data-track-index="4" src="assets/sfx/impact_boom.wav"></audio>
 
-      <!-- Subtitle 06 -->
-      <div class="vox-sub-box clip" id="sub6" data-start="82.27" data-duration="14.62" data-track-index="2" data-layout-allow-overflow>
-        <div class="vox-sub-text" data-layout-ignore>
-          なぜ、誰にも相手にされなかった町工場が、AppleやNVIDIA、そして米日すらひれ伏す怪物になれたのか？これは、<span class="sub-gold">常識を覆し続けた男の狂気の逆転劇</span>です。
+
+      <!-- ================= ACT 2: THE 55-YEAR-OLD OUTSIDER (96.888s - 213.864s) ================= -->
+
+      <!-- SCENE 07: MORRIS CHANG BACKGROUND & CREDENTIALS (96.89s - 115.63s, duration 18.74s) -->
+      <div class="act2-stage clip" id="scene07-stage" data-start="216.93" data-duration="36.08" data-track-index="1" data-layout-allow-overflow>
+        <div class="act2-top-bar">
+          <div class="act2-top-kicker"><span class="vox-pill-badge">ACT II</span> CASE FILE #02: TSMC // MORRIS CHANG · THE 55-YEAR-OLD OUTSIDER</div>
+          <div class="act2-top-time">1958–1983 // DALLAS, TEXAS</div>
+        </div>
+        <div class="s7-container">
+          <div class="s7-portrait-card" id="s7-card-portrait">
+            <img class="s7-portrait-img" src="assets/images/morris_chang_vintage.jpg" alt="Morris Chang TI" />
+            <div class="s7-portrait-caption">
+              <strong>ARCHIVE DOSSIER // MORRIS CHANG (張忠謀)</strong><br />
+              BORN: 1931 · AGE AT TSMC FOUNDING: 55 YEARS OLD
+            </div>
+          </div>
+          <div class="s7-credentials-col" id="s7-creds-list">
+            <div class="s7-credential-card" id="s7-cred-1">
+              <div class="s7-cred-year">1952–53</div>
+              <div class="s7-cred-info">
+                <h3>MIT (MASSACHUSETTS INSTITUTE OF TECHNOLOGY)</h3>
+                <p>Bachelor & Master of Science in Mechanical Engineering</p>
+              </div>
+              <span class="vox-pill-badge">ACADEMIC RECORD</span>
+            </div>
+            <div class="s7-credential-card" id="s7-cred-2">
+              <div class="s7-cred-year">1964</div>
+              <div class="s7-cred-info">
+                <h3>STANFORD UNIVERSITY</h3>
+                <p>Ph.D. in Electrical Engineering</p>
+              </div>
+              <span class="vox-pill-badge">DOCTORATE</span>
+            </div>
+            <div class="s7-credential-card" id="s7-cred-3">
+              <div class="s7-cred-year">1958–83</div>
+              <div class="s7-cred-info">
+                <h3>TEXAS INSTRUMENTS (TI)</h3>
+                <p>Group Vice President · Global Semiconductor Business (25 Years)</p>
+              </div>
+              <div class="s7-stamp-vp">GROUP VP</div>
+            </div>
+          </div>
+        </div>
+        <div class="act2-telop-card" id="s7-telop">
+          <div class="act2-telop-badge">DOSSIER // 1958–1983</div>
+          <h2 class="act2-telop-title">モリス・チャン（張忠謀）</h2>
+          <p class="act2-telop-sub">55歳の元エリート // ハーバード・MIT・スタンフォードを経てTI上級副社長へ</p>
         </div>
       </div>
-      <audio class="clip" id="vo-06" data-start="82.27" data-duration="14.62" data-track-index="3" src="assets/audio/scene_06.mp3"></audio>
-      <audio class="clip" id="sfx-06-impact" data-start="82.50" data-duration="3.00" data-track-index="4" src="assets/sfx/impact_boom.wav"></audio>
+      <audio class="clip" id="vo-07" data-start="218.13" data-duration="26.38" data-track-index="3" src="assets/audio/scene_07.mp3"></audio>
+      <audio class="clip" id="sfx-07-type" data-start="98.00" data-duration="1.50" data-track-index="4" src="assets/sfx/typewriter.wav"></audio>
+
+      <!-- SCENE 08: THE 1985 RESIGNATION & TAIWAN SUMMONS (115.63s - 136.13s, duration 20.50s) -->
+      <div class="act2-stage clip" id="scene08-stage" data-start="253.01" data-duration="36.70" data-track-index="1" data-layout-allow-overflow>
+        <div class="act2-top-bar">
+          <div class="act2-top-kicker"><span class="vox-pill-badge">ACT II</span> CASE FILE #02: TSMC // THE 1985 SUMMONS</div>
+          <div class="act2-top-time">1985 // DALLAS ➔ TAIPEI</div>
+        </div>
+        <div class="s8-container">
+          <div class="s8-doc-card" id="s8-card-doc">
+            <div class="s8-stamp-resigned" id="s8-stamp-res">RESIGNED</div>
+            <div>
+              <div class="vox-pill-badge" style="background:#b71c1c; color:#fff; border-color:#b71c1c;">INTERNAL ARCHIVE</div>
+              <h2 style="font-family:'Oswald',sans-serif; font-size:30px; margin:16px 0 6px 0;">TEXAS INSTRUMENTS CORP</h2>
+              <p style="font-family:'Courier Prime',monospace; font-size:14px; color:#666;">EXECUTIVE BOARD // SUCCESSION REPORT</p>
+            </div>
+            <div style="font-family:'Inter',sans-serif; font-size:15px; color:#444; line-height:1.6; border-top:1px dashed #ccc; border-bottom:1px dashed #ccc; padding:20px 0;">
+              After a 25-year corporate career, power struggle blocks path to CEO.<br />
+              Morris Chang departs corporate America at age 54 with zero company ownership.
+            </div>
+            <div style="font-family:'Courier Prime',monospace; font-size:13px; color:#888;">
+              DATE: DEC 1983 · STATUS: CLOSED FILE
+            </div>
+          </div>
+          <div class="s8-map-board" id="s8-map-board">
+            <div style="position:absolute; top:24px; left:30px; font-family:'Courier Prime',monospace; font-size:14px; color:var(--highlight-gold); letter-spacing:3px;">
+              [ TACTICAL DISPATCH // PACIFIC TRANSMISSION ]
+            </div>
+            <!-- Trans-Pacific Vector Line -->
+            <svg width="900" height="400" viewBox="0 0 900 400" style="position:relative; z-index:5;">
+              <!-- US Point -->
+              <circle cx="180" cy="220" r="10" fill="#ffd54f" />
+              <text x="180" y="260" font-family="Oswald" font-size="18" fill="#ffd54f" text-anchor="middle">USA (DALLAS, TX)</text>
+              <text x="180" y="280" font-family="Courier Prime" font-size="12" fill="#aaa" text-anchor="middle">54-YEAR-OLD EX-VP</text>
+
+              <!-- Taiwan Point -->
+              <circle cx="720" cy="180" r="10" fill="#ff5252" />
+              <text x="720" y="220" font-family="Oswald" font-size="18" fill="#ff5252" text-anchor="middle">TAIWAN (TAIPEI)</text>
+              <text x="720" y="240" font-family="Courier Prime" font-size="12" fill="#aaa" text-anchor="middle">ITRI INVITATION</text>
+
+              <!-- Connection Arc -->
+              <path id="s8-arc-path" d="M 180 220 Q 450 60 720 180" fill="none" stroke="#ffd54f" stroke-width="4" stroke-dasharray="8 6" />
+            </svg>
+            <div style="position:absolute; bottom:30px; background:rgba(0,0,0,0.7); border:1px solid rgba(197,160,89,0.5); padding:12px 24px; border-radius:4px; font-family:'Inter',sans-serif; font-size:16px; color:#fff;" id="s8-call-quote">
+              📞 <strong>緊急電話 (1985):</strong> 「台湾に、世界に通用する半導体産業を作ってくれないか」
+            </div>
+          </div>
+        </div>
+        <div class="act2-telop-card" id="s8-telop">
+          <div class="act2-telop-badge crisis">1985 // TURNING POINT</div>
+          <h2 class="act2-telop-title">すべてを失った男：台湾からの緊急要請</h2>
+          <p class="act2-telop-sub">54歳で権力闘争に敗れた男に、祖国・台湾政府から運命の一本の電話が入る</p>
+        </div>
+      </div>
+      <audio class="clip" id="vo-08" data-start="254.21" data-duration="27.00" data-track-index="3" src="assets/audio/scene_08.mp3"></audio>
+      <audio class="clip" id="sfx-08-slap" data-start="116.80" data-duration="0.35" data-track-index="4" src="assets/sfx/paper_slap.wav"></audio>
+
+      <!-- SCENE 09: THE TRADITIONAL IDM INDUSTRY STANDARD (136.13s - 159.14s, duration 23.02s) -->
+      <div class="act2-stage clip" id="scene09-stage" data-start="289.71" data-duration="38.09" data-track-index="1" data-layout-allow-overflow>
+        <div class="act2-top-bar">
+          <div class="act2-top-kicker"><span class="vox-pill-badge">ACT II</span> EXPLANATORY GRAPHIC // SEMICONDUCTOR ARCHITECTURE</div>
+          <div class="act2-top-time">1980s STANDARD // THE IDM MONOPOLY</div>
+        </div>
+        <div class="s9-container">
+          <div class="s9-idm-box" id="s9-box">
+            <div class="s9-idm-header">
+              <div style="display:flex; align-items:center; gap:16px;">
+                <span class="vox-pill-badge" style="background:#1a237e; color:#fff; border-color:#1a237e;">INDUSTRY MODEL</span>
+                <span style="font-family:'Oswald',sans-serif; font-size:26px; font-weight:700; color:#111;">TRADITIONAL IDM MODEL (垂直統合型半導体企業)</span>
+              </div>
+              <div style="font-family:'Courier Prime',monospace; font-size:14px; color:#777;">
+                ONE ENTERPRISE OWNS BOTH STAGES
+              </div>
+            </div>
+            <div class="s9-idm-stages">
+              <div class="s9-stage-block" id="s9-block-design">
+                <div style="font-size:40px; margin-bottom:12px;">📐</div>
+                <h3 style="font-family:'Oswald',sans-serif; font-size:26px; color:#1a1a1a; margin:0 0 8px 0;">STAGE 1: CHIP DESIGN</h3>
+                <p style="font-family:'Inter',sans-serif; font-size:16px; color:#555; margin:0;">
+                  独自の回路設計・アーキテクチャ開発<br />
+                  (Intel x86, Motorola 68000)
+                </p>
+              </div>
+              <div style="font-family:'Oswald',sans-serif; font-size:48px; color:var(--highlight-gold); font-weight:700;" id="s9-arrow-link">➔</div>
+              <div class="s9-stage-block" id="s9-block-fab">
+                <div style="font-size:40px; margin-bottom:12px;">🏭</div>
+                <h3 style="font-family:'Oswald',sans-serif; font-size:26px; color:#1a1a1a; margin:0 0 8px 0;">STAGE 2: MANUFACTURING (FAB)</h3>
+                <p style="font-family:'Inter',sans-serif; font-size:16px; color:#555; margin:0;">
+                  自社の巨大工場でウェハー製造・量産<br />
+                  (Billion-Dollar Capital Expenditure)
+                </p>
+              </div>
+            </div>
+            <div style="margin-top:24px; padding-top:16px; border-top:1px solid rgba(0,0,0,0.1); display:flex; justify-content:space-around; font-family:'Oswald',sans-serif; font-size:18px; color:#444;" id="s9-idm-logos">
+              <span>[ INTEL ]</span> · <span>[ MOTOROLA ]</span> · <span>[ NEC ]</span> · <span>[ HITACHI ]</span> · <span>[ TOSHIBA ]</span>
+            </div>
+          </div>
+        </div>
+        <div class="act2-telop-card" id="s9-telop">
+          <div class="act2-telop-badge">1987 // WORLD STANDARD</div>
+          <h2 class="act2-telop-title">当時の世界の絶対的常識</h2>
+          <p class="act2-telop-sub">「設計も製造も自社で行う」垂直統合モデル（IDM）が支配していた時代</p>
+        </div>
+      </div>
+      <audio class="clip" id="vo-09" data-start="290.91" data-duration="28.39" data-track-index="3" src="assets/audio/scene_09.mp3"></audio>
+      <audio class="clip" id="sfx-09-click" data-start="138.00" data-duration="0.06" data-track-index="4" src="assets/sfx/mouse_click.wav"></audio>
+
+      <!-- SCENE 10: THE FOUNDRY REVOLUTION SPLIT (159.14s - 177.62s, duration 18.48s) -->
+      <div class="act2-stage clip" id="scene10-stage" data-start="327.80" data-duration="40.30" data-track-index="1" data-layout-allow-overflow>
+        <div class="act2-top-bar">
+          <div class="act2-top-kicker"><span class="vox-pill-badge">ACT II</span> MORRIS CHANG'S DISRUPTION // THE SPLIT</div>
+          <div class="act2-top-time">1987 // THE PURE-PLAY FOUNDRY CONCEPT</div>
+        </div>
+        <div class="s10-container">
+          <div class="s10-left-fabless" id="s10-box-fabless">
+            <div class="vox-pill-badge" style="background:#e3f2fd; color:#0d47a1; border-color:#bbdefb;">NEW ECOSYSTEM: FABLESS</div>
+            <h2 style="font-family:'Oswald',sans-serif; font-size:32px; color:#111; margin:16px 0 8px 0;">CHIP DESIGNERS (ファブレス)</h2>
+            <p style="font-family:'Inter',sans-serif; font-size:16px; color:#555; line-height:1.6;">
+              工場を持たない設計専業スタートアップ。<br />
+              数十億円〜数百億円の工場建設費をゼロにし、設計アイデアだけで起業可能に。
+            </p>
+            <div style="margin-top:auto; padding:16px; background:#f5f5f5; border-radius:4px; font-family:'Courier Prime',monospace; font-size:14px; color:#666;">
+              FUTURE CLIENTS: NVIDIA · QUALCOMM · ARM · BROADCOM
+            </div>
+          </div>
+          <div style="font-family:'Oswald',sans-serif; font-size:44px; font-weight:700; color:var(--highlight-gold);" id="s10-arrow">➔</div>
+          <div class="s10-right-foundry" id="s10-box-foundry">
+            <div class="vox-pill-badge" style="background:#ffd54f; color:#000; border-color:#ffd54f;">HISTORIC DISRUPTION</div>
+            <h2 style="font-family:'Oswald',sans-serif; font-size:36px; color:#fff; margin:16px 0 8px 0;">TSMC PURE-PLAY FOUNDRY</h2>
+            <div style="margin:16px 0; font-family:'Oswald',sans-serif; font-size:24px; color:var(--highlight-gold); line-height:1.4;">
+              <span class="vox-highlight-box" style="padding:4px 12px; color:#000;">「自社製品は一切作らない」</span><br />
+              専業受託製造 (FOUNDRY) という新市場
+            </div>
+            <p style="font-family:'Inter',sans-serif; font-size:16px; color:#ccc; line-height:1.6; margin-top:auto;">
+              すべての顧客の黒衣（裏方）に徹し、他社が設計した半導体の製造だけに全資源を集中する。
+            </p>
+          </div>
+        </div>
+        <div class="act2-telop-card" id="s10-telop">
+          <div class="act2-telop-badge gold">FOUNDRY REVOLUTION</div>
+          <h2 class="act2-telop-title">狂気のアイデア</h2>
+          <p class="act2-telop-sub">「自社製品を作らない」専業受託製造（Pure-play Foundry）という革命</p>
+        </div>
+      </div>
+      <audio class="clip" id="vo-10" data-start="329.80" data-duration="25.80" data-track-index="3" src="assets/audio/scene_10.mp3"></audio>
+      <audio class="clip" id="sfx-10-marker" data-start="162.00" data-duration="0.40" data-track-index="4" src="assets/sfx/marker_wipe.wav"></audio>
+
+      <!-- SCENE 11: THE IRON RULE - NEVER COMPETE WITH CUSTOMERS (177.62s - 195.31s, duration 17.69s) -->
+      <div class="act2-stage clip" id="scene11-stage" data-start="368.10" data-duration="35.36" data-track-index="1" data-layout-allow-overflow>
+        <div class="act2-top-bar">
+          <div class="act2-top-kicker"><span class="vox-pill-badge">ACT II</span> CORE FOUNDING PRINCIPLE // TSMC CHARTER</div>
+          <div class="act2-top-time">1987–PRESENT // ZERO CONFLICT OF INTEREST</div>
+        </div>
+        <div class="s11-container">
+          <div class="s11-card" id="s11-card-rule">
+            <div class="s11-stamp-iron-rule" id="s11-stamp-rule">NEVER COMPETE</div>
+            <div>
+              <div class="vox-pill-badge">FOUNDING DOCTRINE</div>
+              <h2 style="font-family:'Oswald',sans-serif; font-size:36px; color:#111; margin:16px 0 8px 0;">CUSTOMER TRUST (顧客の絶対的信頼)</h2>
+              <p style="font-family:'Courier Prime',monospace; font-size:15px; color:#666;">TSMC CORE VALUE CLAUSE #01</p>
+            </div>
+            <div style="background:#fff; border:1px solid rgba(197,160,89,0.3); border-radius:6px; padding:24px; font-family:'Inter',sans-serif; font-size:17px; color:#333; line-height:1.7;">
+              🔒 <strong>最高機密の設計図 (IP) を守り抜く:</strong><br />
+              自社ブランドを持たないからこそ、Apple、NVIDIA、AMDが互いに競合していても、全員が安心してTSMCに最先端チップの製造を託すことができる。
+            </div>
+            <div style="font-family:'Courier Prime',monospace; font-size:14px; color:#888;">
+              GUARANTEE: 100% NEUTRAL FOUNDRY · ZERO PROPRIETARY PRODUCTS
+            </div>
+          </div>
+        </div>
+        <div class="act2-telop-card" id="s11-telop">
+          <div class="act2-telop-badge">ABSOLUTE PRINCIPLE</div>
+          <h2 class="act2-telop-title">絶対原則：「顧客と絶対に競合しない」</h2>
+          <p class="act2-telop-sub">自社製品を持たないからこそ、世界中の設計企業が最高機密を預けられる</p>
+        </div>
+      </div>
+      <audio class="clip" id="vo-11" data-start="369.30" data-duration="25.66" data-track-index="3" src="assets/audio/scene_11.mp3"></audio>
+      <audio class="clip" id="sfx-11-impact" data-start="179.00" data-duration="2.50" data-track-index="4" src="assets/sfx/impact_boom.wav"></audio>
+
+      <!-- SCENE 12: REALITY BITES - CAPACITY ZERO & COLLAPSE RISK (195.31s - 213.86s, duration 18.55s) -->
+      <div class="act2-stage clip" id="scene12-stage" data-start="403.46" data-duration="39.87" data-track-index="1" data-layout-allow-overflow>
+        <div class="act2-top-bar">
+          <div class="act2-top-kicker"><span class="vox-pill-badge" style="background:#b71c1c; color:#fff; border-color:#b71c1c;">CRITICAL CRISIS</span> CASE FILE #02: TSMC // THE CLIFF EDGE</div>
+          <div class="act2-top-time">1987–1988 // HSINCHU FAB 1</div>
+        </div>
+        <div class="s12-container">
+          <div class="s12-factory-visual" id="s12-vis-fab">
+            <img src="assets/images/hsinchu_park_vintage.jpg" style="width:100%; height:100%; object-fit:cover; filter:contrast(1.2) brightness(0.4) grayscale(0.6);" alt="Dark Fab" />
+            <div style="position:absolute; inset:0; background:rgba(183, 28, 28, 0.25); mix-blend-mode:multiply;"></div>
+            <div style="position:absolute; top:24px; left:24px; font-family:'Courier Prime',monospace; font-size:15px; color:#ff5252; letter-spacing:3px;">
+              [ HSINCHU FAB 1 // STATUS: IDLE ]
+            </div>
+            <div style="position:absolute; bottom:24px; left:24px; right:24px; background:rgba(0,0,0,0.85); padding:16px 20px; border-left:4px solid #ff5252; font-family:'Inter',sans-serif; font-size:15px; color:#eee;">
+              ⚠️ 実績ゼロ・ブランド力ゼロの怪しげな台湾企業に、注文を出す顧客は世界に一社もなかった。
+            </div>
+          </div>
+          <div class="s12-ledger-card" id="s12-card-ledger">
+            <div class="s12-stamp-crisis" id="s12-stamp-crisis">CAPACITY: 0%<br />倒産寸前</div>
+            <div>
+              <div class="vox-pill-badge" style="background:#b71c1c; color:#fff; border-color:#b71c1c;">AUDIT RECORD</div>
+              <h2 style="font-family:'Oswald',sans-serif; font-size:32px; color:#111; margin:16px 0 8px 0;">TSMC FINANCIAL LEDGER (1987–1988)</h2>
+              <p style="font-family:'Courier Prime',monospace; font-size:14px; color:#666;">CASH RUNWAY // IMMINENT DEPLETION</p>
+            </div>
+            <div style="border-top:1px dashed #ccc; border-bottom:1px dashed #ccc; padding:20px 0; display:flex; flex-direction:column; gap:12px; font-family:'Courier Prime',monospace; font-size:15px; color:#333;">
+              <div style="display:flex; justify-content:space-between;">
+                <span>FACTORY UTILIZATION:</span> <strong style="color:#b71c1c;">0.0% (EMPTY)</strong>
+              </div>
+              <div style="display:flex; justify-content:space-between;">
+                <span>GLOBAL CLIENT ORDERS:</span> <strong style="color:#b71c1c;">0 UNITS</strong>
+              </div>
+              <div style="display:flex; justify-content:space-between;">
+                <span>CASH CONSUMPTION RATE:</span> <strong style="color:#b71c1c;">CRITICAL DEFICIT</strong>
+              </div>
+            </div>
+            <div style="font-family:'Inter',sans-serif; font-size:14px; color:#777;">
+              会社は設立早々、死の淵に立たされる。次の打開策はあるのか？
+            </div>
+          </div>
+        </div>
+        <div class="act2-telop-card" id="s12-telop">
+          <div class="act2-telop-badge crisis">CAPACITY ZERO // 1988</div>
+          <h2 class="act2-telop-title">稼働率ゼロ：倒産寸前の崖っぷち</h2>
+          <p class="act2-telop-sub">実績ゼロの台湾企業に注文は来ず、工場は空っぽ。設立早々死の淵へ</p>
+        </div>
+      </div>
+      <audio class="clip" id="vo-12" data-start="405.46" data-duration="25.37" data-track-index="3" src="assets/audio/scene_12.mp3"></audio>
+      <audio class="clip" id="sfx-12-clock" data-start="197.00" data-duration="8.00" data-track-index="4" src="assets/sfx/clock_tick.wav"></audio>
+
+      <!-- Continuous Act 2 Cinematic BGM Score -->
+      
+
+
+      <!-- SCENE 13: 1988年：Intelへの直談判 (213.86s - 229.96s, dur 16.10s) -->
+      <div class="act2-stage clip" id="scene13-stage" data-start="443.33" data-duration="31.73" data-track-index="1" data-layout-allow-overflow>
+        <div class="act2-top-bar">
+          <div class="act2-top-kicker"><span class="vox-pill-badge">ACT III</span> ACT III: THE INTEL CHALLENGE</div>
+          <div class="act2-top-time">1988 // SILICON VALLEY MEETING</div>
+        </div>
+        <div class="s10-container">
+          <div class="s10-left-fabless" id="s13-card-left" style="height:560px; justify-content:space-between;">
+            <div>
+              <div class="vox-pill-badge" style="background:#1a237e; color:#fff; border-color:#1a237e;">HISTORICAL DOSSIER #13</div>
+              <h2 style="font-family:'Oswald',sans-serif; font-size:34px; color:#111; margin:14px 0 8px 0; line-height:1.2;">1988年：Intelへの直談判</h2>
+              <p style="font-family:'Inter',sans-serif; font-size:16px; color:#555; line-height:1.6; margin-top:8px;">最後の望みを賭けた訪問</p>
+            </div>
+            <div style="background:#fbf7ee; border:1px solid rgba(197,160,89,0.4); border-radius:4px; padding:18px; font-family:'Courier Prime',monospace; font-size:14px; color:#333;">
+              <span style="color:var(--highlight-gold); font-weight:700;">DOCUMENT LOG //</span> 1988 // SILICON VALLEY MEETING<br />
+              <span style="color:#666;">ARCHIVE FILE: TSMC-CASE-13 · CONFIDENTIAL</span>
+            </div>
+          </div>
+          <div style="position:relative; width:820px; height:560px; border-radius:8px; overflow:hidden; box-shadow:0 25px 60px rgba(0,0,0,0.35); border:2px solid rgba(197,160,89,0.5);" id="s13-visual">
+            <img src="assets/images/andy_grove_vintage.jpg" style="width:100%; height:100%; object-fit:cover; filter:contrast(1.15) brightness(0.9);" alt="Visual 13" />
+            <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 60%);"></div>
+            <div style="position:absolute; top:30px; right:30px; border:4px solid #b71c1c; color:#b71c1c; font-family:'Oswald',sans-serif; font-size:26px; font-weight:900; letter-spacing:2px; padding:8px 20px; transform:rotate(-8deg); background:rgba(255,255,255,0.95); box-shadow:0 10px 30px rgba(0,0,0,0.3);" id="s13-stamp">
+              INTEL NEGOTIATION
+            </div>
+          </div>
+        </div>
+        <div class="act2-telop-card" id="s13-telop">
+          <div class="act2-telop-badge">ACT III: THE INTEL CHALLENGE</div>
+          <h2 class="act2-telop-title">1988年：Intelへの直談判</h2>
+          <p class="act2-telop-sub">最後の望みを賭けた訪問</p>
+        </div>
+      </div>
+      <audio class="clip" id="vo-13" data-start="444.53" data-duration="22.03" data-track-index="3" src="assets/audio/scene_13.mp3"></audio>
+      <audio class="clip" id="sfx-13" data-start="445.53" data-duration="2.00" data-track-index="4" src="assets/sfx/impact_boom.wav"></audio>
+
+
+      <!-- SCENE 14: 突きつけられた現実 (229.96s - 246.78s, dur 16.82s) -->
+      <div class="act2-stage clip" id="scene14-stage" data-start="475.06" data-duration="33.58" data-track-index="1" data-layout-allow-overflow>
+        <div class="act2-top-bar">
+          <div class="act2-top-kicker"><span class="vox-pill-badge">ACT III</span> ACT III: THE INTEL CHALLENGE</div>
+          <div class="act2-top-time">1988 // INTEL AUDIT REPORT</div>
+        </div>
+        <div class="s10-container">
+          <div class="s10-left-fabless" id="s14-card-left" style="height:560px; justify-content:space-between;">
+            <div>
+              <div class="vox-pill-badge" style="background:#1a237e; color:#fff; border-color:#1a237e;">HISTORICAL DOSSIER #14</div>
+              <h2 style="font-family:'Oswald',sans-serif; font-size:34px; color:#111; margin:14px 0 8px 0; line-height:1.2;">突きつけられた現実</h2>
+              <p style="font-family:'Inter',sans-serif; font-size:16px; color:#555; line-height:1.6; margin-top:8px;">「200項目の致命的欠陥」という宣告</p>
+            </div>
+            <div style="background:#fbf7ee; border:1px solid rgba(197,160,89,0.4); border-radius:4px; padding:18px; font-family:'Courier Prime',monospace; font-size:14px; color:#333;">
+              <span style="color:var(--highlight-gold); font-weight:700;">DOCUMENT LOG //</span> 1988 // INTEL AUDIT REPORT<br />
+              <span style="color:#666;">ARCHIVE FILE: TSMC-CASE-14 · CONFIDENTIAL</span>
+            </div>
+          </div>
+          <div style="position:relative; width:820px; height:560px; border-radius:8px; overflow:hidden; box-shadow:0 25px 60px rgba(0,0,0,0.35); border:2px solid rgba(197,160,89,0.5);" id="s14-visual">
+            <img src="assets/images/andy_grove_vintage.jpg" style="width:100%; height:100%; object-fit:cover; filter:contrast(1.15) brightness(0.9);" alt="Visual 14" />
+            <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 60%);"></div>
+            <div style="position:absolute; top:30px; right:30px; border:4px solid #b71c1c; color:#b71c1c; font-family:'Oswald',sans-serif; font-size:26px; font-weight:900; letter-spacing:2px; padding:8px 20px; transform:rotate(-8deg); background:rgba(255,255,255,0.95); box-shadow:0 10px 30px rgba(0,0,0,0.3);" id="s14-stamp">
+              200 DEFECTS FOUND
+            </div>
+          </div>
+        </div>
+        <div class="act2-telop-card" id="s14-telop">
+          <div class="act2-telop-badge">ACT III: THE INTEL CHALLENGE</div>
+          <h2 class="act2-telop-title">突きつけられた現実</h2>
+          <p class="act2-telop-sub">「200項目の致命的欠陥」という宣告</p>
+        </div>
+      </div>
+      <audio class="clip" id="vo-14" data-start="476.26" data-duration="23.88" data-track-index="3" src="assets/audio/scene_14.mp3"></audio>
+      <audio class="clip" id="sfx-14" data-start="477.26" data-duration="0.35" data-track-index="4" src="assets/sfx/paper_slap.wav"></audio>
+
+
+      <!-- SCENE 15: 24時間突貫修正 (246.78s - 266.29s, dur 19.51s) -->
+      <div class="act2-stage clip" id="scene15-stage" data-start="508.64" data-duration="33.08" data-track-index="1" data-layout-allow-overflow>
+        <div class="act2-top-bar">
+          <div class="act2-top-kicker"><span class="vox-pill-badge">ACT III</span> ACT III: THE INTEL CHALLENGE</div>
+          <div class="act2-top-time">1988–1989 // HSINCHU SPRINT</div>
+        </div>
+        <div class="s10-container">
+          <div class="s10-left-fabless" id="s15-card-left" style="height:560px; justify-content:space-between;">
+            <div>
+              <div class="vox-pill-badge" style="background:#1a237e; color:#fff; border-color:#1a237e;">HISTORICAL DOSSIER #15</div>
+              <h2 style="font-family:'Oswald',sans-serif; font-size:34px; color:#111; margin:14px 0 8px 0; line-height:1.2;">24時間突貫修正</h2>
+              <p style="font-family:'Inter',sans-serif; font-size:16px; color:#555; line-height:1.6; margin-top:8px;">全エンジニア総動員によるIntel基準完全達成</p>
+            </div>
+            <div style="background:#fbf7ee; border:1px solid rgba(197,160,89,0.4); border-radius:4px; padding:18px; font-family:'Courier Prime',monospace; font-size:14px; color:#333;">
+              <span style="color:var(--highlight-gold); font-weight:700;">DOCUMENT LOG //</span> 1988–1989 // HSINCHU SPRINT<br />
+              <span style="color:#666;">ARCHIVE FILE: TSMC-CASE-15 · CONFIDENTIAL</span>
+            </div>
+          </div>
+          <div style="position:relative; width:820px; height:560px; border-radius:8px; overflow:hidden; box-shadow:0 25px 60px rgba(0,0,0,0.35); border:2px solid rgba(197,160,89,0.5);" id="s15-visual">
+            <img src="assets/images/hsinchu_park_vintage.jpg" style="width:100%; height:100%; object-fit:cover; filter:contrast(1.15) brightness(0.9);" alt="Visual 15" />
+            <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 60%);"></div>
+            <div style="position:absolute; top:30px; right:30px; border:4px solid #b71c1c; color:#b71c1c; font-family:'Oswald',sans-serif; font-size:26px; font-weight:900; letter-spacing:2px; padding:8px 20px; transform:rotate(-8deg); background:rgba(255,255,255,0.95); box-shadow:0 10px 30px rgba(0,0,0,0.3);" id="s15-stamp">
+              INTEL 24H SPRINT
+            </div>
+          </div>
+        </div>
+        <div class="act2-telop-card" id="s15-telop">
+          <div class="act2-telop-badge">ACT III: THE INTEL CHALLENGE</div>
+          <h2 class="act2-telop-title">24時間突貫修正</h2>
+          <p class="act2-telop-sub">全エンジニア総動員によるIntel基準完全達成</p>
+        </div>
+      </div>
+      <audio class="clip" id="vo-15" data-start="509.84" data-duration="23.38" data-track-index="3" src="assets/audio/scene_15.mp3"></audio>
+      <audio class="clip" id="sfx-15" data-start="510.84" data-duration="0.06" data-track-index="4" src="assets/sfx/mouse_click.wav"></audio>
+
+
+      <!-- SCENE 16: Intel認証の獲得 (266.29s - 280.52s, dur 14.23s) -->
+      <div class="act2-stage clip" id="scene16-stage" data-start="541.72" data-duration="38.31" data-track-index="1" data-layout-allow-overflow>
+        <div class="act2-top-bar">
+          <div class="act2-top-kicker"><span class="vox-pill-badge">ACT III</span> ACT III: THE INTEL CHALLENGE</div>
+          <div class="act2-top-time">1989 // GLOBAL ACCREDITATION</div>
+        </div>
+        <div class="s10-container">
+          <div class="s10-left-fabless" id="s16-card-left" style="height:560px; justify-content:space-between;">
+            <div>
+              <div class="vox-pill-badge" style="background:#1a237e; color:#fff; border-color:#1a237e;">HISTORICAL DOSSIER #16</div>
+              <h2 style="font-family:'Oswald',sans-serif; font-size:34px; color:#111; margin:14px 0 8px 0; line-height:1.2;">Intel認証の獲得</h2>
+              <p style="font-family:'Inter',sans-serif; font-size:16px; color:#555; line-height:1.6; margin-top:8px;">世界最高峰の製造基準パス・世界への扉開く</p>
+            </div>
+            <div style="background:#fbf7ee; border:1px solid rgba(197,160,89,0.4); border-radius:4px; padding:18px; font-family:'Courier Prime',monospace; font-size:14px; color:#333;">
+              <span style="color:var(--highlight-gold); font-weight:700;">DOCUMENT LOG //</span> 1989 // GLOBAL ACCREDITATION<br />
+              <span style="color:#666;">ARCHIVE FILE: TSMC-CASE-16 · CONFIDENTIAL</span>
+            </div>
+          </div>
+          <div style="position:relative; width:820px; height:560px; border-radius:8px; overflow:hidden; box-shadow:0 25px 60px rgba(0,0,0,0.35); border:2px solid rgba(197,160,89,0.5);" id="s16-visual">
+            <img src="assets/images/tsmc_headquarters_building.jpg" style="width:100%; height:100%; object-fit:cover; filter:contrast(1.15) brightness(0.9);" alt="Visual 16" />
+            <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 60%);"></div>
+            <div style="position:absolute; top:30px; right:30px; border:4px solid #b71c1c; color:#b71c1c; font-family:'Oswald',sans-serif; font-size:26px; font-weight:900; letter-spacing:2px; padding:8px 20px; transform:rotate(-8deg); background:rgba(255,255,255,0.95); box-shadow:0 10px 30px rgba(0,0,0,0.3);" id="s16-stamp">
+              INTEL CERTIFIED
+            </div>
+          </div>
+        </div>
+        <div class="act2-telop-card" id="s16-telop">
+          <div class="act2-telop-badge">ACT III: THE INTEL CHALLENGE</div>
+          <h2 class="act2-telop-title">Intel認証の獲得</h2>
+          <p class="act2-telop-sub">世界最高峰の製造基準パス・世界への扉開く</p>
+        </div>
+      </div>
+      <audio class="clip" id="vo-16" data-start="543.72" data-duration="23.81" data-track-index="3" src="assets/audio/scene_16.mp3"></audio>
+      <audio class="clip" id="sfx-16" data-start="544.72" data-duration="2.00" data-track-index="4" src="assets/sfx/impact_boom.wav"></audio>
+
+
+      <!-- SCENE 17: 出会い：ジェンスン・フアン (280.52s - 295.57s, dur 15.05s) -->
+      <div class="act2-stage clip" id="scene17-stage" data-start="580.03" data-duration="41.88" data-track-index="1" data-layout-allow-overflow>
+        <div class="act2-top-bar">
+          <div class="act2-top-kicker"><span class="vox-pill-badge">ACT III</span> ACT III: THE FABLESS BOOM</div>
+          <div class="act2-top-time">1995 // THE HISTORIC ENCOUNTER</div>
+        </div>
+        <div class="s10-container">
+          <div class="s10-left-fabless" id="s17-card-left" style="height:560px; justify-content:space-between;">
+            <div>
+              <div class="vox-pill-badge" style="background:#1a237e; color:#fff; border-color:#1a237e;">HISTORICAL DOSSIER #17</div>
+              <h2 style="font-family:'Oswald',sans-serif; font-size:34px; color:#111; margin:14px 0 8px 0; line-height:1.2;">出会い：ジェンスン・フアン</h2>
+              <p style="font-family:'Inter',sans-serif; font-size:16px; color:#555; line-height:1.6; margin-top:8px;">工場を持たない天才たち（NVIDIA）との絆</p>
+            </div>
+            <div style="background:#fbf7ee; border:1px solid rgba(197,160,89,0.4); border-radius:4px; padding:18px; font-family:'Courier Prime',monospace; font-size:14px; color:#333;">
+              <span style="color:var(--highlight-gold); font-weight:700;">DOCUMENT LOG //</span> 1995 // THE HISTORIC ENCOUNTER<br />
+              <span style="color:#666;">ARCHIVE FILE: TSMC-CASE-17 · CONFIDENTIAL</span>
+            </div>
+          </div>
+          <div style="position:relative; width:820px; height:560px; border-radius:8px; overflow:hidden; box-shadow:0 25px 60px rgba(0,0,0,0.35); border:2px solid rgba(197,160,89,0.5);" id="s17-visual">
+            <img src="assets/images/jensen_huang_vintage.jpg" style="width:100%; height:100%; object-fit:cover; filter:contrast(1.15) brightness(0.9);" alt="Visual 17" />
+            <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 60%);"></div>
+            <div style="position:absolute; top:30px; right:30px; border:4px solid #b71c1c; color:#b71c1c; font-family:'Oswald',sans-serif; font-size:26px; font-weight:900; letter-spacing:2px; padding:8px 20px; transform:rotate(-8deg); background:rgba(255,255,255,0.95); box-shadow:0 10px 30px rgba(0,0,0,0.3);" id="s17-stamp">
+              NVIDIA PARTNERSHIP
+            </div>
+          </div>
+        </div>
+        <div class="act2-telop-card" id="s17-telop">
+          <div class="act2-telop-badge">ACT III: THE FABLESS BOOM</div>
+          <h2 class="act2-telop-title">出会い：ジェンスン・フアン</h2>
+          <p class="act2-telop-sub">工場を持たない天才たち（NVIDIA）との絆</p>
+        </div>
+      </div>
+      <audio class="clip" id="vo-17" data-start="582.03" data-duration="27.38" data-track-index="3" src="assets/audio/scene_17.mp3"></audio>
+      <audio class="clip" id="sfx-17" data-start="583.03" data-duration="1.50" data-track-index="4" src="assets/sfx/typewriter.wav"></audio>
+
+
+      <!-- SCENE 18: 不夜城の秘密：伝説の夜鷹部隊 (295.57s - 312.39s, dur 16.82s) -->
+      <div class="act2-stage clip" id="scene18-stage" data-start="621.91" data-duration="34.54" data-track-index="1" data-layout-allow-overflow>
+        <div class="act2-top-bar">
+          <div class="act2-top-kicker"><span class="vox-pill-badge">ACT IV</span> ACT IV: NIGHTINGALE ARMY</div>
+          <div class="act2-top-time">1990s–2000s // 24-HOUR R&D</div>
+        </div>
+        <div class="s10-container">
+          <div class="s10-left-fabless" id="s18-card-left" style="height:560px; justify-content:space-between;">
+            <div>
+              <div class="vox-pill-badge" style="background:#1a237e; color:#fff; border-color:#1a237e;">HISTORICAL DOSSIER #18</div>
+              <h2 style="font-family:'Oswald',sans-serif; font-size:34px; color:#111; margin:14px 0 8px 0; line-height:1.2;">不夜城の秘密：伝説の夜鷹部隊</h2>
+              <p style="font-family:'Inter',sans-serif; font-size:16px; color:#555; line-height:1.6; margin-top:8px;">昼夜を分かたぬ3交代・欧米の3倍速進化</p>
+            </div>
+            <div style="background:#fbf7ee; border:1px solid rgba(197,160,89,0.4); border-radius:4px; padding:18px; font-family:'Courier Prime',monospace; font-size:14px; color:#333;">
+              <span style="color:var(--highlight-gold); font-weight:700;">DOCUMENT LOG //</span> 1990s–2000s // 24-HOUR R&D<br />
+              <span style="color:#666;">ARCHIVE FILE: TSMC-CASE-18 · CONFIDENTIAL</span>
+            </div>
+          </div>
+          <div style="position:relative; width:820px; height:560px; border-radius:8px; overflow:hidden; box-shadow:0 25px 60px rgba(0,0,0,0.35); border:2px solid rgba(197,160,89,0.5);" id="s18-visual">
+            <img src="assets/images/hsinchu_park_vintage.jpg" style="width:100%; height:100%; object-fit:cover; filter:contrast(1.15) brightness(0.9);" alt="Visual 18" />
+            <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 60%);"></div>
+            <div style="position:absolute; top:30px; right:30px; border:4px solid #b71c1c; color:#b71c1c; font-family:'Oswald',sans-serif; font-size:26px; font-weight:900; letter-spacing:2px; padding:8px 20px; transform:rotate(-8deg); background:rgba(255,255,255,0.95); box-shadow:0 10px 30px rgba(0,0,0,0.3);" id="s18-stamp">
+              NIGHTINGALE 24/7
+            </div>
+          </div>
+        </div>
+        <div class="act2-telop-card" id="s18-telop">
+          <div class="act2-telop-badge">ACT IV: NIGHTINGALE ARMY</div>
+          <h2 class="act2-telop-title">不夜城の秘密：伝説の夜鷹部隊</h2>
+          <p class="act2-telop-sub">昼夜を分かたぬ3交代・欧米の3倍速進化</p>
+        </div>
+      </div>
+      <audio class="clip" id="vo-18" data-start="623.11" data-duration="24.84" data-track-index="3" src="assets/audio/scene_18.mp3"></audio>
+      <audio class="clip" id="sfx-18" data-start="624.11" data-duration="4.00" data-track-index="4" src="assets/sfx/clock_tick.wav"></audio>
+
+
+      <!-- SCENE 19: 欧米の3倍速で進化 (312.39s - 335.50s, dur 23.11s) -->
+      <div class="act2-stage clip" id="scene19-stage" data-start="656.45" data-duration="29.84" data-track-index="1" data-layout-allow-overflow>
+        <div class="act2-top-bar">
+          <div class="act2-top-kicker"><span class="vox-pill-badge">ACT IV</span> ACT IV: 24/7 ADVANCEMENT</div>
+          <div class="act2-top-time">2000s // MOORE'S LAW LEADERSHIP</div>
+        </div>
+        <div class="s10-container">
+          <div class="s10-left-fabless" id="s19-card-left" style="height:560px; justify-content:space-between;">
+            <div>
+              <div class="vox-pill-badge" style="background:#1a237e; color:#fff; border-color:#1a237e;">HISTORICAL DOSSIER #19</div>
+              <h2 style="font-family:'Oswald',sans-serif; font-size:34px; color:#111; margin:14px 0 8px 0; line-height:1.2;">欧米の3倍速で進化</h2>
+              <p style="font-family:'Inter',sans-serif; font-size:16px; color:#555; line-height:1.6; margin-top:8px;">24時間365日止まらぬ研究開発が生んだ圧倒的歩留まり</p>
+            </div>
+            <div style="background:#fbf7ee; border:1px solid rgba(197,160,89,0.4); border-radius:4px; padding:18px; font-family:'Courier Prime',monospace; font-size:14px; color:#333;">
+              <span style="color:var(--highlight-gold); font-weight:700;">DOCUMENT LOG //</span> 2000s // MOORE'S LAW LEADERSHIP<br />
+              <span style="color:#666;">ARCHIVE FILE: TSMC-CASE-19 · CONFIDENTIAL</span>
+            </div>
+          </div>
+          <div style="position:relative; width:820px; height:560px; border-radius:8px; overflow:hidden; box-shadow:0 25px 60px rgba(0,0,0,0.35); border:2px solid rgba(197,160,89,0.5);" id="s19-visual">
+            <img src="assets/images/tsmc_headquarters_building.jpg" style="width:100%; height:100%; object-fit:cover; filter:contrast(1.15) brightness(0.9);" alt="Visual 19" />
+            <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 60%);"></div>
+            <div style="position:absolute; top:30px; right:30px; border:4px solid #b71c1c; color:#b71c1c; font-family:'Oswald',sans-serif; font-size:26px; font-weight:900; letter-spacing:2px; padding:8px 20px; transform:rotate(-8deg); background:rgba(255,255,255,0.95); box-shadow:0 10px 30px rgba(0,0,0,0.3);" id="s19-stamp">
+              TRIPLE SPEED R&D
+            </div>
+          </div>
+        </div>
+        <div class="act2-telop-card" id="s19-telop">
+          <div class="act2-telop-badge">ACT IV: 24/7 ADVANCEMENT</div>
+          <h2 class="act2-telop-title">欧米の3倍速で進化</h2>
+          <p class="act2-telop-sub">24時間365日止まらぬ研究開発が生んだ圧倒的歩留まり</p>
+        </div>
+      </div>
+      <audio class="clip" id="vo-19" data-start="657.65" data-duration="20.14" data-track-index="3" src="assets/audio/scene_19.mp3"></audio>
+      <audio class="clip" id="sfx-19" data-start="658.65" data-duration="0.06" data-track-index="4" src="assets/sfx/mouse_click.wav"></audio>
+
+
+      <!-- SCENE 20: 2010年：Appleとの極秘会談 (335.50s - 348.03s, dur 12.53s) -->
+      <div class="act2-stage clip" id="scene20-stage" data-start="686.29" data-duration="31.37" data-track-index="1" data-layout-allow-overflow>
+        <div class="act2-top-bar">
+          <div class="act2-top-kicker"><span class="vox-pill-badge">ACT IV</span> ACT IV: THE APPLE STRATEGY</div>
+          <div class="act2-top-time">2010 // CUPERTINO SECRET SUMMIT</div>
+        </div>
+        <div class="s10-container">
+          <div class="s10-left-fabless" id="s20-card-left" style="height:560px; justify-content:space-between;">
+            <div>
+              <div class="vox-pill-badge" style="background:#1a237e; color:#fff; border-color:#1a237e;">HISTORICAL DOSSIER #20</div>
+              <h2 style="font-family:'Oswald',sans-serif; font-size:34px; color:#111; margin:14px 0 8px 0; line-height:1.2;">2010年：Appleとの極秘会談</h2>
+              <p style="font-family:'Inter',sans-serif; font-size:16px; color:#555; line-height:1.6; margin-top:8px;">最大の敵・Samsung打倒へ向けた秘密同盟</p>
+            </div>
+            <div style="background:#fbf7ee; border:1px solid rgba(197,160,89,0.4); border-radius:4px; padding:18px; font-family:'Courier Prime',monospace; font-size:14px; color:#333;">
+              <span style="color:var(--highlight-gold); font-weight:700;">DOCUMENT LOG //</span> 2010 // CUPERTINO SECRET SUMMIT<br />
+              <span style="color:#666;">ARCHIVE FILE: TSMC-CASE-20 · CONFIDENTIAL</span>
+            </div>
+          </div>
+          <div style="position:relative; width:820px; height:560px; border-radius:8px; overflow:hidden; box-shadow:0 25px 60px rgba(0,0,0,0.35); border:2px solid rgba(197,160,89,0.5);" id="s20-visual">
+            <img src="assets/images/tim_cook_vintage.jpg" style="width:100%; height:100%; object-fit:cover; filter:contrast(1.15) brightness(0.9);" alt="Visual 20" />
+            <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 60%);"></div>
+            <div style="position:absolute; top:30px; right:30px; border:4px solid #b71c1c; color:#b71c1c; font-family:'Oswald',sans-serif; font-size:26px; font-weight:900; letter-spacing:2px; padding:8px 20px; transform:rotate(-8deg); background:rgba(255,255,255,0.95); box-shadow:0 10px 30px rgba(0,0,0,0.3);" id="s20-stamp">
+              SECRET SUMMIT
+            </div>
+          </div>
+        </div>
+        <div class="act2-telop-card" id="s20-telop">
+          <div class="act2-telop-badge">ACT IV: THE APPLE STRATEGY</div>
+          <h2 class="act2-telop-title">2010年：Appleとの極秘会談</h2>
+          <p class="act2-telop-sub">最大の敵・Samsung打倒へ向けた秘密同盟</p>
+        </div>
+      </div>
+      <audio class="clip" id="vo-20" data-start="687.49" data-duration="21.67" data-track-index="3" src="assets/audio/scene_20.mp3"></audio>
+      <audio class="clip" id="sfx-20" data-start="688.49" data-duration="4.00" data-track-index="4" src="assets/sfx/sub_drone.wav"></audio>
+
+
+      <!-- SCENE 21: Appleの苦悩：敵に心臓部を作らせている (348.03s - 371.53s, dur 23.50s) -->
+      <div class="act2-stage clip" id="scene21-stage" data-start="717.66" data-duration="30.96" data-track-index="1" data-layout-allow-overflow>
+        <div class="act2-top-bar">
+          <div class="act2-top-kicker"><span class="vox-pill-badge">ACT IV</span> ACT IV: THE APPLE STRATEGY</div>
+          <div class="act2-top-time">2011–2013 // PROJECT AZALEA</div>
+        </div>
+        <div class="s10-container">
+          <div class="s10-left-fabless" id="s21-card-left" style="height:560px; justify-content:space-between;">
+            <div>
+              <div class="vox-pill-badge" style="background:#1a237e; color:#fff; border-color:#1a237e;">HISTORICAL DOSSIER #21</div>
+              <h2 style="font-family:'Oswald',sans-serif; font-size:34px; color:#111; margin:14px 0 8px 0; line-height:1.2;">Appleの苦悩：敵に心臓部を作らせている</h2>
+              <p style="font-family:'Inter',sans-serif; font-size:16px; color:#555; line-height:1.6; margin-top:8px;">Samsungとの特許泥沼戦争からTSMC独占への道</p>
+            </div>
+            <div style="background:#fbf7ee; border:1px solid rgba(197,160,89,0.4); border-radius:4px; padding:18px; font-family:'Courier Prime',monospace; font-size:14px; color:#333;">
+              <span style="color:var(--highlight-gold); font-weight:700;">DOCUMENT LOG //</span> 2011–2013 // PROJECT AZALEA<br />
+              <span style="color:#666;">ARCHIVE FILE: TSMC-CASE-21 · CONFIDENTIAL</span>
+            </div>
+          </div>
+          <div style="position:relative; width:820px; height:560px; border-radius:8px; overflow:hidden; box-shadow:0 25px 60px rgba(0,0,0,0.35); border:2px solid rgba(197,160,89,0.5);" id="s21-visual">
+            <img src="assets/images/steve_jobs_vintage.jpg" style="width:100%; height:100%; object-fit:cover; filter:contrast(1.15) brightness(0.9);" alt="Visual 21" />
+            <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 60%);"></div>
+            <div style="position:absolute; top:30px; right:30px; border:4px solid #b71c1c; color:#b71c1c; font-family:'Oswald',sans-serif; font-size:26px; font-weight:900; letter-spacing:2px; padding:8px 20px; transform:rotate(-8deg); background:rgba(255,255,255,0.95); box-shadow:0 10px 30px rgba(0,0,0,0.3);" id="s21-stamp">
+              PROJECT AZALEA
+            </div>
+          </div>
+        </div>
+        <div class="act2-telop-card" id="s21-telop">
+          <div class="act2-telop-badge">ACT IV: THE APPLE STRATEGY</div>
+          <h2 class="act2-telop-title">Appleの苦悩：敵に心臓部を作らせている</h2>
+          <p class="act2-telop-sub">Samsungとの特許泥沼戦争からTSMC独占への道</p>
+        </div>
+      </div>
+      <audio class="clip" id="vo-21" data-start="718.86" data-duration="21.26" data-track-index="3" src="assets/audio/scene_21.mp3"></audio>
+      <audio class="clip" id="sfx-21" data-start="719.86" data-duration="0.35" data-track-index="4" src="assets/sfx/paper_slap.wav"></audio>
+
+
+      <!-- SCENE 22: 世界最強同盟の誕生 (371.53s - 396.71s, dur 25.18s) -->
+      <div class="act2-stage clip" id="scene22-stage" data-start="748.62" data-duration="38.07" data-track-index="1" data-layout-allow-overflow>
+        <div class="act2-top-bar">
+          <div class="act2-top-kicker"><span class="vox-pill-badge">ACT IV</span> ACT IV: THE ALLIANCE</div>
+          <div class="act2-top-time">2014–PRESENT // 100% EXCLUSIVE</div>
+        </div>
+        <div class="s10-container">
+          <div class="s10-left-fabless" id="s22-card-left" style="height:560px; justify-content:space-between;">
+            <div>
+              <div class="vox-pill-badge" style="background:#1a237e; color:#fff; border-color:#1a237e;">HISTORICAL DOSSIER #22</div>
+              <h2 style="font-family:'Oswald',sans-serif; font-size:34px; color:#111; margin:14px 0 8px 0; line-height:1.2;">世界最強同盟の誕生</h2>
+              <p style="font-family:'Inter',sans-serif; font-size:16px; color:#555; line-height:1.6; margin-top:8px;">iPhoneの全Aシリーズチップを100%独占受託</p>
+            </div>
+            <div style="background:#fbf7ee; border:1px solid rgba(197,160,89,0.4); border-radius:4px; padding:18px; font-family:'Courier Prime',monospace; font-size:14px; color:#333;">
+              <span style="color:var(--highlight-gold); font-weight:700;">DOCUMENT LOG //</span> 2014–PRESENT // 100% EXCLUSIVE<br />
+              <span style="color:#666;">ARCHIVE FILE: TSMC-CASE-22 · CONFIDENTIAL</span>
+            </div>
+          </div>
+          <div style="position:relative; width:820px; height:560px; border-radius:8px; overflow:hidden; box-shadow:0 25px 60px rgba(0,0,0,0.35); border:2px solid rgba(197,160,89,0.5);" id="s22-visual">
+            <img src="assets/images/tim_cook_vintage.jpg" style="width:100%; height:100%; object-fit:cover; filter:contrast(1.15) brightness(0.9);" alt="Visual 22" />
+            <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 60%);"></div>
+            <div style="position:absolute; top:30px; right:30px; border:4px solid #b71c1c; color:#b71c1c; font-family:'Oswald',sans-serif; font-size:26px; font-weight:900; letter-spacing:2px; padding:8px 20px; transform:rotate(-8deg); background:rgba(255,255,255,0.95); box-shadow:0 10px 30px rgba(0,0,0,0.3);" id="s22-stamp">
+              100% EXCLUSIVE
+            </div>
+          </div>
+        </div>
+        <div class="act2-telop-card" id="s22-telop">
+          <div class="act2-telop-badge">ACT IV: THE ALLIANCE</div>
+          <h2 class="act2-telop-title">世界最強同盟の誕生</h2>
+          <p class="act2-telop-sub">iPhoneの全Aシリーズチップを100%独占受託</p>
+        </div>
+      </div>
+      <audio class="clip" id="vo-22" data-start="750.62" data-duration="23.57" data-track-index="3" src="assets/audio/scene_22.mp3"></audio>
+      <audio class="clip" id="sfx-22" data-start="751.62" data-duration="2.00" data-track-index="4" src="assets/sfx/impact_boom.wav"></audio>
+
+
+      <!-- SCENE 23: 2008年：世界金融危機 (396.71s - 418.74s, dur 22.03s) -->
+      <div class="act2-stage clip" id="scene23-stage" data-start="786.69" data-duration="40.88" data-track-index="1" data-layout-allow-overflow>
+        <div class="act2-top-bar">
+          <div class="act2-top-kicker"><span class="vox-pill-badge">ACT V</span> ACT V: THE 2008 SHOCK</div>
+          <div class="act2-top-time">2008–2009 // LEHMAN BROTHERS COLLAPSE</div>
+        </div>
+        <div class="s10-container">
+          <div class="s10-left-fabless" id="s23-card-left" style="height:560px; justify-content:space-between;">
+            <div>
+              <div class="vox-pill-badge" style="background:#1a237e; color:#fff; border-color:#1a237e;">HISTORICAL DOSSIER #23</div>
+              <h2 style="font-family:'Oswald',sans-serif; font-size:34px; color:#111; margin:14px 0 8px 0; line-height:1.2;">2008年：世界金融危機</h2>
+              <p style="font-family:'Inter',sans-serif; font-size:16px; color:#555; line-height:1.6; margin-top:8px;">世界需要蒸発・半導体業界最大の暗黒期</p>
+            </div>
+            <div style="background:#fbf7ee; border:1px solid rgba(197,160,89,0.4); border-radius:4px; padding:18px; font-family:'Courier Prime',monospace; font-size:14px; color:#333;">
+              <span style="color:var(--highlight-gold); font-weight:700;">DOCUMENT LOG //</span> 2008–2009 // LEHMAN BROTHERS COLLAPSE<br />
+              <span style="color:#666;">ARCHIVE FILE: TSMC-CASE-23 · CONFIDENTIAL</span>
+            </div>
+          </div>
+          <div style="position:relative; width:820px; height:560px; border-radius:8px; overflow:hidden; box-shadow:0 25px 60px rgba(0,0,0,0.35); border:2px solid rgba(197,160,89,0.5);" id="s23-visual">
+            <img src="assets/images/lehman_brothers_vintage.jpg" style="width:100%; height:100%; object-fit:cover; filter:contrast(1.15) brightness(0.9);" alt="Visual 23" />
+            <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 60%);"></div>
+            <div style="position:absolute; top:30px; right:30px; border:4px solid #b71c1c; color:#b71c1c; font-family:'Oswald',sans-serif; font-size:26px; font-weight:900; letter-spacing:2px; padding:8px 20px; transform:rotate(-8deg); background:rgba(255,255,255,0.95); box-shadow:0 10px 30px rgba(0,0,0,0.3);" id="s23-stamp">
+              GLOBAL CRISIS 2008
+            </div>
+          </div>
+        </div>
+        <div class="act2-telop-card" id="s23-telop">
+          <div class="act2-telop-badge">ACT V: THE 2008 SHOCK</div>
+          <h2 class="act2-telop-title">2008年：世界金融危機</h2>
+          <p class="act2-telop-sub">世界需要蒸発・半導体業界最大の暗黒期</p>
+        </div>
+      </div>
+      <audio class="clip" id="vo-23" data-start="788.69" data-duration="26.38" data-track-index="3" src="assets/audio/scene_23.mp3"></audio>
+      <audio class="clip" id="sfx-23" data-start="789.69" data-duration="2.50" data-track-index="4" src="assets/sfx/impact_boom.wav"></audio>
+
+
+      <!-- SCENE 24: 77歳の復権：解雇撤回 (418.74s - 438.59s, dur 19.85s) -->
+      <div class="act2-stage clip" id="scene24-stage" data-start="827.57" data-duration="34.80" data-track-index="1" data-layout-allow-overflow>
+        <div class="act2-top-bar">
+          <div class="act2-top-kicker"><span class="vox-pill-badge">ACT V</span> ACT V: MORRIS CHANG RETURNS</div>
+          <div class="act2-top-time">2009 // 77-YEAR-OLD FOUNDER RECALL</div>
+        </div>
+        <div class="s10-container">
+          <div class="s10-left-fabless" id="s24-card-left" style="height:560px; justify-content:space-between;">
+            <div>
+              <div class="vox-pill-badge" style="background:#1a237e; color:#fff; border-color:#1a237e;">HISTORICAL DOSSIER #24</div>
+              <h2 style="font-family:'Oswald',sans-serif; font-size:34px; color:#111; margin:14px 0 8px 0; line-height:1.2;">77歳の復権：解雇撤回</h2>
+              <p style="font-family:'Inter',sans-serif; font-size:16px; color:#555; line-height:1.6; margin-top:8px;">「社員の信頼こそが全て」前CEO解任と改革</p>
+            </div>
+            <div style="background:#fbf7ee; border:1px solid rgba(197,160,89,0.4); border-radius:4px; padding:18px; font-family:'Courier Prime',monospace; font-size:14px; color:#333;">
+              <span style="color:var(--highlight-gold); font-weight:700;">DOCUMENT LOG //</span> 2009 // 77-YEAR-OLD FOUNDER RECALL<br />
+              <span style="color:#666;">ARCHIVE FILE: TSMC-CASE-24 · CONFIDENTIAL</span>
+            </div>
+          </div>
+          <div style="position:relative; width:820px; height:560px; border-radius:8px; overflow:hidden; box-shadow:0 25px 60px rgba(0,0,0,0.35); border:2px solid rgba(197,160,89,0.5);" id="s24-visual">
+            <img src="assets/images/morris_chang_1987.jpg" style="width:100%; height:100%; object-fit:cover; filter:contrast(1.15) brightness(0.9);" alt="Visual 24" />
+            <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 60%);"></div>
+            <div style="position:absolute; top:30px; right:30px; border:4px solid #b71c1c; color:#b71c1c; font-family:'Oswald',sans-serif; font-size:26px; font-weight:900; letter-spacing:2px; padding:8px 20px; transform:rotate(-8deg); background:rgba(255,255,255,0.95); box-shadow:0 10px 30px rgba(0,0,0,0.3);" id="s24-stamp">
+              FOUNDER RECALL
+            </div>
+          </div>
+        </div>
+        <div class="act2-telop-card" id="s24-telop">
+          <div class="act2-telop-badge">ACT V: MORRIS CHANG RETURNS</div>
+          <h2 class="act2-telop-title">77歳の復権：解雇撤回</h2>
+          <p class="act2-telop-sub">「社員の信頼こそが全て」前CEO解任と改革</p>
+        </div>
+      </div>
+      <audio class="clip" id="vo-24" data-start="828.77" data-duration="25.10" data-track-index="3" src="assets/audio/scene_24.mp3"></audio>
+      <audio class="clip" id="sfx-24" data-start="829.77" data-duration="0.35" data-track-index="4" src="assets/sfx/paper_slap.wav"></audio>
+
+
+      <!-- SCENE 25: 狂気の大博打：設備投資を一気に1兆円へ (438.59s - 455.13s, dur 16.54s) -->
+      <div class="act2-stage clip" id="scene25-stage" data-start="862.37" data-duration="37.88" data-track-index="1" data-layout-allow-overflow>
+        <div class="act2-top-bar">
+          <div class="act2-top-kicker"><span class="vox-pill-badge">ACT V</span> ACT V: THE $10B GAMBLE</div>
+          <div class="act2-top-time">2010 // HISTORIC CAPEX SURGE</div>
+        </div>
+        <div class="s10-container">
+          <div class="s10-left-fabless" id="s25-card-left" style="height:560px; justify-content:space-between;">
+            <div>
+              <div class="vox-pill-badge" style="background:#1a237e; color:#fff; border-color:#1a237e;">HISTORICAL DOSSIER #25</div>
+              <h2 style="font-family:'Oswald',sans-serif; font-size:34px; color:#111; margin:14px 0 8px 0; line-height:1.2;">狂気の大博打：設備投資を一気に1兆円へ</h2>
+              <p style="font-family:'Inter',sans-serif; font-size:16px; color:#555; line-height:1.6; margin-top:8px;">不況の底で踏み切った史上最大の先手必勝投資</p>
+            </div>
+            <div style="background:#fbf7ee; border:1px solid rgba(197,160,89,0.4); border-radius:4px; padding:18px; font-family:'Courier Prime',monospace; font-size:14px; color:#333;">
+              <span style="color:var(--highlight-gold); font-weight:700;">DOCUMENT LOG //</span> 2010 // HISTORIC CAPEX SURGE<br />
+              <span style="color:#666;">ARCHIVE FILE: TSMC-CASE-25 · CONFIDENTIAL</span>
+            </div>
+          </div>
+          <div style="position:relative; width:820px; height:560px; border-radius:8px; overflow:hidden; box-shadow:0 25px 60px rgba(0,0,0,0.35); border:2px solid rgba(197,160,89,0.5);" id="s25-visual">
+            <img src="assets/images/morris_chang_vintage.jpg" style="width:100%; height:100%; object-fit:cover; filter:contrast(1.15) brightness(0.9);" alt="Visual 25" />
+            <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 60%);"></div>
+            <div style="position:absolute; top:30px; right:30px; border:4px solid #b71c1c; color:#b71c1c; font-family:'Oswald',sans-serif; font-size:26px; font-weight:900; letter-spacing:2px; padding:8px 20px; transform:rotate(-8deg); background:rgba(255,255,255,0.95); box-shadow:0 10px 30px rgba(0,0,0,0.3);" id="s25-stamp">
+              ALL-IN $10B CAPEX
+            </div>
+          </div>
+        </div>
+        <div class="act2-telop-card" id="s25-telop">
+          <div class="act2-telop-badge">ACT V: THE $10B GAMBLE</div>
+          <h2 class="act2-telop-title">狂気の大博打：設備投資を一気に1兆円へ</h2>
+          <p class="act2-telop-sub">不況の底で踏み切った史上最大の先手必勝投資</p>
+        </div>
+      </div>
+      <audio class="clip" id="vo-25" data-start="864.37" data-duration="23.38" data-track-index="3" src="assets/audio/scene_25.mp3"></audio>
+      <audio class="clip" id="sfx-25" data-start="865.37" data-duration="2.50" data-track-index="4" src="assets/sfx/impact_boom.wav"></audio>
+
+
+      <!-- SCENE 26: ASML・EUV装置の独占 (455.13s - 477.47s, dur 22.34s) -->
+      <div class="act2-stage clip" id="scene26-stage" data-start="900.25" data-duration="35.28" data-track-index="1" data-layout-allow-overflow>
+        <div class="act2-top-bar">
+          <div class="act2-top-kicker"><span class="vox-pill-badge">ACT V</span> ACT V: THE EUV MONOPOLY</div>
+          <div class="act2-top-time">2015–2020 // ASML PARTNERSHIP</div>
+        </div>
+        <div class="s10-container">
+          <div class="s10-left-fabless" id="s26-card-left" style="height:560px; justify-content:space-between;">
+            <div>
+              <div class="vox-pill-badge" style="background:#1a237e; color:#fff; border-color:#1a237e;">HISTORICAL DOSSIER #26</div>
+              <h2 style="font-family:'Oswald',sans-serif; font-size:34px; color:#111; margin:14px 0 8px 0; line-height:1.2;">ASML・EUV装置の独占</h2>
+              <p style="font-family:'Inter',sans-serif; font-size:16px; color:#555; line-height:1.6; margin-top:8px;">競合が追いつけない極端紫外線（EUV）領域へ</p>
+            </div>
+            <div style="background:#fbf7ee; border:1px solid rgba(197,160,89,0.4); border-radius:4px; padding:18px; font-family:'Courier Prime',monospace; font-size:14px; color:#333;">
+              <span style="color:var(--highlight-gold); font-weight:700;">DOCUMENT LOG //</span> 2015–2020 // ASML PARTNERSHIP<br />
+              <span style="color:#666;">ARCHIVE FILE: TSMC-CASE-26 · CONFIDENTIAL</span>
+            </div>
+          </div>
+          <div style="position:relative; width:820px; height:560px; border-radius:8px; overflow:hidden; box-shadow:0 25px 60px rgba(0,0,0,0.35); border:2px solid rgba(197,160,89,0.5);" id="s26-visual">
+            <img src="assets/images/silicon_wafer_vintage.jpg" style="width:100%; height:100%; object-fit:cover; filter:contrast(1.15) brightness(0.9);" alt="Visual 26" />
+            <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 60%);"></div>
+            <div style="position:absolute; top:30px; right:30px; border:4px solid #b71c1c; color:#b71c1c; font-family:'Oswald',sans-serif; font-size:26px; font-weight:900; letter-spacing:2px; padding:8px 20px; transform:rotate(-8deg); background:rgba(255,255,255,0.95); box-shadow:0 10px 30px rgba(0,0,0,0.3);" id="s26-stamp">
+              ASML EUV MONOPOLY
+            </div>
+          </div>
+        </div>
+        <div class="act2-telop-card" id="s26-telop">
+          <div class="act2-telop-badge">ACT V: THE EUV MONOPOLY</div>
+          <h2 class="act2-telop-title">ASML・EUV装置の独占</h2>
+          <p class="act2-telop-sub">競合が追いつけない極端紫外線（EUV）領域へ</p>
+        </div>
+      </div>
+      <audio class="clip" id="vo-26" data-start="901.45" data-duration="25.58" data-track-index="3" src="assets/audio/scene_26.mp3"></audio>
+      <audio class="clip" id="sfx-26" data-start="902.45" data-duration="0.40" data-track-index="4" src="assets/sfx/marker_wipe.wav"></audio>
+
+
+      <!-- SCENE 27: 圧倒的技術格差 (477.47s - 498.30s, dur 20.83s) -->
+      <div class="act2-stage clip" id="scene27-stage" data-start="935.53" data-duration="37.42" data-track-index="1" data-layout-allow-overflow>
+        <div class="act2-top-bar">
+          <div class="act2-top-kicker"><span class="vox-pill-badge">ACT V</span> ACT V: THE SUPREME DYNASTY</div>
+          <div class="act2-top-time">2020–2024 // 3NM / 2NM DOMINANCE</div>
+        </div>
+        <div class="s10-container">
+          <div class="s10-left-fabless" id="s27-card-left" style="height:560px; justify-content:space-between;">
+            <div>
+              <div class="vox-pill-badge" style="background:#1a237e; color:#fff; border-color:#1a237e;">HISTORICAL DOSSIER #27</div>
+              <h2 style="font-family:'Oswald',sans-serif; font-size:34px; color:#111; margin:14px 0 8px 0; line-height:1.2;">圧倒的技術格差</h2>
+              <p style="font-family:'Inter',sans-serif; font-size:16px; color:#555; line-height:1.6; margin-top:8px;">Intel、Samsungの完全脱落と先端チップ90%独占</p>
+            </div>
+            <div style="background:#fbf7ee; border:1px solid rgba(197,160,89,0.4); border-radius:4px; padding:18px; font-family:'Courier Prime',monospace; font-size:14px; color:#333;">
+              <span style="color:var(--highlight-gold); font-weight:700;">DOCUMENT LOG //</span> 2020–2024 // 3NM / 2NM DOMINANCE<br />
+              <span style="color:#666;">ARCHIVE FILE: TSMC-CASE-27 · CONFIDENTIAL</span>
+            </div>
+          </div>
+          <div style="position:relative; width:820px; height:560px; border-radius:8px; overflow:hidden; box-shadow:0 25px 60px rgba(0,0,0,0.35); border:2px solid rgba(197,160,89,0.5);" id="s27-visual">
+            <img src="assets/images/silicon_wafer_vintage.jpg" style="width:100%; height:100%; object-fit:cover; filter:contrast(1.15) brightness(0.9);" alt="Visual 27" />
+            <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 60%);"></div>
+            <div style="position:absolute; top:30px; right:30px; border:4px solid #b71c1c; color:#b71c1c; font-family:'Oswald',sans-serif; font-size:26px; font-weight:900; letter-spacing:2px; padding:8px 20px; transform:rotate(-8deg); background:rgba(255,255,255,0.95); box-shadow:0 10px 30px rgba(0,0,0,0.3);" id="s27-stamp">
+              90% GLOBAL DOMAIN
+            </div>
+          </div>
+        </div>
+        <div class="act2-telop-card" id="s27-telop">
+          <div class="act2-telop-badge">ACT V: THE SUPREME DYNASTY</div>
+          <h2 class="act2-telop-title">圧倒的技術格差</h2>
+          <p class="act2-telop-sub">Intel、Samsungの完全脱落と先端チップ90%独占</p>
+        </div>
+      </div>
+      <audio class="clip" id="vo-27" data-start="937.53" data-duration="22.92" data-track-index="3" src="assets/audio/scene_27.mp3"></audio>
+      <audio class="clip" id="sfx-27" data-start="938.53" data-duration="2.00" data-track-index="4" src="assets/sfx/impact_boom.wav"></audio>
+
+
+      <!-- SCENE 28: なぜ熊本だったのか？ (498.30s - 520.45s, dur 22.15s) -->
+      <div class="act2-stage clip" id="scene28-stage" data-start="972.95" data-duration="37.28" data-track-index="1" data-layout-allow-overflow>
+        <div class="act2-top-bar">
+          <div class="act2-top-kicker"><span class="vox-pill-badge">ACT VI</span> ACT VI: SILICON SHIELD</div>
+          <div class="act2-top-time">2024 // KUMAMOTO JASM OPENING</div>
+        </div>
+        <div class="s10-container">
+          <div class="s10-left-fabless" id="s28-card-left" style="height:560px; justify-content:space-between;">
+            <div>
+              <div class="vox-pill-badge" style="background:#1a237e; color:#fff; border-color:#1a237e;">HISTORICAL DOSSIER #28</div>
+              <h2 style="font-family:'Oswald',sans-serif; font-size:34px; color:#111; margin:14px 0 8px 0; line-height:1.2;">なぜ熊本だったのか？</h2>
+              <p style="font-family:'Inter',sans-serif; font-size:16px; color:#555; line-height:1.6; margin-top:8px;">阿蘇の清らかな地下水と日本人の「職人魂」</p>
+            </div>
+            <div style="background:#fbf7ee; border:1px solid rgba(197,160,89,0.4); border-radius:4px; padding:18px; font-family:'Courier Prime',monospace; font-size:14px; color:#333;">
+              <span style="color:var(--highlight-gold); font-weight:700;">DOCUMENT LOG //</span> 2024 // KUMAMOTO JASM OPENING<br />
+              <span style="color:#666;">ARCHIVE FILE: TSMC-CASE-28 · CONFIDENTIAL</span>
+            </div>
+          </div>
+          <div style="position:relative; width:820px; height:560px; border-radius:8px; overflow:hidden; box-shadow:0 25px 60px rgba(0,0,0,0.35); border:2px solid rgba(197,160,89,0.5);" id="s28-visual">
+            <img src="assets/images/mount_aso_vintage.jpg" style="width:100%; height:100%; object-fit:cover; filter:contrast(1.15) brightness(0.9);" alt="Visual 28" />
+            <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 60%);"></div>
+            <div style="position:absolute; top:30px; right:30px; border:4px solid #b71c1c; color:#b71c1c; font-family:'Oswald',sans-serif; font-size:26px; font-weight:900; letter-spacing:2px; padding:8px 20px; transform:rotate(-8deg); background:rgba(255,255,255,0.95); box-shadow:0 10px 30px rgba(0,0,0,0.3);" id="s28-stamp">
+              KUMAMOTO JASM
+            </div>
+          </div>
+        </div>
+        <div class="act2-telop-card" id="s28-telop">
+          <div class="act2-telop-badge">ACT VI: SILICON SHIELD</div>
+          <h2 class="act2-telop-title">なぜ熊本だったのか？</h2>
+          <p class="act2-telop-sub">阿蘇の清らかな地下水と日本人の「職人魂」</p>
+        </div>
+      </div>
+      <audio class="clip" id="vo-28" data-start="974.15" data-duration="27.58" data-track-index="3" src="assets/audio/scene_28.mp3"></audio>
+      <audio class="clip" id="sfx-28" data-start="975.15" data-duration="3.00" data-track-index="4" src="assets/sfx/sub_drone.wav"></audio>
+
+
+      <!-- SCENE 29: 日台半導体同盟の始動 (520.45s - 541.43s, dur 20.98s) -->
+      <div class="act2-stage clip" id="scene29-stage" data-start="1010.23" data-duration="37.32" data-track-index="1" data-layout-allow-overflow>
+        <div class="act2-top-bar">
+          <div class="act2-top-kicker"><span class="vox-pill-badge">ACT VI</span> ACT VI: JAPAN-TAIWAN ALLIANCE</div>
+          <div class="act2-top-time">2024–BEYOND // GLOBAL FOUNDRY</div>
+        </div>
+        <div class="s10-container">
+          <div class="s10-left-fabless" id="s29-card-left" style="height:560px; justify-content:space-between;">
+            <div>
+              <div class="vox-pill-badge" style="background:#1a237e; color:#fff; border-color:#1a237e;">HISTORICAL DOSSIER #29</div>
+              <h2 style="font-family:'Oswald',sans-serif; font-size:34px; color:#111; margin:14px 0 8px 0; line-height:1.2;">日台半導体同盟の始動</h2>
+              <p style="font-family:'Inter',sans-serif; font-size:16px; color:#555; line-height:1.6; margin-top:8px;">失われた30年の奪還へ向けた歴史的メガファブ</p>
+            </div>
+            <div style="background:#fbf7ee; border:1px solid rgba(197,160,89,0.4); border-radius:4px; padding:18px; font-family:'Courier Prime',monospace; font-size:14px; color:#333;">
+              <span style="color:var(--highlight-gold); font-weight:700;">DOCUMENT LOG //</span> 2024–BEYOND // GLOBAL FOUNDRY<br />
+              <span style="color:#666;">ARCHIVE FILE: TSMC-CASE-29 · CONFIDENTIAL</span>
+            </div>
+          </div>
+          <div style="position:relative; width:820px; height:560px; border-radius:8px; overflow:hidden; box-shadow:0 25px 60px rgba(0,0,0,0.35); border:2px solid rgba(197,160,89,0.5);" id="s29-visual">
+            <img src="assets/images/tsmc_headquarters_building.jpg" style="width:100%; height:100%; object-fit:cover; filter:contrast(1.15) brightness(0.9);" alt="Visual 29" />
+            <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 60%);"></div>
+            <div style="position:absolute; top:30px; right:30px; border:4px solid #b71c1c; color:#b71c1c; font-family:'Oswald',sans-serif; font-size:26px; font-weight:900; letter-spacing:2px; padding:8px 20px; transform:rotate(-8deg); background:rgba(255,255,255,0.95); box-shadow:0 10px 30px rgba(0,0,0,0.3);" id="s29-stamp">
+              JAPAN-TAIWAN AXIS
+            </div>
+          </div>
+        </div>
+        <div class="act2-telop-card" id="s29-telop">
+          <div class="act2-telop-badge">ACT VI: JAPAN-TAIWAN ALLIANCE</div>
+          <h2 class="act2-telop-title">日台半導体同盟の始動</h2>
+          <p class="act2-telop-sub">失われた30年の奪還へ向けた歴史的メガファブ</p>
+        </div>
+      </div>
+      <audio class="clip" id="vo-29" data-start="1011.43" data-duration="27.62" data-track-index="3" src="assets/audio/scene_29.mp3"></audio>
+      <audio class="clip" id="sfx-29" data-start="1012.43" data-duration="2.00" data-track-index="4" src="assets/sfx/impact_boom.wav"></audio>
+
+
+      <!-- SCENE 30: 「護国神山」 (541.43s - 564.66s, dur 23.23s) -->
+      <div class="act2-stage clip" id="scene30-stage" data-start="1047.55" data-duration="39.20" data-track-index="1" data-layout-allow-overflow>
+        <div class="act2-top-bar">
+          <div class="act2-top-kicker"><span class="vox-pill-badge">ACT VI</span> ACT VI: THE SILICON SHIELD</div>
+          <div class="act2-top-time">GEOPOLITICAL REALITY // TAIWAN STRAIT</div>
+        </div>
+        <div class="s10-container">
+          <div class="s10-left-fabless" id="s30-card-left" style="height:560px; justify-content:space-between;">
+            <div>
+              <div class="vox-pill-badge" style="background:#1a237e; color:#fff; border-color:#1a237e;">HISTORICAL DOSSIER #30</div>
+              <h2 style="font-family:'Oswald',sans-serif; font-size:34px; color:#111; margin:14px 0 8px 0; line-height:1.2;">「護国神山」</h2>
+              <p style="font-family:'Inter',sans-serif; font-size:16px; color:#555; line-height:1.6; margin-top:8px;">世界大戦を抑止するシリコンの盾</p>
+            </div>
+            <div style="background:#fbf7ee; border:1px solid rgba(197,160,89,0.4); border-radius:4px; padding:18px; font-family:'Courier Prime',monospace; font-size:14px; color:#333;">
+              <span style="color:var(--highlight-gold); font-weight:700;">DOCUMENT LOG //</span> GEOPOLITICAL REALITY // TAIWAN STRAIT<br />
+              <span style="color:#666;">ARCHIVE FILE: TSMC-CASE-30 · CONFIDENTIAL</span>
+            </div>
+          </div>
+          <div style="position:relative; width:820px; height:560px; border-radius:8px; overflow:hidden; box-shadow:0 25px 60px rgba(0,0,0,0.35); border:2px solid rgba(197,160,89,0.5);" id="s30-visual">
+            <img src="assets/images/csis_taiwan_map.jpg" style="width:100%; height:100%; object-fit:cover; filter:contrast(1.15) brightness(0.9);" alt="Visual 30" />
+            <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 60%);"></div>
+            <div style="position:absolute; top:30px; right:30px; border:4px solid #b71c1c; color:#b71c1c; font-family:'Oswald',sans-serif; font-size:26px; font-weight:900; letter-spacing:2px; padding:8px 20px; transform:rotate(-8deg); background:rgba(255,255,255,0.95); box-shadow:0 10px 30px rgba(0,0,0,0.3);" id="s30-stamp">
+              SILICON SHIELD
+            </div>
+          </div>
+        </div>
+        <div class="act2-telop-card" id="s30-telop">
+          <div class="act2-telop-badge">ACT VI: THE SILICON SHIELD</div>
+          <h2 class="act2-telop-title">「護国神山」</h2>
+          <p class="act2-telop-sub">世界大戦を抑止するシリコンの盾</p>
+        </div>
+      </div>
+      <audio class="clip" id="vo-30" data-start="1049.55" data-duration="24.70" data-track-index="3" src="assets/audio/scene_30.mp3"></audio>
+      <audio class="clip" id="sfx-30" data-start="1050.55" data-duration="2.50" data-track-index="4" src="assets/sfx/impact_boom.wav"></audio>
+
+
+      <!-- SCENE 31: 創業者の誓い：ただ愚直に、顧客のために (564.66s - 586.14s, dur 21.48s) -->
+      <div class="act2-stage clip" id="scene31-stage" data-start="1086.75" data-duration="39.87" data-track-index="1" data-layout-allow-overflow>
+        <div class="act2-top-bar">
+          <div class="act2-top-kicker"><span class="vox-pill-badge">ACT VI</span> ACT VI: THE FINAL PHILOSOPHY</div>
+          <div class="act2-top-time">1987–PRESENT // 93-YEAR-OLD LEGACY</div>
+        </div>
+        <div class="s10-container">
+          <div class="s10-left-fabless" id="s31-card-left" style="height:560px; justify-content:space-between;">
+            <div>
+              <div class="vox-pill-badge" style="background:#1a237e; color:#fff; border-color:#1a237e;">HISTORICAL DOSSIER #31</div>
+              <h2 style="font-family:'Oswald',sans-serif; font-size:34px; color:#111; margin:14px 0 8px 0; line-height:1.2;">創業者の誓い：ただ愚直に、顧客のために</h2>
+              <p style="font-family:'Inter',sans-serif; font-size:16px; color:#555; line-height:1.6; margin-top:8px;">37年の逆転劇：世界最強の半導体帝国</p>
+            </div>
+            <div style="background:#fbf7ee; border:1px solid rgba(197,160,89,0.4); border-radius:4px; padding:18px; font-family:'Courier Prime',monospace; font-size:14px; color:#333;">
+              <span style="color:var(--highlight-gold); font-weight:700;">DOCUMENT LOG //</span> 1987–PRESENT // 93-YEAR-OLD LEGACY<br />
+              <span style="color:#666;">ARCHIVE FILE: TSMC-CASE-31 · CONFIDENTIAL</span>
+            </div>
+          </div>
+          <div style="position:relative; width:820px; height:560px; border-radius:8px; overflow:hidden; box-shadow:0 25px 60px rgba(0,0,0,0.35); border:2px solid rgba(197,160,89,0.5);" id="s31-visual">
+            <img src="assets/images/morris_chang_93yo.jpg" style="width:100%; height:100%; object-fit:cover; filter:contrast(1.15) brightness(0.9);" alt="Visual 31" />
+            <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 60%);"></div>
+            <div style="position:absolute; top:30px; right:30px; border:4px solid #b71c1c; color:#b71c1c; font-family:'Oswald',sans-serif; font-size:26px; font-weight:900; letter-spacing:2px; padding:8px 20px; transform:rotate(-8deg); background:rgba(255,255,255,0.95); box-shadow:0 10px 30px rgba(0,0,0,0.3);" id="s31-stamp">
+              MONOLITHIC LEGACY
+            </div>
+          </div>
+        </div>
+        <div class="act2-telop-card" id="s31-telop">
+          <div class="act2-telop-badge">ACT VI: THE FINAL PHILOSOPHY</div>
+          <h2 class="act2-telop-title">創業者の誓い：ただ愚直に、顧客のために</h2>
+          <p class="act2-telop-sub">37年の逆転劇：世界最強の半導体帝国</p>
+        </div>
+      </div>
+      <audio class="clip" id="vo-31" data-start="1088.75" data-duration="25.37" data-track-index="3" src="assets/audio/scene_31.mp3"></audio>
+      <audio class="clip" id="sfx-31" data-start="1089.75" data-duration="3.00" data-track-index="4" src="assets/sfx/impact_boom.wav"></audio>
+
+
+      <!-- Continuous BGM Loops for Acts 3, 4, 5, 6 -->
+      
+      
+      
+      
 
       <!-- Master Continuous Cinematic BGM Score -->
-      <audio class="clip" id="bgm-master" data-start="0.00" data-duration="96.888" data-track-index="25" src="assets/audio/cinematic_score.mp3"></audio>
+      
+
+      <!-- Seamless Continuous 18-minute BGM Soundtrack -->
+      <audio class="clip" id="bgm-loop-00" data-start="0.00" data-duration="96.88" data-track-index="25" src="assets/audio/cinematic_score.mp3"></audio>
+      <audio class="clip" id="bgm-loop-01" data-start="96.88" data-duration="96.88" data-track-index="25" src="assets/audio/cinematic_score.mp3"></audio>
+      <audio class="clip" id="bgm-loop-02" data-start="193.76" data-duration="96.88" data-track-index="25" src="assets/audio/cinematic_score.mp3"></audio>
+      <audio class="clip" id="bgm-loop-03" data-start="290.64" data-duration="96.88" data-track-index="25" src="assets/audio/cinematic_score.mp3"></audio>
+      <audio class="clip" id="bgm-loop-04" data-start="387.52" data-duration="96.88" data-track-index="25" src="assets/audio/cinematic_score.mp3"></audio>
+      <audio class="clip" id="bgm-loop-05" data-start="484.40" data-duration="96.88" data-track-index="25" src="assets/audio/cinematic_score.mp3"></audio>
+      <audio class="clip" id="bgm-loop-06" data-start="581.28" data-duration="96.88" data-track-index="25" src="assets/audio/cinematic_score.mp3"></audio>
+      <audio class="clip" id="bgm-loop-07" data-start="678.16" data-duration="96.88" data-track-index="25" src="assets/audio/cinematic_score.mp3"></audio>
+      <audio class="clip" id="bgm-loop-08" data-start="775.04" data-duration="96.88" data-track-index="25" src="assets/audio/cinematic_score.mp3"></audio>
+      <audio class="clip" id="bgm-loop-09" data-start="871.92" data-duration="96.88" data-track-index="25" src="assets/audio/cinematic_score.mp3"></audio>
+      <audio class="clip" id="bgm-loop-10" data-start="968.80" data-duration="96.88" data-track-index="25" src="assets/audio/cinematic_score.mp3"></audio>
+      <audio class="clip" id="bgm-loop-11" data-start="1065.68" data-duration="60.94" data-track-index="25" src="assets/audio/cinematic_score.mp3"></audio>
     </div>
 
     <!-- ================= GSAP TIMELINE SCRIPT (FAST, ENGAGING VOX PACING) ================= -->
@@ -1280,71 +3347,215 @@
       window.__timelines = window.__timelines || {};
       const tl = gsap.timeline({ paused: true });
 
-      // ================= SCENE 01: VEO 3 GOLD MAP VIDEO LAYER (0.00s - 8.42s) =================
-      // Taiwan Strait Callout: glides in smoothly as Taiwan comes into view at 2.8s, exits cleanly at 5.8s
-      tl.fromTo("#shot1-strait-callout", { x: 40, opacity: 0 }, { x: 0, opacity: 1, duration: 0.45, ease: "power2.out" }, 2.8);
-      tl.to("#shot1-strait-callout", { x: 25, opacity: 0, duration: 0.35, ease: "power2.in" }, 5.8);
+      // --- SCENE 01: TAIWAN STRAIT (0.00s - 35.64s) ---
+      tl.fromTo("#shot1-strait-callout", { x: 40, opacity: 0 }, { x: 0, opacity: 1, duration: 0.6, ease: "power2.out" }, 1.0);
+      tl.fromTo("#shot1-strait-callout .vox-highlight-box", { scaleX: 0 }, { scaleX: 1, duration: 0.4, ease: "power2.out" }, 1.5);
+      tl.fromTo("#shot1-map-pin", { scale: 3.0, opacity: 0 }, { scale: 1.0, opacity: 1, duration: 0.4, ease: "back.out(2.0)" }, 3.5);
+      tl.fromTo("#shot1-connector-svg", { opacity: 0 }, { opacity: 1, duration: 0.2 }, 3.7);
+      tl.fromTo("#shot1-leader-line", { strokeDashoffset: 450 }, { strokeDashoffset: 0, duration: 0.5, ease: "power2.out" }, 3.7);
+      tl.fromTo("#shot1-map-hint", { x: -30, opacity: 0 }, { x: 0, opacity: 1, duration: 0.5, ease: "power2.out" }, 3.9);
+      tl.to("#scene01-stage", { opacity: 0, duration: 0.6, ease: "power2.in" }, 35.04);
+      tl.to("#shot1-video", { opacity: 0, duration: 0.6, ease: "power2.in" }, 35.04);
 
-      // TSMC Headquarters Card: glides in with the buffer scene at 6.3s, holds until 8.42s
-      tl.fromTo("#shot1-tsmc-card", { y: 35, opacity: 0 }, { y: 0, opacity: 1, duration: 0.45, ease: "back.out(1.4)" }, 6.3);
+      // --- SCENE 02: (35.64s - 70.88s) ---
+      tl.to("#scene02-stage", { opacity: 1, duration: 0.5, ease: "power2.out" }, 35.64);
+      tl.fromTo("#scene02-stage .vox-highlight-box", { scaleX: 0 }, { scaleX: 1, duration: 0.4, ease: "power2.out" }, 37.14);
+      tl.to("#scene02-stage", { opacity: 0, duration: 0.6, ease: "power2.in" }, 70.28);
 
-      // ================= SCENE 02: DOMINO SUPPLY CHAIN DISRUPTION (8.42s - 23.57s) =================
-      // Dynamic rapid slamming of cards every 1.2s
-      tl.fromTo("#card-phone", { y: -80, rotation: -12, opacity: 0 }, { y: 0, rotation: -2, opacity: 1, duration: 0.45, ease: "back.out(1.6)" }, 8.7);
-      tl.fromTo("#card-ai", { y: -80, rotation: 10, opacity: 0 }, { y: 0, rotation: 1.5, opacity: 1, duration: 0.45, ease: "back.out(1.6)" }, 9.9);
-      tl.fromTo("#card-cloud", { y: -80, rotation: -8, opacity: 0 }, { y: 0, rotation: -1, opacity: 1, duration: 0.45, ease: "back.out(1.6)" }, 11.1);
+      // --- SCENE 03: (70.88s - 105.56s) ---
+      tl.to("#scene03-stage", { opacity: 1, duration: 0.5, ease: "power2.out" }, 70.88);
+      tl.fromTo("#scene03-stage .vox-highlight-box", { scaleX: 0 }, { scaleX: 1, duration: 0.4, ease: "power2.out" }, 72.38);
+      tl.to("#scene03-stage", { opacity: 0, duration: 0.6, ease: "power2.in" }, 104.96);
 
-      // Rapid rhythmic stamping of red rubber stamps
-      tl.fromTo("#stamp-phone", { scale: 2.5, opacity: 0, rotation: -25 }, { scale: 1.0, opacity: 1, rotation: -10, duration: 0.25, ease: "back.out(2.2)" }, 12.5);
-      tl.fromTo("#stamp-ai", { scale: 2.5, opacity: 0, rotation: 20 }, { scale: 1.0, opacity: 1, rotation: 8, duration: 0.25, ease: "back.out(2.2)" }, 14.5);
-      tl.fromTo("#stamp-cloud", { scale: 2.5, opacity: 0, rotation: -20 }, { scale: 1.0, opacity: 1, rotation: -12, duration: 0.25, ease: "back.out(2.2)" }, 16.5);
+      // --- SCENE 04: (105.56s - 146.94s) ---
+      tl.to("#scene04-stage", { opacity: 1, duration: 0.5, ease: "power2.out" }, 105.56);
+      tl.fromTo("#scene04-stage .vox-highlight-box", { scaleX: 0 }, { scaleX: 1, duration: 0.4, ease: "power2.out" }, 107.06);
+      tl.to("#scene04-stage", { opacity: 0, duration: 0.6, ease: "power2.in" }, 146.34);
 
-      // Loss Ticker badge pops in with rapid pulse
-      tl.fromTo("#scene02-ticker-badge", { scale: 0.85, opacity: 0 }, { scale: 1.0, opacity: 1, duration: 0.4, ease: "back.out(1.8)" }, 17.5);
+      // --- SCENE 05: (146.94s - 182.39s) ---
+      tl.to("#scene05-stage", { opacity: 1, duration: 0.5, ease: "power2.out" }, 146.94);
+      tl.fromTo("#scene05-stage .vox-highlight-box", { scaleX: 0 }, { scaleX: 1, duration: 0.4, ease: "power2.out" }, 148.44);
+      tl.to("#scene05-stage", { opacity: 0, duration: 0.6, ease: "power2.in" }, 181.79);
 
-      // ================= SCENE 03: TSMC REVEAL & 90% MONOPOLY INFOGRAPHIC (23.57s - 39.58s) =================
-      tl.fromTo("#scene03-gauge-card", { x: -80, opacity: 0 }, { x: 0, opacity: 1, duration: 0.5, ease: "power2.out" }, 23.7);
-      tl.fromTo("#scene03-dossier-paper", { x: 80, opacity: 0 }, { x: 0, opacity: 1, duration: 0.5, ease: "power2.out" }, 23.9);
+      // --- SCENE 06: (182.39s - 216.93s) ---
+      tl.to("#scene06-stage", { opacity: 1, duration: 0.5, ease: "power2.out" }, 182.39);
+      tl.fromTo("#scene06-stage .vox-highlight-box", { scaleX: 0 }, { scaleX: 1, duration: 0.4, ease: "power2.out" }, 183.89);
+      tl.to("#scene06-stage", { opacity: 0, duration: 0.6, ease: "power2.in" }, 216.33);
 
-      // Donut Gauge spins up rapidly
-      tl.fromTo("#vox-donut-arc", { strokeDashoffset: 264 }, { strokeDashoffset: 26.4, duration: 1.2, ease: "power3.out" }, 24.2);
+      // --- SCENE 07: (216.93s - 253.01s) ---
+      tl.to("#scene07-stage", { opacity: 1, duration: 0.5, ease: "power2.out" }, 216.93);
+      tl.fromTo("#scene07-stage .s10-left-fabless", { x: -40, opacity: 0 }, { x: 0, opacity: 1, duration: 0.6, ease: "power2.out" }, 217.43);
+      tl.fromTo("#scene07-stage .act2-telop-card", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power2.out" }, 217.53);
+      tl.fromTo("#scene07-stage #s07-stamp", { scale: 2.5, opacity: 0 }, { scale: 1.0, opacity: 1, duration: 0.35, ease: "back.out(2.0)" }, 218.43);
+      tl.to("#scene07-stage", { opacity: 0, duration: 0.6, ease: "power2.in" }, 252.41);
 
-      // Bar charts shoot out dynamically
-      tl.to("#fill-strip-tsmc", { width: "90%", duration: 1.0, ease: "power2.out" }, 24.6);
-      tl.to("#fill-strip-samsung", { width: "8%", duration: 0.6, ease: "power2.out" }, 25.2);
-      tl.to("#fill-strip-intel", { width: "2%", duration: 0.5, ease: "power2.out" }, 25.5);
+      // --- SCENE 08: (253.01s - 289.71s) ---
+      tl.to("#scene08-stage", { opacity: 1, duration: 0.5, ease: "power2.out" }, 253.01);
+      tl.fromTo("#scene08-stage .s10-left-fabless", { x: -40, opacity: 0 }, { x: 0, opacity: 1, duration: 0.6, ease: "power2.out" }, 253.51);
+      tl.fromTo("#scene08-stage .act2-telop-card", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power2.out" }, 253.61);
+      tl.fromTo("#scene08-stage #s08-stamp", { scale: 2.5, opacity: 0 }, { scale: 1.0, opacity: 1, duration: 0.35, ease: "back.out(2.0)" }, 254.51);
+      tl.to("#scene08-stage", { opacity: 0, duration: 0.6, ease: "power2.in" }, 289.11);
 
-      // ================= SCENE 04: JAPAN KUMAMOTO JASM (39.58s - 59.09s) =================
-      tl.fromTo("#card-jasm", { y: 60, rotation: -4, opacity: 0 }, { y: 0, rotation: -1.5, opacity: 1, duration: 0.5, ease: "power2.out" }, 39.7);
-      tl.fromTo("#card-morris-93", { y: 60, rotation: 4, opacity: 0 }, { y: 0, rotation: 1.5, opacity: 1, duration: 0.5, ease: "power2.out" }, 40.1);
+      // --- SCENE 09: (289.71s - 327.80s) ---
+      tl.to("#scene09-stage", { opacity: 1, duration: 0.5, ease: "power2.out" }, 289.71);
+      tl.fromTo("#scene09-stage .s10-left-fabless", { x: -40, opacity: 0 }, { x: 0, opacity: 1, duration: 0.6, ease: "power2.out" }, 290.21);
+      tl.fromTo("#scene09-stage .act2-telop-card", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power2.out" }, 290.31);
+      tl.fromTo("#scene09-stage #s09-stamp", { scale: 2.5, opacity: 0 }, { scale: 1.0, opacity: 1, duration: 0.35, ease: "back.out(2.0)" }, 291.21);
+      tl.to("#scene09-stage", { opacity: 0, duration: 0.6, ease: "power2.in" }, 327.20);
 
-      // Red 1.2 Trillion stamp slams down
-      tl.fromTo(".scene04-stamp-pos", { scale: 2.2, opacity: 0, rotation: -25 }, { scale: 1.0, opacity: 1, rotation: -10, duration: 0.3, ease: "back.out(2.0)" }, 41.2);
+      // --- SCENE 10: (327.80s - 368.10s) ---
+      tl.to("#scene10-stage", { opacity: 1, duration: 0.5, ease: "power2.out" }, 327.80);
+      tl.fromTo("#scene10-stage .s10-left-fabless", { x: -40, opacity: 0 }, { x: 0, opacity: 1, duration: 0.6, ease: "power2.out" }, 328.30);
+      tl.fromTo("#scene10-stage .act2-telop-card", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power2.out" }, 328.40);
+      tl.fromTo("#scene10-stage #s10-stamp", { scale: 2.5, opacity: 0 }, { scale: 1.0, opacity: 1, duration: 0.35, ease: "back.out(2.0)" }, 329.30);
+      tl.to("#scene10-stage", { opacity: 0, duration: 0.6, ease: "power2.in" }, 367.50);
 
-      // Photographic push-in on 93yo Morris Chang
-      tl.to("#card-morris-93 .scene04-photo-container img", { scale: 1.06, duration: 16.0, ease: "none" }, 41.5);
+      // --- SCENE 11: (368.10s - 403.46s) ---
+      tl.to("#scene11-stage", { opacity: 1, duration: 0.5, ease: "power2.out" }, 368.10);
+      tl.fromTo("#scene11-stage .s10-left-fabless", { x: -40, opacity: 0 }, { x: 0, opacity: 1, duration: 0.6, ease: "power2.out" }, 368.60);
+      tl.fromTo("#scene11-stage .act2-telop-card", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power2.out" }, 368.70);
+      tl.fromTo("#scene11-stage #s11-stamp", { scale: 2.5, opacity: 0 }, { scale: 1.0, opacity: 1, duration: 0.35, ease: "back.out(2.0)" }, 369.60);
+      tl.to("#scene11-stage", { opacity: 0, duration: 0.6, ease: "power2.in" }, 402.86);
 
-      // ================= SCENE 05: 1987 FLASHBACK DOSSIER (59.09s - 82.27s) =================
-      tl.fromTo("#timeline-ruler", { y: -40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.35, ease: "power2.out" }, 59.2);
+      // --- SCENE 12: (403.46s - 443.33s) ---
+      tl.to("#scene12-stage", { opacity: 1, duration: 0.5, ease: "power2.out" }, 403.46);
+      tl.fromTo("#scene12-stage .s10-left-fabless", { x: -40, opacity: 0 }, { x: 0, opacity: 1, duration: 0.6, ease: "power2.out" }, 403.96);
+      tl.fromTo("#scene12-stage .act2-telop-card", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power2.out" }, 404.06);
+      tl.fromTo("#scene12-stage #s12-stamp", { scale: 2.5, opacity: 0 }, { scale: 1.0, opacity: 1, duration: 0.35, ease: "back.out(2.0)" }, 404.96);
+      tl.to("#scene12-stage", { opacity: 0, duration: 0.6, ease: "power2.in" }, 442.73);
 
-      // Mouse Pointer slides across timeline: 2024 -> 1987
-      tl.fromTo("#mouse-pointer", { x: 0, opacity: 0 }, { x: 0, opacity: 1, duration: 0.15 }, 59.4);
-      tl.to("#mouse-pointer", { x: 1400, duration: 0.7, ease: "power2.inOut" }, 59.6);
-      // Mouse click bounce at 1987
-      tl.to("#mouse-pointer", { scale: 0.75, yoyo: true, repeat: 1, duration: 0.1 }, 60.2);
+      // --- SCENE 13: (443.33s - 475.06s) ---
+      tl.to("#scene13-stage", { opacity: 1, duration: 0.5, ease: "power2.out" }, 443.33);
+      tl.fromTo("#scene13-stage .s10-left-fabless", { x: -40, opacity: 0 }, { x: 0, opacity: 1, duration: 0.6, ease: "power2.out" }, 443.83);
+      tl.fromTo("#scene13-stage .act2-telop-card", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power2.out" }, 443.93);
+      tl.fromTo("#scene13-stage #s13-stamp", { scale: 2.5, opacity: 0 }, { scale: 1.0, opacity: 1, duration: 0.35, ease: "back.out(2.0)" }, 444.83);
+      tl.to("#scene13-stage", { opacity: 0, duration: 0.6, ease: "power2.in" }, 474.46);
 
-      // Dossier Cards Appear
-      tl.fromTo("#card-morris-55", { y: 60, rotation: -4, opacity: 0 }, { y: 0, rotation: -1, opacity: 1, duration: 0.5, ease: "power2.out" }, 60.5);
-      tl.fromTo("#card-fab-1987", { y: 60, rotation: 4, opacity: 0 }, { y: 0, rotation: 1, opacity: 1, duration: 0.5, ease: "power2.out" }, 60.9);
-      tl.fromTo("#stamp-zero", { scale: 2.4, opacity: 0, rotation: -20 }, { scale: 1.0, opacity: 1, rotation: -10, duration: 0.35, ease: "back.out(2.2)" }, 61.5);
+      // --- SCENE 14: (475.06s - 508.64s) ---
+      tl.to("#scene14-stage", { opacity: 1, duration: 0.5, ease: "power2.out" }, 475.06);
+      tl.fromTo("#scene14-stage .s10-left-fabless", { x: -40, opacity: 0 }, { x: 0, opacity: 1, duration: 0.6, ease: "power2.out" }, 475.56);
+      tl.fromTo("#scene14-stage .act2-telop-card", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power2.out" }, 475.66);
+      tl.fromTo("#scene14-stage #s14-stamp", { scale: 2.5, opacity: 0 }, { scale: 1.0, opacity: 1, duration: 0.35, ease: "back.out(2.0)" }, 476.56);
+      tl.to("#scene14-stage", { opacity: 0, duration: 0.6, ease: "power2.in" }, 508.04);
 
-      // ================= SCENE 06: MONOLITHIC TITLE REVEAL (82.27s - 96.89s) =================
-      tl.fromTo("#scene06-title-plate", { scale: 0.85, opacity: 0 }, { scale: 1.0, opacity: 1, duration: 0.6, ease: "back.out(1.4)" }, 82.5);
-      tl.fromTo("#s6-kicker", { y: -15, opacity: 0 }, { y: 0, opacity: 1, duration: 0.3, ease: "power2.out" }, 82.8);
-      tl.fromTo("#s6-title", { scale: 1.15, opacity: 0 }, { scale: 1.0, opacity: 1, duration: 0.5, ease: "power2.out" }, 83.1);
-      tl.fromTo("#s6-sub", { y: 15, opacity: 0 }, { y: 0, opacity: 1, duration: 0.35, ease: "power2.out" }, 83.5);
-      tl.fromTo("#s6-tag", { opacity: 0 }, { opacity: 1, duration: 0.4, ease: "power2.out" }, 83.9);
-      tl.fromTo("#s6-clients", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" }, 84.3);
+      // --- SCENE 15: (508.64s - 541.72s) ---
+      tl.to("#scene15-stage", { opacity: 1, duration: 0.5, ease: "power2.out" }, 508.64);
+      tl.fromTo("#scene15-stage .s10-left-fabless", { x: -40, opacity: 0 }, { x: 0, opacity: 1, duration: 0.6, ease: "power2.out" }, 509.14);
+      tl.fromTo("#scene15-stage .act2-telop-card", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power2.out" }, 509.24);
+      tl.fromTo("#scene15-stage #s15-stamp", { scale: 2.5, opacity: 0 }, { scale: 1.0, opacity: 1, duration: 0.35, ease: "back.out(2.0)" }, 510.14);
+      tl.to("#scene15-stage", { opacity: 0, duration: 0.6, ease: "power2.in" }, 541.12);
+
+      // --- SCENE 16: (541.72s - 580.03s) ---
+      tl.to("#scene16-stage", { opacity: 1, duration: 0.5, ease: "power2.out" }, 541.72);
+      tl.fromTo("#scene16-stage .s10-left-fabless", { x: -40, opacity: 0 }, { x: 0, opacity: 1, duration: 0.6, ease: "power2.out" }, 542.22);
+      tl.fromTo("#scene16-stage .act2-telop-card", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power2.out" }, 542.32);
+      tl.fromTo("#scene16-stage #s16-stamp", { scale: 2.5, opacity: 0 }, { scale: 1.0, opacity: 1, duration: 0.35, ease: "back.out(2.0)" }, 543.22);
+      tl.to("#scene16-stage", { opacity: 0, duration: 0.6, ease: "power2.in" }, 579.43);
+
+      // --- SCENE 17: (580.03s - 621.91s) ---
+      tl.to("#scene17-stage", { opacity: 1, duration: 0.5, ease: "power2.out" }, 580.03);
+      tl.fromTo("#scene17-stage .s10-left-fabless", { x: -40, opacity: 0 }, { x: 0, opacity: 1, duration: 0.6, ease: "power2.out" }, 580.53);
+      tl.fromTo("#scene17-stage .act2-telop-card", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power2.out" }, 580.63);
+      tl.fromTo("#scene17-stage #s17-stamp", { scale: 2.5, opacity: 0 }, { scale: 1.0, opacity: 1, duration: 0.35, ease: "back.out(2.0)" }, 581.53);
+      tl.to("#scene17-stage", { opacity: 0, duration: 0.6, ease: "power2.in" }, 621.31);
+
+      // --- SCENE 18: (621.91s - 656.45s) ---
+      tl.to("#scene18-stage", { opacity: 1, duration: 0.5, ease: "power2.out" }, 621.91);
+      tl.fromTo("#scene18-stage .s10-left-fabless", { x: -40, opacity: 0 }, { x: 0, opacity: 1, duration: 0.6, ease: "power2.out" }, 622.41);
+      tl.fromTo("#scene18-stage .act2-telop-card", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power2.out" }, 622.51);
+      tl.fromTo("#scene18-stage #s18-stamp", { scale: 2.5, opacity: 0 }, { scale: 1.0, opacity: 1, duration: 0.35, ease: "back.out(2.0)" }, 623.41);
+      tl.to("#scene18-stage", { opacity: 0, duration: 0.6, ease: "power2.in" }, 655.85);
+
+      // --- SCENE 19: (656.45s - 686.29s) ---
+      tl.to("#scene19-stage", { opacity: 1, duration: 0.5, ease: "power2.out" }, 656.45);
+      tl.fromTo("#scene19-stage .s10-left-fabless", { x: -40, opacity: 0 }, { x: 0, opacity: 1, duration: 0.6, ease: "power2.out" }, 656.95);
+      tl.fromTo("#scene19-stage .act2-telop-card", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power2.out" }, 657.05);
+      tl.fromTo("#scene19-stage #s19-stamp", { scale: 2.5, opacity: 0 }, { scale: 1.0, opacity: 1, duration: 0.35, ease: "back.out(2.0)" }, 657.95);
+      tl.to("#scene19-stage", { opacity: 0, duration: 0.6, ease: "power2.in" }, 685.69);
+
+      // --- SCENE 20: (686.29s - 717.66s) ---
+      tl.to("#scene20-stage", { opacity: 1, duration: 0.5, ease: "power2.out" }, 686.29);
+      tl.fromTo("#scene20-stage .s10-left-fabless", { x: -40, opacity: 0 }, { x: 0, opacity: 1, duration: 0.6, ease: "power2.out" }, 686.79);
+      tl.fromTo("#scene20-stage .act2-telop-card", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power2.out" }, 686.89);
+      tl.fromTo("#scene20-stage #s20-stamp", { scale: 2.5, opacity: 0 }, { scale: 1.0, opacity: 1, duration: 0.35, ease: "back.out(2.0)" }, 687.79);
+      tl.to("#scene20-stage", { opacity: 0, duration: 0.6, ease: "power2.in" }, 717.06);
+
+      // --- SCENE 21: (717.66s - 748.62s) ---
+      tl.to("#scene21-stage", { opacity: 1, duration: 0.5, ease: "power2.out" }, 717.66);
+      tl.fromTo("#scene21-stage .s10-left-fabless", { x: -40, opacity: 0 }, { x: 0, opacity: 1, duration: 0.6, ease: "power2.out" }, 718.16);
+      tl.fromTo("#scene21-stage .act2-telop-card", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power2.out" }, 718.26);
+      tl.fromTo("#scene21-stage #s21-stamp", { scale: 2.5, opacity: 0 }, { scale: 1.0, opacity: 1, duration: 0.35, ease: "back.out(2.0)" }, 719.16);
+      tl.to("#scene21-stage", { opacity: 0, duration: 0.6, ease: "power2.in" }, 748.02);
+
+      // --- SCENE 22: (748.62s - 786.69s) ---
+      tl.to("#scene22-stage", { opacity: 1, duration: 0.5, ease: "power2.out" }, 748.62);
+      tl.fromTo("#scene22-stage .s10-left-fabless", { x: -40, opacity: 0 }, { x: 0, opacity: 1, duration: 0.6, ease: "power2.out" }, 749.12);
+      tl.fromTo("#scene22-stage .act2-telop-card", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power2.out" }, 749.22);
+      tl.fromTo("#scene22-stage #s22-stamp", { scale: 2.5, opacity: 0 }, { scale: 1.0, opacity: 1, duration: 0.35, ease: "back.out(2.0)" }, 750.12);
+      tl.to("#scene22-stage", { opacity: 0, duration: 0.6, ease: "power2.in" }, 786.09);
+
+      // --- SCENE 23: (786.69s - 827.57s) ---
+      tl.to("#scene23-stage", { opacity: 1, duration: 0.5, ease: "power2.out" }, 786.69);
+      tl.fromTo("#scene23-stage .s10-left-fabless", { x: -40, opacity: 0 }, { x: 0, opacity: 1, duration: 0.6, ease: "power2.out" }, 787.19);
+      tl.fromTo("#scene23-stage .act2-telop-card", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power2.out" }, 787.29);
+      tl.fromTo("#scene23-stage #s23-stamp", { scale: 2.5, opacity: 0 }, { scale: 1.0, opacity: 1, duration: 0.35, ease: "back.out(2.0)" }, 788.19);
+      tl.to("#scene23-stage", { opacity: 0, duration: 0.6, ease: "power2.in" }, 826.97);
+
+      // --- SCENE 24: (827.57s - 862.37s) ---
+      tl.to("#scene24-stage", { opacity: 1, duration: 0.5, ease: "power2.out" }, 827.57);
+      tl.fromTo("#scene24-stage .s10-left-fabless", { x: -40, opacity: 0 }, { x: 0, opacity: 1, duration: 0.6, ease: "power2.out" }, 828.07);
+      tl.fromTo("#scene24-stage .act2-telop-card", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power2.out" }, 828.17);
+      tl.fromTo("#scene24-stage #s24-stamp", { scale: 2.5, opacity: 0 }, { scale: 1.0, opacity: 1, duration: 0.35, ease: "back.out(2.0)" }, 829.07);
+      tl.to("#scene24-stage", { opacity: 0, duration: 0.6, ease: "power2.in" }, 861.77);
+
+      // --- SCENE 25: (862.37s - 900.25s) ---
+      tl.to("#scene25-stage", { opacity: 1, duration: 0.5, ease: "power2.out" }, 862.37);
+      tl.fromTo("#scene25-stage .s10-left-fabless", { x: -40, opacity: 0 }, { x: 0, opacity: 1, duration: 0.6, ease: "power2.out" }, 862.87);
+      tl.fromTo("#scene25-stage .act2-telop-card", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power2.out" }, 862.97);
+      tl.fromTo("#scene25-stage #s25-stamp", { scale: 2.5, opacity: 0 }, { scale: 1.0, opacity: 1, duration: 0.35, ease: "back.out(2.0)" }, 863.87);
+      tl.to("#scene25-stage", { opacity: 0, duration: 0.6, ease: "power2.in" }, 899.65);
+
+      // --- SCENE 26: (900.25s - 935.53s) ---
+      tl.to("#scene26-stage", { opacity: 1, duration: 0.5, ease: "power2.out" }, 900.25);
+      tl.fromTo("#scene26-stage .s10-left-fabless", { x: -40, opacity: 0 }, { x: 0, opacity: 1, duration: 0.6, ease: "power2.out" }, 900.75);
+      tl.fromTo("#scene26-stage .act2-telop-card", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power2.out" }, 900.85);
+      tl.fromTo("#scene26-stage #s26-stamp", { scale: 2.5, opacity: 0 }, { scale: 1.0, opacity: 1, duration: 0.35, ease: "back.out(2.0)" }, 901.75);
+      tl.to("#scene26-stage", { opacity: 0, duration: 0.6, ease: "power2.in" }, 934.93);
+
+      // --- SCENE 27: (935.53s - 972.95s) ---
+      tl.to("#scene27-stage", { opacity: 1, duration: 0.5, ease: "power2.out" }, 935.53);
+      tl.fromTo("#scene27-stage .s10-left-fabless", { x: -40, opacity: 0 }, { x: 0, opacity: 1, duration: 0.6, ease: "power2.out" }, 936.03);
+      tl.fromTo("#scene27-stage .act2-telop-card", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power2.out" }, 936.13);
+      tl.fromTo("#scene27-stage #s27-stamp", { scale: 2.5, opacity: 0 }, { scale: 1.0, opacity: 1, duration: 0.35, ease: "back.out(2.0)" }, 937.03);
+      tl.to("#scene27-stage", { opacity: 0, duration: 0.6, ease: "power2.in" }, 972.35);
+
+      // --- SCENE 28: (972.95s - 1010.23s) ---
+      tl.to("#scene28-stage", { opacity: 1, duration: 0.5, ease: "power2.out" }, 972.95);
+      tl.fromTo("#scene28-stage .s10-left-fabless", { x: -40, opacity: 0 }, { x: 0, opacity: 1, duration: 0.6, ease: "power2.out" }, 973.45);
+      tl.fromTo("#scene28-stage .act2-telop-card", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power2.out" }, 973.55);
+      tl.fromTo("#scene28-stage #s28-stamp", { scale: 2.5, opacity: 0 }, { scale: 1.0, opacity: 1, duration: 0.35, ease: "back.out(2.0)" }, 974.45);
+      tl.to("#scene28-stage", { opacity: 0, duration: 0.6, ease: "power2.in" }, 1009.63);
+
+      // --- SCENE 29: (1010.23s - 1047.55s) ---
+      tl.to("#scene29-stage", { opacity: 1, duration: 0.5, ease: "power2.out" }, 1010.23);
+      tl.fromTo("#scene29-stage .s10-left-fabless", { x: -40, opacity: 0 }, { x: 0, opacity: 1, duration: 0.6, ease: "power2.out" }, 1010.73);
+      tl.fromTo("#scene29-stage .act2-telop-card", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power2.out" }, 1010.83);
+      tl.fromTo("#scene29-stage #s29-stamp", { scale: 2.5, opacity: 0 }, { scale: 1.0, opacity: 1, duration: 0.35, ease: "back.out(2.0)" }, 1011.73);
+      tl.to("#scene29-stage", { opacity: 0, duration: 0.6, ease: "power2.in" }, 1046.95);
+
+      // --- SCENE 30: (1047.55s - 1086.75s) ---
+      tl.to("#scene30-stage", { opacity: 1, duration: 0.5, ease: "power2.out" }, 1047.55);
+      tl.fromTo("#scene30-stage .s10-left-fabless", { x: -40, opacity: 0 }, { x: 0, opacity: 1, duration: 0.6, ease: "power2.out" }, 1048.05);
+      tl.fromTo("#scene30-stage .act2-telop-card", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power2.out" }, 1048.15);
+      tl.fromTo("#scene30-stage #s30-stamp", { scale: 2.5, opacity: 0 }, { scale: 1.0, opacity: 1, duration: 0.35, ease: "back.out(2.0)" }, 1049.05);
+      tl.to("#scene30-stage", { opacity: 0, duration: 0.6, ease: "power2.in" }, 1086.15);
+
+      // --- SCENE 31: (1086.75s - 1126.62s) ---
+      tl.to("#scene31-stage", { opacity: 1, duration: 0.5, ease: "power2.out" }, 1086.75);
+      tl.fromTo("#scene31-stage .s10-left-fabless", { x: -40, opacity: 0 }, { x: 0, opacity: 1, duration: 0.6, ease: "power2.out" }, 1087.25);
+      tl.fromTo("#scene31-stage .act2-telop-card", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power2.out" }, 1087.35);
+      tl.fromTo("#scene31-stage #s31-stamp", { scale: 2.5, opacity: 0 }, { scale: 1.0, opacity: 1, duration: 0.35, ease: "back.out(2.0)" }, 1088.25);
+      tl.to("#scene31-stage", { opacity: 0, duration: 0.6, ease: "power2.in" }, 1126.02);
 
       window.__timelines["main"] = tl;
       tl.seek(0);
